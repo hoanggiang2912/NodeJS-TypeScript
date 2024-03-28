@@ -1,0 +1,28 @@
+.category__item {
+    color: $text;
+    width: 100%;
+
+    &__banner__wrapper {
+        width: 100%;
+        position: relative;
+        padding-bottom: 125%;
+        height: 0;
+        .category__item__banner {
+            position: absolute;
+            display: block;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+    }
+    &__name {
+        color: $text;
+        transition: .25s linear;
+    }
+    &:hover {
+        .category__item__name {
+            color: $primary;
+        }
+    }
+}

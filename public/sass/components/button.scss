@@ -1,0 +1,192 @@
+
+$btn-hover-effect: .3s linear;
+.btn {
+    width: 100%;
+    max-width: 260px;
+    padding: 12px 33px;
+    min-width: 157px;
+    transition: $btn-hover-effect;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+    font-family:'Product Sans', serif;
+    font-size: 14px;
+    border: 1px solid transparent;
+}
+.btn.btn-fit {
+    width: fit-content;
+    max-width: unset;
+}
+
+.primary-fill-btn {
+    background: $primary;
+    color: white;
+}
+.primary-fill-btn.hover {
+    &:hover {
+        background: $primary-hover;
+    }
+}
+.primary-fill-btn.hover-outline {
+    &:hover {
+        background: transparent !important;
+        border-color: $primary !important;
+        color: $primary !important;
+    }
+}
+
+
+.secondary-fill-btn {
+    padding: 20px;
+    background: $light-gray;
+    border-radius: 8px;
+    color: $neutral60;
+    border: 1px solid $neutral80;
+    width: fit-content
+}
+.secondary-fill-btn.hover {
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+
+.primary-outline-btn {
+    border: 1px solid $primary;
+    background: transparent;
+    color: $primary;
+}
+.primary-outline-btn.hover {
+    &:hover {
+        background: $primary;
+        color: $-white !important;
+    }
+}
+
+.secondary-outline-btn {
+    border: 2px solid $neutral50
+}
+
+.primary-text-btn {
+    color: $primary;
+    background: transparent;
+    padding: 1rem 1.2rem;
+    transition: .25s linear;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.auto-set-width {
+    width: unset;
+    min-width: unset;
+    max-width: none;
+}
+.primary-text-btn.hover {
+    &:hover {
+        background: rgba($color: #000000, $alpha: .1);
+    }
+}
+.primary-text-btn.hover-fade {
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+.icon-btn {
+    min-width: 28px;
+    min-height: 28px;
+    height: 40px;
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    color: $text;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .25s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.icon-btn.no-padding {
+    width: auto;
+    height: auto;
+}
+.icon-btn.hover {
+    &:hover,
+    &:active {
+        background: $neutral87;
+        // color: $primary;
+    }
+}
+
+.delete__btn {
+    font-weight: bold !important;
+    &:hover {
+        color: $--rose;
+    }
+}
+
+.show-product-btn {
+    background: var(--glass, linear-gradient(92deg, rgba(255, 255, 255, 0.36) 0%, rgba(255, 255, 255, 0.36) 105.54%));
+    color: $--white;
+}
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.edit__btn {
+    font-weight: bold !important;
+    &:hover {
+        color: $--blue;
+    }
+}
+
+.confirm-btn {
+    background: $--blue;
+    color: $--white;
+}
+.discard-btn {
+    background: $--rose;
+    color: $--white;
+}
+
+.upload-btn {
+    background: $--blue;
+    color: $--white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .2s linear;
+    &:hover {
+        background: rgba($color: $-blue, $alpha: .8);
+    }
+}
+
+.discard-upload-btn {
+    background: $--rose;
+    color: $--white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .2s linear;
+    &:hover {
+        background: rgba($color: $--rose, $alpha: .8);
+    }
+}
+
+.add__gallery__btn {
+    background: $--blue;
+    color: $--white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: .2s linear;
+    &:hover {
+        background: rgba($color: $--blue, $alpha: .8);
+    }
+}

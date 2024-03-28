@@ -1,0 +1,62 @@
+<div class="admin__panel">
+    <div class="admin__title flex-between v-center">
+        <h4 class="display-small fw-bold ttc">Category</h4>
+        <div class="flex g20">
+            <form action="#" class="form form--search glass">
+                <div class="form__group form__group--collapse flex v-center">
+                    <input type="search" class="form__input form__input--search form__input--transparent"
+                        placeholder="Search for category">
+                    <!-- <button class="icon-btn search__btn">
+                                        <i class="fal fa-search"></i>
+                                    </button> -->
+                </div>
+            </form>
+            <a href="/admin/categories/create" data-tooltip="Add new category" data-position="left"
+                class="add-product-btn glass rounded-8 flex-center tooltips-btn--open por"
+                style="height: 45px; width: 45px; border-radius: 100%;">
+                <i class="fal fa-plus text"></i>
+                <div class="tooltips tooltips--left">Add new category</div>
+            </a>
+        </div>
+    </div>
+    <main class="admin__panel__main product__panel category__panel row mt30">
+        <!-- single product start -->
+        {{!-- {{#each categories}}
+            <div class="admin__category col l-4 m-6 c-12 cp" data-id="{{this._id}}">
+                <div class="admin__product__inner glass rounded-8 oh p20 flex-column g12">
+                    <div class="flex">
+                        <div class="admin__category__image por">
+                            <div class="abs-full banner-cover"
+                                style="background-image: url('/assets/image/categories/{{this.banner}}');">
+                            </div>
+                        </div>
+                        <div class="admin__category__info flex-column flex-between g20">
+                            <h4 class="admin__product__name text body-large fw-smb ttc">{{this.name}}</h4>
+                            <div class="flex-between">
+                                <div class="admin__category__stock flex g6 v-center wrap">
+                                    <span class="admin__product__price__old text body-large fw-smb">Updating</span>
+                                    <span class="admin__product__price__new text body-large fw-normal">products available</span>
+                                </div>
+                                <div class="admin__category__action flex-between v-center">
+                                    <button class="icon-btn edit__btn">
+                                        <i class="fal fa-edit"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="admin__product__info flex-between v-center">
+                        <span class="admin__category__statis__text flex g6 v-center"><i class="fa-solid fa-arrow-trend-up"></i> 15%
+                            increased</span>
+                        <span class="admin__category__update__text body-medium fw-light flex g6 neutral-text60"> Last 24 hours
+                        </span>
+                    </div>
+                </div>
+            </div>
+        {{/each}} --}}
+        <!-- single product end -->
+    </main>
+</div>
+
+<script type="module" src="/js/adminCategories.js"></script>

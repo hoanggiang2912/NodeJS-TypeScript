@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="/assets/image/favicon.webp" type="image/x-icon">
+    <!-- css styling link -->
+    <link rel="stylesheet" href="/css/app.css" />
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- javascript link -->
+    <script type="module" src="/js/main.js" defer></script>
+    <script type="module" src="/js/shippingPayment.js" defer></script>
+</head>
+
+<body class="por">
+    <div class="container third-font">
+        <!-- page content start -->
+        <section class="checkout__wrapper">
+            <main class="checkout__main grid">
+                <div class="row no-gutters">
+                    <div class="checkout__info__side col l-7 m-6 c-12 flex">
+                        <div class="inner p60">
+                            <div class="logo" style="max-width: 9rem; max-inline-size: 9rem;">
+                                <img src="/assets/image/icon-logo.png" alt="">
+                            </div>
+                            <div class="respon__checkout__box width-full hide-on-desktop hide-on-tablet mt30">
+                                <div
+                                    class="toggle__respon__box secondary-bg flex-between v-center width-full p20 border-bottom">
+                                    <button class="primary-text-btn flex g12 v-center">
+                                        <i class="fab fa-opencart"></i>
+                                        Show order summary
+                                        <i class="fal fa-chevron-down" style="font-size: 12px;"></i>
+                                    </button>
+                                    <p class="body-large fw-smb total">$92</p>
+                                </div>
+                                <div
+                                    class="respon__checkout__box--inner secondary-bg hide-on-desktop hide-on-tablet p20">
+                                    <div class="bill__products flex-column g20">
+                                        {{#each bill.products}} 
+                                            <!-- single bill product start -->
+                                            <div class="bill__product flex v-center g20">
+                                                <div class="bill__product__banner__wrapper por">
+                                                    <div class="banner-contain bill__product__banner poa abs-full"
+                                                        style="background-image: url('/uploads/{{this.image}}')">
+                                                    </div>
+                                                    <span class="label-small poa bill__product__qty">{{this.qty}}</span>
+                                                </div>
+                                                <div class="bill__product__info flex-full flex-between v-center g12">
+                                                    <div class="flex-column">
+                                                        <div class="title-medium fw-normal bill__product__name ttu">{{this.title}}</div>
+                                                        <div class="label-medium fw-normal bill__product__category neutral-text60">
+                                                            {{this.idCategory.name}}</div>
+                                                    </div>
+                                                    <div class="label-large fw-normal bill__product__price">$
+                                                        {{#if this.salePrice}}
+                                                            {{this.salePrice}}
+                                                        {{else}}
+                                                            {{this.price}}
+                                                        {{/if}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- single bill product end -->
+                                        {{/each}}
+                                    </div>
+                                    <form action="" class="form discount__form mt20">
+                                        <div class="form__group flex g12">
+                                            <input type="text" class="form__input">
+                                            <button class="secondary-fill-btn">Apply</button>
+                                        </div>
+                                    </form>
+                                    <div class="summary mt20">
+                                        <div class="summary__row flex-between v-center">
+                                            <p class="body-medium fw-medium">Subtotal</p>
+                                            <p class="body-medium fw-medium subtotal">$42</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="body-medium fw-medium">Shipping</p>
+                                            <p class="body-small fw-medium neutral-text60 shipping__fee">$0</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="title-medium fw-medium">Total</p>
+                                            <p class="title-medium fw-medium total">$42</p>
+                                        </div>
+                                    </div>
+                                    <div class="bill__products--bought-together mt20">
+                                        <h4 class="title-medium fw-bold ttu tac">FREQUENTLY BOUGHT TOGETHER</h4>
+                                        <div class="bill__products__holder mt20 flex-column g20">
+                                            <!-- single bill product start -->
+                                            <!-- <div class="bill__product border flex v-center g20 p20 rounded-8">
+                                                <div class="bill__product__banner__wrapper por">
+                                                    <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/src/assets/image/products/curated-single-origin-subscription-20231221_1_3000x.webp')"></div>
+                                                </div>
+                                                <div class="bill__product__info flex-full flex-between v-center g12">
+                                                    <div class="flex-column">
+                                                        <div class="title-medium fw-normal bill__product__name">El Salvador Los Pirineos Orange Pacamara</div>
+                                                        <div class="label-medium fw-normal bill__product__category neutral-text60">Whole Bean / 12oz</div>
+                                                        <div class="label-large fw-normal bill__product__price primary-text">$42.00</div>
+                                                    </div>
+                                                    <button class="add-bill-btn secondary-fill-btn hover primary-text">Add</button>
+                                                </div>
+                                            </div> -->
+                                            <!-- single bill product end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="nav checkout__nav label-medium fw-normal flex g12 v-center mt20">
+                                <div class="nav__item active">
+                                    <a href="" class="nav__link">Cart</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item current">
+                                    <a href="" class="nav__link">Information</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item">
+                                    <a href="" class="nav__link">Shipping</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item">
+                                    <a href="" class="nav__link">Payment</a>
+                                </div>
+                            </nav>
+
+                            <div class="payment__error__message body-medium fw-smb primary-text"></div>
+                            
+                            <div class="mt20 pi20 bill__info border rounded-8">
+                                <div class="bill__info__row">
+                                    <p class="body-medium fw-medium neutral-text60 flex v-center">Contact</p>
+                                    <div class="flex-between v-center">
+                                        <p class="body-medium fw-medium user__email">{{bill.email}}</p>
+                                        <button disabled
+                                            class="primary-text-btn primary-text label-small underline fw-normal">Change</button>
+                                    </div>
+                                </div>
+                                <div class="bill__info__row border-top">
+                                    <p class="body-medium fw-medium neutral-text60 flex v-center">Ship to</p>
+                                    <div class="flex-between v-center">
+                                        <p class="body-medium fw-medium user__address">{{bill.address}}</p>
+                                        <button disabled
+                                            class="primary-text-btn primary-text label-small underline fw-normal">Change</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt20 shipping__methods radio__boxes">
+                                <h4 class="title-medium fw-smb mt30">Shipping methods</h4>
+                                <div class="shipping__method__holder radio__boxes__holder mt20 width-full">
+                                    <!-- single shipping method start -->
+                                    <div class="shipping__method custom__radio__parent checked flex v-center width-full g12 p20 border"
+                                        data-value="0" data-name="Free Shipping USPS">
+                                        <div class="custom__radio__wrapper">
+                                            <input type="radio" style="display: none !important" name="shippingMethod"
+                                                id="" data-value="0" checked>
+                                            <div class="custom__radio"></div>
+                                        </div>
+                                        <div class="flex-between v-center flex-full">
+                                            <p class="body-medium fw-normal">Free Shipping USPS</p>
+                                            <p class="body-medium fw-normal">Free</p>
+                                        </div>
+                                    </div>
+                                    <!-- single shipping method end -->
+                                    <!-- single shipping method start -->
+                                    <div class="shipping__method custom__radio__parent flex v-center width-full g12 p20 border"
+                                        data-value="10.85" data-name="USPS Priority Mail">
+                                        <div class="custom__radio__wrapper">
+                                            <input type="radio" style="display: none !important" name="shippingMethod"
+                                                id="" data-value="10.85" />
+                                            <div class="custom__radio"></div>
+                                        </div>
+                                        <div class="flex-between v-center flex-full">
+                                            <p class="body-medium fw-normal">USPS Priority Mail</p>
+                                            <p class="body-medium fw-normal">$10.85</p>
+                                        </div>
+                                    </div>
+                                    <!-- single shipping method end -->
+                                    <!-- single shipping method start -->
+                                    <div class="shipping__method custom__radio__parent flex v-center width-full g12 p20 border"
+                                        data-value="17.50" data-name="UPS® Ground">
+                                        <div class="custom__radio__wrapper">
+                                            <input type="radio" style="display: none !important" name="shippingMethod"
+                                                id="" data-value="17.50" />
+                                            <div class="custom__radio"></div>
+                                        </div>
+                                        <div class="flex-between v-center flex-full">
+                                            <p class="body-medium fw-normal">UPS® Ground</p>
+                                            <p class="body-medium fw-normal">$17.50</p>
+                                        </div>
+                                    </div>
+                                    <!-- single shipping method end -->
+                                </div>
+                            </div>
+                            <div class="mt20 payment__methods radio__boxes">
+                                <h4 class="title-medium fw-smb mt30">Payment methods</h4>
+                                <div class="payment__method__holder radio__boxes__holder mt20 width-full">
+                                    <!-- single Payment method start -->
+                                    <div class="payment__method custom__radio__parent checked flex v-center width-full g12 p20 border"
+                                        data-name="Cash">
+                                        <div class="custom__radio__wrapper">
+                                            <input type="radio" checked style="display: none !important"
+                                                name="paymentMethod" id="" />
+                                            <div class="custom__radio"></div>
+                                        </div>
+                                        <div class="flex-between v-center flex-full">
+                                            <p class="body-medium fw-normal">Cash</p>
+                                        </div>
+                                    </div>
+                                    <!-- single Payment method end -->
+                                </div>
+                            </div>
+                            <div class="flex flex-between width-full mt20">
+                                <button class="primary-text-btn hover-fade">
+                                    <i class="fal fa-chevron-left"></i>
+                                    Return to cart
+                                </button>
+                                <button class="btn buy-now-btn primary-fill-btn hover-fade rounded-8"
+                                    style="max-width: unset; width: fit-content; padding-block: 20px">
+                                    Buy now
+                                    <i class="fal fa-chevron-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout__product__side col l-5 m-6 c-12 flex hide-on-mobile">
+                        <div class="inner">
+                            <div class="bill__products flex-column g20">
+                                {{#each bill.products}}
+                                    <!-- single bill product start -->
+                                    <div class="bill__product flex v-center g20">
+                                        <div class="bill__product__banner__wrapper por" style="min-width: 90px;">
+                                            <div class="banner-contain bill__product__banner poa abs-full"
+                                                style="background-image: url('/uploads/{{this.image}}')">
+                                            </div>
+                                            <span class="label-small poa bill__product__qty">{{this.qty}}</span>
+                                        </div>
+                                        <div class="bill__product__info flex-full v-center g12">
+                                            <div class="flex-column flex-full">
+                                                <div class="title-medium fw-normal bill__product__name ttu flex-full">{{this.title}}</div>
+                                                <div class="label-medium fw-normal bill__product__category neutral-text60 ttc">
+                                                    {{this.idCategory.name}}</div>
+                                            </div>
+                                            <div class="label-large fw-normal bill__product__price">
+                                                {{#if this.salePrice}}
+                                                    ${{this.salePrice}}
+                                                {{else}}
+                                                    ${{this.price}}
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single bill product end -->
+                                {{/each}}
+                            </div>
+                            <form action="" class="form discount__form mt20">
+                                <div class="form__group flex g12">
+                                    <input type="text" class="form__input">
+                                    <button class="secondary-fill-btn">Apply</button>
+                                </div>
+                            </form>
+                            <div class="summary mt20">
+                                <div class="summary__row flex-between v-center">
+                                    <p class="body-medium fw-medium">Subtotal</p>
+                                    <p class="body-medium fw-medium subtotal">${{bill.subTotal}}</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="body-medium fw-medium">Shipping</p>
+                                    <p class="body-small fw-medium neutral-text60 shipping__fee">$0</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="title-medium fw-medium">Total</p>
+                                    <p class="title-medium fw-medium total">$42</p>
+                                </div>
+                            </div>
+                            {{!-- <div class="bill__products--bought-together mt20">
+                                <h4 class="title-medium fw-bold ttu tac">FREQUENTLY BOUGHT TOGETHER</h4>
+                                <div class="bill__products__holder mt20 flex-column g20">
+                                    <!-- single bill product start -->
+                                    <div class="bill__product border flex v-center g20 p20 rounded-8">
+                                        <div class="bill__product__banner__wrapper por">
+                                            <div class="banner-contain bill__product__banner poa abs-full"
+                                                style="background-image: url('/src/assets/image/products/curated-single-origin-subscription-20231221_1_3000x.webp')">
+                                            </div>
+                                        </div>
+                                        <div class="bill__product__info flex-full v-center g12">
+                                            <div class="flex-column">
+                                                <div class="title-medium fw-normal bill__product__name">El Salvador Los
+                                                    Pirineos Orange Pacamara</div>
+                                                <div
+                                                    class="label-medium fw-normal bill__product__category neutral-text60">
+                                                    Whole Bean / 12oz</div>
+                                                <div class="label-large fw-normal bill__product__price primary-text">
+                                                    $42.00</div>
+                                            </div>
+                                            <button
+                                                class="add-bill-btn secondary-fill-btn hover primary-text">Add</button>
+                                        </div>
+                                    </div>
+                                    <!-- single bill product end -->
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <!-- page content end -->
+    </div>
+</body>
+
+</html>
+
+{{!-- <script type="module" src="/js/main.js"></script> --}}
+{{!-- <script type="module" src="/src/js/shipping.js"></script> --}}

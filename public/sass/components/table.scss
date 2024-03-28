@@ -1,0 +1,29 @@
+table {
+    width: 100%;
+    overflow-x: scroll;
+    background: white;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 10px 1px #EEE;
+
+    th {
+        font-weight: 700;
+        padding: 1.2rem 1rem;
+    }
+
+    td {
+        padding: 1.2rem 1rem;
+        text-align: center;
+        color: $--darkgray;
+    }
+
+    .detail-btn {
+        color: $-blue;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: .2s linear;
+
+        &:hover {
+            text-decoration-thickness: 2px;
+        }
+    }
+}

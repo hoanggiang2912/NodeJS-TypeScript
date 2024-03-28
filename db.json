@@ -1,0 +1,475 @@
+{
+  "Products": [
+    {
+      "id": "0",
+      "idCategory": "1",
+      "title": "North Star Blend",
+      "price": 22,
+      "qty": 100,
+      "salePrice": null,
+      "background": {
+        "lazy-load": "NorthStarPDP-1_1_180x.avif",
+        "main": "NorthStarPDP-1_1_1728x.webp",
+        "sub": "NorthStarPDP-2_1_3000x.webp"
+      },
+      "thumbnails": [
+        "NorthStarPDP-1_1_1728x.webp",
+        "NorthStarPDP-2_1_3000x.webp"
+      ],
+      "description": [
+        "Warm and inviting with flavors of peanut brittle, red apple, and candied orange, our winter blend welcomes a new year brewing with possibilities. It pays homage to the North Star, famous for remaining steadfast in the sky.",
+        "5% of sales go directly to our producer partners at Fazenda California in Brazil to support the \"Future is in our Hands,\" a local environmental education initiative which engages elementary school-aged children in the coffee-growing region through hands-on, sustainability-focused activities."
+      ]
+    },
+    {
+      "id": "1",
+      "idCategory": "1",
+      "title": "Guatemala El Amate Cup of Excellence",
+      "price": 22,
+      "qty": 100,
+      "salePrice": 80,
+      "background": {
+        "lazy-load": "GuatemalaElAmateCupofExcellence_6oz_angle_180x.avif",
+        "main": "GuatemalaElAmateCupofExcellence_6oz_angle_3000x.webp",
+        "sub": "GuatemalaElAmateCupofExcellence-TastingNotes2024_1_3000x.webp"
+      },
+      "thumbnails": [
+        "GuatemalaElAmateCupofExcellence_6oz_angle_3000x.webp",
+        "GuatemalaElAmateCupofExcellence-TastingNotes2024_1_3000x.webp"
+      ],
+      "description": [
+        "Decadent & sweet, this fully-washed Bourbon single origin lot was one of the winners of this year’s highly competitive Cup of Excellence competition in Guatemala!",
+        "Petronilo de Jesús Martínez Castillo and his son produced this coffee on their family farm, Finca El Amate. Having invested in their own wet mill and drying area, this producer family yields more control over the processing of their coffees."
+      ]
+    },
+    {
+      "id": "2",
+      "idCategory": "1",
+      "title": "Mocha Java Blend Fair Trade Organic",
+      "price": 18,
+      "qty": 100,
+      "salePrice": null,
+      "background": {
+        "lazy-load": "MochaJavaFTO-93Points_angle_d_180x.avif",
+        "main": "MochaJavaFTO-93Points_angle_d_3000x.webp",
+        "sub": "mocha-java-blend-fair-trade-organic-576852_3000x.webp"
+      },
+      "thumbnails": [
+        "MochaJavaFTO-93Points_angle_d_3000x.webp",
+        "mocha-java-blend-fair-trade-organic-576852_3000x.webp"
+      ],
+      "description": [
+        "A certified classic synonymous with fruit-forward flavors of dark chocolate, almonds, and berry-like fruit. This medium roast coffee is dark enough to stand up to milk, but not so dark as to hide the inherent flavor qualities of the blend’s component coffees. ",
+        "Petronilo de Jesús Martínez Castillo and his son produced this coffee on their family farm, Finca El Amate. Having invested in their own wet mill and drying area, this producer family yields more control over the processing of their coffees."
+      ]
+    },
+    {
+      "id": "3",
+      "idCategory": "2",
+      "title": "Curated Single Origin Subscription",
+      "price": 19,
+      "qty": 100,
+      "salePrice": null,
+      "background": {
+        "lazy-load": "curated-single-origin-subscription-20231221_1_180x.avif",
+        "main": "curated-single-origin-subscription-20231221_1_3000x.webp",
+        "sub": "EquatorCoffees-CuratedSingleOrigin_1_3000x.webp"
+      },
+      "thumbnails": [
+        "curated-single-origin-subscription-20231221_1_3000x.webp",
+        "EquatorCoffees-CuratedSingleOrigin_1_3000x.webp"
+      ],
+      "description": [
+        "A certified classic synonymous with fruit-forward flavors of dark chocolate, almonds, and berry-like fruit. This medium roast coffee is dark enough to stand up to milk, but not so dark as to hide the inherent flavor qualities of the blend’s component coffees. ",
+        "Petronilo de Jesús Martínez Castillo and his son produced this coffee on their family farm, Finca El Amate. Having invested in their own wet mill and drying area, this producer family yields more control over the processing of their coffees."
+      ]
+    },
+    {
+      "id": "4",
+      "idCategory": "4",
+      "title": "Ethiopia Hamasho White Honey",
+      "price": "24",
+      "qty": 100,
+      "salePrice": "",
+      "background": {
+        "lazy-load": "EthiopiaHamashoWhiteHoney-6oz_angle_d_180x.avif",
+        "main": "EthiopiaHamashoWhiteHoney-6oz_angle_d_3000x.webp",
+        "sub": "EthiopiaHamashoWhiteHoney-TastingNotes2023_3000x.webp"
+      },
+      "thumbnails": [
+        "EthiopiaHamashoWhiteHoney-6oz_angle_d_3000x.webp",
+        "EthiopiaHamashoWhiteHoney-TastingNotes2023_3000x.webp"
+      ],
+      "description": [
+        "Sourced from Ethiopia\"s Sidama growing region, this vibrant single origin coffee came to us by way of Catalyst Coffee: a women-led importer dedicated to innovation and traceability in Ethiopian coffeeDebuted at the SF Coffee Festival, this coffee was white-honey processed, imparting a subtly sweet quality to this coffee\"s stone fruit profile",
+        ""
+      ]
+    },
+    {
+      "id": "5",
+      "idCategory": "2",
+      "title": "10 oz. North Star Diner Mug ",
+      "price": "22",
+      "qty": "100",
+      "salePrice": "16",
+      "background": {
+        "lazy-load": "",
+        "main": "demoproduct-main.webp",
+        "sub": "demoproduct-sub.webp"
+      },
+      "thumbnails": [
+        "demoproduct-main.webp",
+        "demoproduct-sub.webp",
+        "demoproduct-thumbnail.webp"
+      ],
+      "description": [
+        "Chart your new path, one magical sip at a time",
+        " Featuring custom artwork from illustrator Brooklyn Bell, our ceramic North Star diner mug is durable, and long-lasting— just the way a diner mug should be!\n\n5% of sales go directly to our producer partners at Fazenda California in Brazil to support the \"Future is in our Hands,\" a local environmental education initiative which engages elementary school-aged children in the coffee-growing region through hands-on, sustainability-focused activities",
+        "\n\nMicrowave safe; hand wash recommended",
+        ""
+      ]
+    },
+    {
+      "id": "6",
+      "idCategory": "3",
+      "title": "16 oz. Fellow Etched Drinking Good Coffee Tumbler ",
+      "price": "28",
+      "qty": "1000",
+      "salePrice": "22",
+      "background": {
+        "lazy-load": "",
+        "main": "202310_FellowEtchedTumbler4x5_1_3000x.webp",
+        "sub": "202311-Fellow-Etched-Drinking-Good-Coffee-Tumbler-GIF_v2-compressed_3000x.webp"
+      },
+      "thumbnails": [
+        "202310_FellowEtchedTumbler4x5_1_3000x.webp",
+        "202311-Fellow-Etched-Drinking-Good-Coffee-Tumbler-GIF_v2-compressed_3000x.webp"
+      ],
+      "description": [
+        "It's our guiding philosophy, summed up in coffee tumbler form",
+        " In over 25 years of doing business, we continue to find that drinking good coffee leads to good things, time and time again",
+        "\n\nEtched with our custom design, Fellow's award-winning Carter Move Mug is outfitted with the Slide Lock Lid",
+        " This leak-proof seal slides open and closed for quick sipping and secure stowing",
+        ""
+      ]
+    },
+    {
+      "id": "7",
+      "idCategory": "0",
+      "title": "new product",
+      "price": "22",
+      "qty": "10000",
+      "salePrice": "20",
+      "background": {
+        "lazy-load": "",
+        "main": "demoproduct-main.webp",
+        "sub": "demoproduct-sub.webp"
+      },
+      "thumbnails": [
+        "demoproduct-main.webp",
+        "demoproduct-sub.webp",
+        "demoproduct-thumbnail.webp"
+      ],
+      "description": [
+        "lorem"
+      ]
+    }
+  ],
+  "Categories": [
+    {
+      "id": "0",
+      "name": "Best Sellers",
+      "banner": "20210201_Equator-Evergreen-0027-Edit-ROC_1_052d540e-93bd-4212-a0fa-22d80abf905a_360x.webp",
+      "description": "this is category description"
+    },
+    {
+      "id": "1",
+      "name": "new arrivals",
+      "banner": "20221026EquatorCoffeesHoliday2022-1442_2c51b2fe-cf3c-4105-89d9-aba13a836d5b_360x.webp",
+      "description": "description\n"
+    },
+    {
+      "id": "2",
+      "name": "single origins",
+      "banner": "Best_Sellers_360x.webp",
+      "description": ""
+    },
+    {
+      "id": "3",
+      "name": "fair trade oganic",
+      "banner": "EquatorCoffees-CuratedSingleOrigin_78c5644a-cc83-4081-a53e-7c910655aca0_360x.webp",
+      "description": ""
+    },
+    {
+      "id": "4",
+      "name": "seasonal",
+      "banner": "Holiday_Blend_2023_-_Shop_by_Collection_1_360x.webp",
+      "description": ""
+    },
+    {
+      "id": "5",
+      "name": "gifts & gear",
+      "banner": "Single_Origin_360x.webp",
+      "description": ""
+    },
+    {
+      "id": "6",
+      "name": "this is a new category",
+      "description": "this is category description\n",
+      "banner": [
+        "earlybird-coffee-mSjTAV7JuV4-unsplash.jpg"
+      ]
+    }
+  ],
+  "DiscountCode": [
+    {
+      "code": "discount2",
+      "value": 2,
+      "id": "e967"
+    },
+    {
+      "code": "discount30",
+      "value": 3,
+      "id": "cbba"
+    },
+    {
+      "code": "discount40",
+      "value": 4,
+      "id": "5f85"
+    },
+    {
+      "code": "discount50",
+      "value": 5,
+      "id": "3c9c"
+    }
+  ],
+  "Bill": [
+    {
+      "id": "vLrexL",
+      "idUser": "0",
+      "name": "hoang giang",
+      "phone": "0928382938",
+      "address": "asdlkfalskdfj alsdkfjlak",
+      "email": "giang@gmail.com",
+      "products": [
+        {
+          "id": "4",
+          "title": "Curated Single Origin Subscription",
+          "price": "19",
+          "bg": "curated-single-origin-subscription-20231221_1_3000x.webp",
+          "category": "Single Origins",
+          "qty": 1
+        },
+        {
+          "id": "3",
+          "title": "Mocha Java Blend Fair Trade Organic",
+          "price": "18",
+          "bg": "MochaJavaFTO-93Points_angle_d_3000x.webp",
+          "category": "New Arrival",
+          "qty": 1
+        }
+      ],
+      "subtotal": 37,
+      "status": "delivered",
+      "shippingMethod": "UPS® Ground",
+      "shippingFee": "17.50",
+      "paymentMethod": "Cash",
+      "total": 54.5,
+      "date": "Sat Mar 02 2024"
+    },
+    {
+      "id": "yG0xBe",
+      "name": "giang hoang",
+      "phone": "0938382938",
+      "address": "address apartment",
+      "email": "test@gmail.com",
+      "products": [
+        {
+          "id": "4",
+          "title": "Curated Single Origin Subscription",
+          "price": "19",
+          "bg": "curated-single-origin-subscription-20231221_1_3000x.webp",
+          "category": "Single Origins",
+          "qty": 2
+        },
+        {
+          "id": "3",
+          "title": "Mocha Java Blend Fair Trade Organic",
+          "price": "18",
+          "bg": "MochaJavaFTO-93Points_angle_d_3000x.webp",
+          "category": "New Arrival",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Guatemala El Amate Cup of Excellence",
+          "price": "22",
+          "bg": "GuatemalaElAmateCupofExcellence_6oz_angle_3000x.webp",
+          "category": "New Arrival",
+          "qty": 2
+        }
+      ],
+      "subtotal": 100,
+      "status": "pending",
+      "shippingMethod": "UPS® Ground",
+      "shippingFee": "17.50",
+      "paymentMethod": "Cash",
+      "total": 100,
+      "date": "Fri Mar 01 2024"
+    },
+    {
+      "id": "fqhZHK",
+      "name": "nguyen van a",
+      "phone": "0929281928",
+      "address": "tp.hcm, quan tan binh, phuong 10 11, cong lo",
+      "email": "testemail@gmail.com",
+      "products": [
+        {
+          "id": "3",
+          "title": "Mocha Java Blend Fair Trade Organic",
+          "price": "18",
+          "bg": "MochaJavaFTO-93Points_angle_d_3000x.webp",
+          "idCategory": "3",
+          "qty": "1"
+        },
+        {
+          "id": "1",
+          "title": "North Star Blend",
+          "price": "22",
+          "bg": "NorthStarPDP-1_1_1728x.webp",
+          "idCategory": "1",
+          "qty": 1
+        },
+        {
+          "id": "2",
+          "title": "Guatemala El Amate Cup of Excellence",
+          "price": "22",
+          "bg": "GuatemalaElAmateCupofExcellence_6oz_angle_3000x.webp",
+          "idCategory": "2",
+          "qty": "1"
+        },
+        {
+          "id": "6",
+          "title": "16 oz. Fellow Etched Drinking Good Coffee Tumbler ",
+          "price": "28",
+          "bg": "202310_FellowEtchedTumbler4x5_1_3000x.webp",
+          "idCategory": "6",
+          "qty": "1"
+        }
+      ],
+      "subtotal": 90,
+      "status": "pending",
+      "shippingMethod": "Free Shipping USPS",
+      "shippingFee": "0",
+      "paymentMethod": "Cash",
+      "total": 90,
+      "date": "Mon Mar 18 2024"
+    },
+    {
+      "id": "wilWLv",
+      "name": "giang hoang",
+      "phone": "0939283828",
+      "address": "address apartment",
+      "email": "test@gmail.com",
+      "products": [
+        {
+          "id": "7",
+          "title": "new product",
+          "price": "22",
+          "bg": "demoproduct-main.webp",
+          "idCategory": "0",
+          "qty": 1
+        },
+        {
+          "id": "6",
+          "title": "16 oz. Fellow Etched Drinking Good Coffee Tumbler ",
+          "price": "28",
+          "bg": "202310_FellowEtchedTumbler4x5_1_3000x.webp",
+          "idCategory": "3",
+          "qty": 1
+        }
+      ],
+      "subtotal": 50,
+      "status": "pending",
+      "shippingMethod": "UPS® Ground",
+      "shippingFee": "17.50",
+      "paymentMethod": "Cash",
+      "total": 50,
+      "date": "Tue Mar 19 2024"
+    },
+    {
+      "id": "2ghG3M",
+      "name": "giang hoang",
+      "phone": "0928387283",
+      "address": "address apartment",
+      "email": "giang@gmail.com",
+      "products": [
+        {
+          "id": "7",
+          "title": "new product",
+          "price": "22",
+          "bg": "demoproduct-main.webp",
+          "idCategory": "0",
+          "qty": 1
+        }
+      ],
+      "subtotal": 22,
+      "status": "pending",
+      "shippingMethod": "USPS Priority Mail",
+      "shippingFee": "10.85",
+      "paymentMethod": "Cash",
+      "total": 32.85,
+      "date": "Tue Mar 19 2024"
+    }
+  ],
+  "Users": [
+    {
+      "id": "1",
+      "firstName": "hoang",
+      "lastName": "giang",
+      "email": "giang@gmail.com",
+      "password": "adminpassword",
+      "role": "admin"
+    },
+    {
+      "id": "0",
+      "firstName": "hoang",
+      "lastName": "giang",
+      "email": "giang@gmail.com",
+      "password": "ginaksdlfjkal",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "firstName": "ho duy",
+      "lastName": "hoang giang",
+      "email": "giangupdated@gmail.com",
+      "password": "ginagalkdf",
+      "role": "user"
+    },
+    {
+      "id": "3",
+      "firstName": "hoang",
+      "lastName": "giang",
+      "email": "giang@gmail.com",
+      "password": "giang29120",
+      "role": "user"
+    },
+    {
+      "id": "4",
+      "firstName": "nguyen van",
+      "lastName": "a",
+      "email": "a@gmail.com",
+      "password": "a'spassword",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "firstName": "tran van",
+      "lastName": "c",
+      "email": "c@gmail.com",
+      "password": "cpassword",
+      "role": "user"
+    }
+  ]
+}

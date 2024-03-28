@@ -1,0 +1,118 @@
+<div class="admin__panel">
+    <div class="admin__title">
+        <h4 class="display-small fw-bold ttc">Category Details</h4>
+    </div>
+
+    <main class="admin__panel__main category-detail__panel row mt30">
+        <div class="admin__category__wrapper col l-4 m-6 c-12 mt20">
+            <!-- single category start -->
+            <div class="admin__category">
+                <div class="admin__product__inner glass rounded-8 oh p20 flex-column g12">
+                    <div class="flex">
+                        <div class="admin__category__image por">
+                            <div class="abs-full banner-cover" style="background-image: url('/assets/image/categories/{{category.banner}}');"></div>
+                        </div>
+                        <div class="admin__category__info flex-column flex-between g20">
+                            <h4 class="admin__product__name text body-large fw-smb ttc">{{category.name}}</h4>
+                            <div class="flex-between">
+                                <div class="admin__category__stock flex g6 v-center wrap">
+                                    <span class="admin__product__price__old text body-large fw-smb">{{categoryProducts.length}}</span>
+                                    <span class="admin__product__price__new text body-large fw-normal">products available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="admin__product__info flex-between v-center">
+                        <span class="admin__category__statis__text flex g6 v-center"><i class="fa-solid fa-arrow-trend-up"></i> 15% increased</span>
+                        <span class="admin__category__update__text body-medium fw-light flex g6 neutral-text60"> Last 24 hours
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- single category end -->
+        </div>
+
+        <div class="col l-8 m-6 c-12">
+            <form class="form admin__product__form pb20 rounded-16">
+                <div class="row">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb12">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Name</h4>
+                            <input type="text" class="form__input form__input--category__name" value="{{category.name}}">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb12">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Description</h4>
+                            <textarea name="description" id="description" cols="30" rows="10"
+                                class="form__input form__input--category__description" 
+                                value="{{category.description}}"></textarea>
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="flex-between v-center">
+        <button class="btn primary-text-btn fw-bold back-btn flex g12">
+            <i class="fas fa-arrow-left"></i>
+            Back to category
+        </button>
+        <div class="flex g20">
+            <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center fw-bold">
+                <i class="fal fa-times"></i>
+                Cancel
+            </button>
+            <button class="btn save-btn update__category__btn rounded-8 g12 flex auto-set-width v-center fw-bold">
+                <i class="fal fa-save"></i>
+                Save
+            </button>
+        </div>
+    </div>
+
+    <div class="admin__title flex-between v-center mt30">
+        <h4 class="display-small fw-bold ttc">Products</h4>
+        <div class="flex g12">
+            <form action="" class="form form--search glass">
+                <div class="form__group form__group--collapse flex v-center">
+                    <input type="text" class="form__input form__input--transparent" placeholder="Search for products">
+                    <button class="icon-btn search__btn">
+                        <i class="fal fa-search"></i>
+                    </button>
+                </div>
+            </form>
+            <a href="" class="add-product-btn glass rounded-8 flex-center tooltips-btn--open por"
+                style="height: 45px; width: 45px; border-radius: 100%;">
+                <i class="fal fa-plus text"></i>
+                <div class="tooltips tooltips--left">Add new product</div>
+            </a>
+        </div>
+    </div>
+
+    <main class="admin__panel__main product__panel row mt30">
+        <!-- category products render here -->
+        {{#each categoryProducts}} 
+            <!-- single product card start -->
+                    <div class="product primary__product col l-3 m-4 c-12 flex-center mt30" data-id="{{this._id}}">
+                        <a href="/singleProduct/{{this._id}}" class="product__link width-full">
+                            <div class="product__inner flex-column flex-full height-full">
+                                <div class="product__banner__wrapper por oh">
+                                    <div class="product__banner banner-contain poa" style="background-image: url('/uploads/{{this.background.main}}"></div>
+                                    <div class="product__banner product__banner--sub__banner banner-contain poa" style="background-image: url('/uploads/{{this.background.sub}}')"></div>
+                                    <button class="add-cart-btn hover btn primary-fill-btn width-full poa" style="max-width: none;" data-id="{{this._id}}" data-name="{{this.title}}" data-price="{{this.price}}" data-img="{{this.background.main}}" data-id-category="{{this.idCategory}}"><i class="fa fa-plus"></i> Add to cart</button>
+                                </div>
+                                <div class="product__info">
+                                    <div class="product__name ttu tal label-medium fw-bold mt6 text">{{this.title}}</div>
+                                    <div class="product__price tal body-small mt6 text primary-text">${{this.price}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- single product card end -->
+        {{/each}}
+    </main>
+</div>
+
+<script type="module" src="/js/adminCategoriesDetail.js"></script>

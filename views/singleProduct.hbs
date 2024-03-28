@@ -1,0 +1,434 @@
+<!-- page content start -->
+<main class="single-product__main header__next">
+    <div class="single__product__wrapper m60 grid">
+        <div class="row no-gutters">
+            <div class="product__gallery__wrapper col l-6 m-6 c-12">
+                <div class="product__gallery row no-wrap g12">
+                    <div class="gallery__thumbnails hide-on-mobile flex-column flex-center">
+                        {{#each product.thumbnails}}
+                            <div class="gallery__thumbnail">
+                                <img class="img-cover" src="/uploads/{{this}}" alt="Image 1">
+                            </div>
+                        {{/each}}
+                    </div>
+                    <div class="gallery__spotlight flex-full por">
+                        {{#each product.thumbnails}}
+                            <div class="gallery__spotlight__holder por mb12">
+                                <img src="/uploads/{{this}}" alt="" class="image-cover">
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="product__info__wrapper col l-6 m-6 c-12">
+                <div class="product__info">
+                    <h2 class="display-medium fw-black product__name">{{product.title}}</h2>
+                    <p class="body-medium sub-font fw-light mt12 product__description">
+                        {{#each product.description}}
+                            {{this}}
+                        {{/each}}
+                    </p>
+                    <form action="#" class="product__form width-full por">
+                        <div class="custom__select custom__select--product-type">
+                            {{!-- <button class="form__btn product__option--btn flex-between width-full por">
+                                <span class="flex-full body-small ttc">Grind</span>
+                                <span class="label-medium sub-font fw-light option__text">Option</span>
+                            </button> --}}
+                            <ul class="option__list poa sub-font fw-light body-small l0 r0">
+                                <li class="option__item"><a href="#" class="option__link text tac" data-value="">Option
+                                        1</a></li>
+                                <li class="option__item"><a href="#" class="option__link text tac" data-value="">Option
+                                        2</a></li>
+                                <li class="option__item"><a href="#" class="option__link text tac" data-value="">Option
+                                        3</a></li>
+                                <li class="option__item"><a href="#" class="option__link text tac" data-value="">Option
+                                        4</a></li>
+                                <li class="option__item"><a href="#" class="option__link text tac" data-value="">Option
+                                        5</a></li>
+                            </ul>
+                            <input type="text" hidden name="productType" value="">
+                        </div>
+                        {{!-- <div class="block">
+                            <span class="flex-full body-small pb10 pi16 ttc">Size</span>
+                            <div class="flex flex-full g12">
+                                <button class="option__btn flex-full hover body-medium fw-bold">
+                                    <input type="radio" checked="" class="productOptionSize" id="productOptionSize-1"
+                                        name="productSize" hidden value="">
+                                    <label for="productOptionSize-1"
+                                        class="btn__label width-full btn height-full display-block">12oz</label>
+                                </button>
+                                <button class="option__btn flex-full current-choosed hover body-medium fw-bold">
+                                    <input type="radio" checked="true" class="productOptionSize"
+                                        id="productOptionSize-2" name="productSize" hidden value="">
+                                    <label for="productOptionSize-2"
+                                        class="btn__label width-full btn height-full display-block">21b</label>
+                                </button>
+                            </div>
+                        </div> --}}
+                        <div class="order__price flex-between width-full v-center">
+                            <span class="flex-full body-small ttc">Sub total</span>
+                            <span class="body-large sub-font fw-light option__text product__price">${{product.price}}</span>
+                        </div>
+                        <div class="product__submit__group width-full">
+                            <div class="submit__group__inner flex g12">
+                                <div class="qty__selector flex v-center">
+                                    <button class="icon-btn minus-btn"><i class="far fa-minus"></i></button>
+                                    <input type="number" name="productQty" id="productQty"
+                                        class="qty__input fw-bold body-medium" value="1">
+                                    <button class="icon-btn plus-btn"><i class="fal fa-plus"></i></button>
+                                </div>
+                                <div class="submit__group__btns add-cart__group flex-full">
+                                    <!-- <button class="add-cart__btn add-cart-btn btn primary-fill-btn hover width-full fw-bold body-medium"><i class="far fa-plus"></i>Add to cart</button> -->
+                                    <button class="add-cart__btn add-cart-btn btn primary-fill-btn hover width-full fw-bold body-medium" data-id="{{product.id}}"
+                                        data-name="{{product.title}}" data-price="{{product.price}}" data-id-category="{{product.idCategory._id}}" data-img="{{product.background.main}}"
+                                        data-qty=""><i class="far fa-plus"></i>Add to cart</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- page content end -->
+
+<!-- flavor profile section start -->
+<section class="section full flavor__profile__section">
+    <h2 class="section__title headline-large fw-bold ttu">Flavor Profile</h2>
+    <div class="grid wide">
+        <div class="row">
+            <div class="icon__box mt30 flex-column g20 col l-4 m-4 c-12">
+                <div class="icon flex-center">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.0006 1.00412e-08C12.0338 -0.000108516 9.13366 0.879509 6.66685 2.52766C4.20004 4.17582 2.27737 6.51848 1.14197 9.25937C0.0065758 12.0002 -0.290557 15.0162 0.288159 17.926C0.866876 20.8357 2.29545 23.5086 4.39322 25.6064C6.49098 27.7043 9.16372 29.1329 12.0735 29.7117C14.9832 30.2906 17.9992 29.9935 20.7401 28.8582C23.481 27.7229 25.8238 25.8003 27.472 23.3336C29.1203 20.8668 30 17.9668 30 15C29.9954 11.0233 28.4136 7.21068 25.6017 4.39864C22.7898 1.58661 18.9773 0.00474397 15.0006 1.00412e-08ZM1.69535 15.8285H6.93721C7.01515 17.6917 7.40951 19.5281 8.10341 21.259C6.92976 21.923 5.84762 22.7371 4.88429 23.6807C2.99174 21.4822 1.87174 18.7241 1.69572 15.8285H1.69535ZM4.7654 6.45105C5.76823 7.45574 6.90477 8.3174 8.14291 9.01171C7.48011 10.6595 7.08046 12.4013 6.95861 14.1733H1.69535C1.86641 11.3372 2.9423 8.6306 4.76504 6.45105H4.7654ZM15.0006 19.4062C13.1439 19.4068 11.3066 19.7839 9.59975 20.5146C9.01014 19.0181 8.66982 17.4351 8.59232 15.8285H21.366C21.287 17.3678 20.966 18.885 20.4149 20.3243C18.6799 19.6959 16.846 19.3849 15.0009 19.4062H15.0006ZM19.7564 21.8406C18.5539 24.2071 16.9289 26.3339 14.9616 28.1161C13.0563 26.3819 11.4738 24.3234 10.2877 22.0363C11.7768 21.3956 13.3803 21.0633 15.0015 21.0596C16.6201 21.0403 18.2296 21.3047 19.757 21.8406H19.7564ZM8.61627 14.1733C8.73485 12.6556 9.0801 11.1642 9.64053 9.74878C11.3359 10.4715 13.1599 10.8442 15.0029 10.8444C16.8442 10.8662 18.6745 10.557 20.4065 9.93168C20.9227 11.293 21.2408 12.7215 21.3508 14.1733H8.61481H8.61627ZM15.002 9.19096C13.3956 9.18648 11.8064 8.85931 10.3288 8.22888C11.5295 5.89194 13.1147 3.77361 15.0181 1.96256C16.9578 3.82138 18.5609 6.00213 19.7563 8.40812C18.2296 8.94553 16.6204 9.21051 15.002 9.19096ZM17.249 1.85829C19.8422 2.30308 22.2456 3.50595 24.1558 5.31517C23.3801 6.31408 22.4001 7.13597 21.2813 7.72589C20.236 5.58067 18.877 3.60309 17.249 1.85829ZM8.83247 7.48444C7.76637 6.87147 6.78531 6.12126 5.91441 5.25301C7.82075 3.47059 10.2095 2.28868 12.783 1.85463C11.2049 3.53363 9.87453 5.42936 8.83229 7.48444H8.83247ZM8.79717 22.7844C9.79581 24.7347 11.071 26.5305 12.5833 28.1161C10.1438 27.6637 7.87926 26.5386 6.04518 24.8677C6.87328 24.063 7.79731 23.3633 8.79643 22.7844H8.79717ZM21.2833 22.5247C22.3442 23.0881 23.2822 23.8573 24.0424 24.7872C22.1733 26.5221 19.8442 27.6822 17.3335 28.1289C18.9269 26.4721 20.2587 24.5824 21.2833 22.5247ZM21.9473 21.0011C22.583 19.3464 22.9459 17.5995 23.0218 15.8285H28.3043C28.1317 18.6835 27.0424 21.4066 25.1982 23.5929C24.2907 22.5286 23.187 21.6486 21.9473 21.0011ZM23.0056 14.1733C22.8964 12.4899 22.5369 10.8323 21.9389 9.25495C23.2339 8.5832 24.3786 7.65469 25.303 6.52602C27.0872 8.69345 28.138 11.3709 28.3043 14.1733H23.0056Z"
+                            fill="#ED1B24"></path>
+                    </svg>
+                </div>
+                <div class="title-large fw-bold ttu">Origin</div>
+                <p class="body-small sub-font fw-light">Berlín, Usulutan Department, El Salvador</p>
+            </div>
+            <div class="icon__box mt30 flex-column g20 col l-4 m-4 c-12">
+                <div class="icon flex-center g20">
+                    <svg width="32" height="30" viewBox="0 0 32 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M31.8036 12.4298C31.8036 20.9391 25.5267 28.1761 16.7865 29.6748C10.5789 30.7384 5.1 29.188 0.484117 25.097C-0.167861 24.5201 -0.15485 24.2488 0.484117 23.646L13.142 11.7221L25.0092 0.530475C25.7537 -0.171814 26.0067 -0.18136 26.7194 0.529111C29.5398 3.33827 31.1907 6.66016 31.6836 10.4975C31.7718 11.1903 31.7863 11.8816 31.8022 12.4298H31.8036ZM25.9344 12.5321C25.9517 12.5621 25.9575 12.5853 25.9705 12.5935C26.1642 12.7135 26.3608 12.8267 26.5517 12.9508C27.8325 13.7881 28.3919 14.9335 28.2055 16.3913C28.0681 17.459 27.6214 18.4204 27.0345 19.3327C26.2524 20.5464 24.8155 21.5801 22.7265 21.0673C22.3839 20.9841 22.2871 21.0441 22.3796 21.411C22.7699 22.9792 22.2408 24.2488 20.8646 25.1979C20.1085 25.7174 19.2729 26.0938 18.368 26.3324C16.1937 26.9093 14.7597 26.4033 13.5367 24.6278C13.502 24.576 13.4384 24.5419 13.382 24.4942C12.7459 25.607 11.8569 26.3897 10.5038 26.5193C8.74732 26.687 7.2323 26.0515 5.85462 25.1051C4.78775 24.3742 4.28901 23.3433 4.31647 22.0887C3.61535 22.7296 2.97927 23.3678 2.27525 23.9324C1.80397 24.3101 1.92252 24.5078 2.33452 24.8188C7.11376 28.4298 12.477 29.5452 18.3405 27.8597C28.1158 25.0506 32.9934 14.8531 28.882 6.05469C28.1938 4.582 27.2726 3.21641 26.1498 2.0046C26.0385 1.88323 25.9575 1.61186 25.68 1.88323C24.9962 2.5487 24.2893 3.19235 23.5057 3.92601C24.3789 3.92192 25.1104 4.05556 25.6973 4.49329C27.4566 5.80651 28.298 7.56427 28.204 9.65069C28.1404 11.028 27.2094 11.9348 25.9344 12.5321ZM15.3987 11.8176C17.8707 11.8176 20.415 11.8448 22.9593 11.8039C23.8562 11.793 24.7359 11.5703 25.518 11.1562C26.3666 10.7034 26.8495 10.0284 26.7497 9.09158C26.6338 7.93807 26.1257 6.85081 25.3012 5.99196C24.7186 5.37831 23.9654 5.22286 23.1226 5.41922C22.2301 5.61936 21.4127 6.04616 20.759 6.65334C18.9448 8.3552 17.1753 10.0993 15.3987 11.8176ZM14.1699 14.4249C14.1699 16.8877 14.1381 19.2973 14.1858 21.7055C14.2031 22.5223 14.446 23.3255 14.8985 24.051C15.3249 24.7315 15.9306 25.1556 16.785 25.142C18.2292 25.1201 19.4681 24.5828 20.4829 23.6419C21.0077 23.1551 21.1392 22.5101 20.9672 21.8119C20.759 20.9719 20.3572 20.2109 19.7341 19.6109C17.9285 17.8722 16.0665 16.1854 14.1684 14.4249H14.1699ZM12.6317 14.3622C10.9302 15.9495 9.29811 17.4659 7.67611 18.9891C6.95474 19.6668 6.37938 20.4428 6.02087 21.3455C5.55393 22.5237 5.87631 23.4319 6.97787 24.1519C7.33205 24.3838 7.71803 24.5474 8.10402 24.7179C10.3722 25.7174 11.9277 25.0138 12.4915 22.7296C12.5002 22.6942 12.4987 22.656 12.5088 22.6205C12.678 22.0846 12.6317 21.5351 12.6317 20.9882V14.3608V14.3622ZM15.4348 13.3653C15.3871 13.4812 15.4738 13.518 15.5215 13.563C17.2332 15.1858 18.9332 16.8154 20.6636 18.4191C21.2881 19 22.0442 19.4214 22.8899 19.6709C24.0406 20.0091 24.9398 19.7255 25.6308 18.79C26.1527 18.0809 26.5199 17.3036 26.7006 16.4513C26.9304 15.3604 26.5184 14.5081 25.4805 13.9735C24.7798 13.612 24.0013 13.4054 23.2036 13.3694C20.6593 13.2535 18.1135 13.3408 15.5663 13.323C15.5172 13.323 15.468 13.3544 15.4348 13.364V13.3653Z"
+                            fill="#ED1C24"></path>
+                    </svg>
+                    <svg width="30" height="32" viewBox="0 0 30 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M2.3322 23.9163C-3.04422 7.52822 19.4919 -2.52135 27.5009 2.1461C32.0762 10.281 25.2124 33.7277 9.99715 30.7384C6.10648 29.9002 3.59029 27.8673 2.3322 23.9181V23.9163Z"
+                            stroke="#ED1C24" stroke-width="1.70061" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                        <path
+                            d="M21.5955 17.4507C20.1728 19.1592 18.6488 20.7751 17.0322 22.2893M4.25098 26.1591C4.71313 15.3843 23.3928 0.861373 27.8894 2.03309C28.468 4.25828 26.3917 9.6457 23.0471 14.9149L4.25098 26.1591Z"
+                            stroke="#ED1C24" stroke-width="1.70061" stroke-linecap="round" stroke-linejoin="round">
+                        </path>
+                    </svg>
+                    <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M28.4197 12.0667C28.3808 10.7145 28.1879 9.78223 28.1879 9.75223L28.1101 9.42112L27.6869 9.51112C27.5717 9.54112 26.3753 9.75223 24.7557 10.2933C24.6795 8.81577 24.4338 7.34632 24.0215 5.90223C23.5205 4.18779 22.9417 3.10556 22.9043 3.07556L22.7114 2.71445L22.2478 2.92556C22.0937 2.98445 20.513 3.70667 18.5464 5.06001C16.9268 2.44445 15.1128 0.790008 14.9587 0.668896L14.6132 0.368896L14.2648 0.668896C14.2259 0.698897 13.2239 1.57112 12.0664 3.07556C11.6043 3.64667 11.1407 4.3089 10.6786 5.03112C8.71057 3.70556 7.12981 2.95334 6.97432 2.89334L6.51219 2.71334L6.2804 3.07445C6.24153 3.13445 5.70166 4.18667 5.16178 5.90112C4.81482 7.13445 4.46786 8.63779 4.42755 10.2922C2.81224 9.75223 1.61587 9.51112 1.5007 9.51112L1.11343 9.42223L1.03712 9.75334C1.03712 9.78334 0.805337 10.7156 0.805337 12.0689C0.766466 14.1745 1.19117 17.2111 3.35067 19.8278C6.97576 24.1889 13.9179 25.5122 14.2259 25.5722L14.6118 25.6322L15.0365 25.5433C15.3446 25.4822 22.2867 24.1589 25.9117 19.7989C28.0713 17.2111 28.4571 14.1745 28.4197 12.0689V12.0667ZM21.7857 4.85001C21.9397 5.24112 22.0937 5.69223 22.2478 6.23334C22.6336 7.52667 22.982 9.18001 22.9431 10.9845C22.3011 11.27 21.6707 11.5709 21.0529 11.8867C20.8599 9.87223 20.166 8.00779 19.3166 6.38334C20.2812 5.75223 21.1306 5.24112 21.7857 4.85001ZM6.97432 6.23334C7.12837 5.69223 7.28241 5.24112 7.43646 4.85001C8.09295 5.21001 8.94091 5.72223 9.86662 6.38334C9.01722 8.00779 8.32474 9.87223 8.13182 11.8867C7.53789 11.543 6.90526 11.241 6.24153 10.9845C6.24153 9.18001 6.58849 7.52667 6.97432 6.23334ZM13.1073 22.9556C13.1073 23.2556 13.0684 23.5267 13.0684 23.7667C12.3059 23.5472 11.5591 23.2965 10.8312 23.0156C9.01722 22.3233 6.51219 21.03 4.85369 19.0456C2.92453 16.7289 2.57901 13.9922 2.61644 12.0978C2.61644 11.7978 2.65531 11.5267 2.65531 11.2867C3.27149 11.4667 4.04316 11.7067 4.89112 12.0378C6.70511 12.76 9.21013 14.0222 10.8701 16.0078C12.7992 18.3233 13.1448 21.06 13.1059 22.9545L13.1073 22.9556ZM14.6103 19.7667C14.2648 18.2933 13.6083 16.7 12.3731 15.2256C11.6759 14.4064 10.8473 13.6587 9.90693 13C9.90693 9.27112 11.9124 5.96223 13.5709 3.82667C13.9179 3.37556 14.2648 2.95445 14.5729 2.65445C15.1128 3.22556 15.8081 4.06779 16.5021 5.06001C17.292 6.213 17.938 7.42141 18.4312 8.6689C19.0085 10.1433 19.2792 11.5867 19.2792 13C18.347 13.6654 17.5184 14.4122 16.8102 15.2256C15.6152 16.6989 14.9587 18.2922 14.6118 19.7667H14.6103ZM24.3684 19.0445C22.7099 21.03 20.2035 22.3233 18.3909 23.0156C17.5415 23.3456 16.7698 23.5867 16.1537 23.7667C16.1148 23.5267 16.1148 23.2556 16.1148 22.9556C16.0759 21.06 16.4618 18.3233 18.352 16.0078C20.0105 14.0222 22.517 12.73 24.3295 12.0378C25.179 11.7067 25.9492 11.4667 26.5668 11.2856C26.6057 11.5267 26.6057 11.7967 26.6057 12.0978C26.6431 13.9922 26.2961 16.7289 24.3684 19.0456V19.0445Z"
+                            fill="#ED1C24"></path>
+                    </svg>
+                </div>
+                <div class="title-large fw-bold ttu">Tasting Notes</div>
+                <p class="body-small sub-font fw-light">A perfect blend of sweet and savory flavors including, black
+                    currant, chamomile, dried mango, and sage.</p>
+            </div>
+            <div class="icon__box mt30 flex-column g20 col l-4 m-4 c-12">
+                <div class="icon flex-center">
+                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M15.0006 1.00412e-08C12.0338 -0.000108516 9.13366 0.879509 6.66685 2.52766C4.20004 4.17582 2.27737 6.51848 1.14197 9.25937C0.0065758 12.0002 -0.290557 15.0162 0.288159 17.926C0.866876 20.8357 2.29545 23.5086 4.39322 25.6064C6.49098 27.7043 9.16372 29.1329 12.0735 29.7117C14.9832 30.2906 17.9992 29.9935 20.7401 28.8582C23.481 27.7229 25.8238 25.8003 27.472 23.3336C29.1203 20.8668 30 17.9668 30 15C29.9954 11.0233 28.4136 7.21068 25.6017 4.39864C22.7898 1.58661 18.9773 0.00474397 15.0006 1.00412e-08ZM1.69535 15.8285H6.93721C7.01515 17.6917 7.40951 19.5281 8.10341 21.259C6.92976 21.923 5.84762 22.7371 4.88429 23.6807C2.99174 21.4822 1.87174 18.7241 1.69572 15.8285H1.69535ZM4.7654 6.45105C5.76823 7.45574 6.90477 8.3174 8.14291 9.01171C7.48011 10.6595 7.08046 12.4013 6.95861 14.1733H1.69535C1.86641 11.3372 2.9423 8.6306 4.76504 6.45105H4.7654ZM15.0006 19.4062C13.1439 19.4068 11.3066 19.7839 9.59975 20.5146C9.01014 19.0181 8.66982 17.4351 8.59232 15.8285H21.366C21.287 17.3678 20.966 18.885 20.4149 20.3243C18.6799 19.6959 16.846 19.3849 15.0009 19.4062H15.0006ZM19.7564 21.8406C18.5539 24.2071 16.9289 26.3339 14.9616 28.1161C13.0563 26.3819 11.4738 24.3234 10.2877 22.0363C11.7768 21.3956 13.3803 21.0633 15.0015 21.0596C16.6201 21.0403 18.2296 21.3047 19.757 21.8406H19.7564ZM8.61627 14.1733C8.73485 12.6556 9.0801 11.1642 9.64053 9.74878C11.3359 10.4715 13.1599 10.8442 15.0029 10.8444C16.8442 10.8662 18.6745 10.557 20.4065 9.93168C20.9227 11.293 21.2408 12.7215 21.3508 14.1733H8.61481H8.61627ZM15.002 9.19096C13.3956 9.18648 11.8064 8.85931 10.3288 8.22888C11.5295 5.89194 13.1147 3.77361 15.0181 1.96256C16.9578 3.82138 18.5609 6.00213 19.7563 8.40812C18.2296 8.94553 16.6204 9.21051 15.002 9.19096ZM17.249 1.85829C19.8422 2.30308 22.2456 3.50595 24.1558 5.31517C23.3801 6.31408 22.4001 7.13597 21.2813 7.72589C20.236 5.58067 18.877 3.60309 17.249 1.85829ZM8.83247 7.48444C7.76637 6.87147 6.78531 6.12126 5.91441 5.25301C7.82075 3.47059 10.2095 2.28868 12.783 1.85463C11.2049 3.53363 9.87453 5.42936 8.83229 7.48444H8.83247ZM8.79717 22.7844C9.79581 24.7347 11.071 26.5305 12.5833 28.1161C10.1438 27.6637 7.87926 26.5386 6.04518 24.8677C6.87328 24.063 7.79731 23.3633 8.79643 22.7844H8.79717ZM21.2833 22.5247C22.3442 23.0881 23.2822 23.8573 24.0424 24.7872C22.1733 26.5221 19.8442 27.6822 17.3335 28.1289C18.9269 26.4721 20.2587 24.5824 21.2833 22.5247ZM21.9473 21.0011C22.583 19.3464 22.9459 17.5995 23.0218 15.8285H28.3043C28.1317 18.6835 27.0424 21.4066 25.1982 23.5929C24.2907 22.5286 23.187 21.6486 21.9473 21.0011ZM23.0056 14.1733C22.8964 12.4899 22.5369 10.8323 21.9389 9.25495C23.2339 8.5832 24.3786 7.65469 25.303 6.52602C27.0872 8.69345 28.138 11.3709 28.3043 14.1733H23.0056Z"
+                            fill="#ED1B24"></path>
+                    </svg>
+                </div>
+                <div class="title-large fw-bold ttu">Origin</div>
+                <div class="product-features__roast">
+                    <div class="product-features__roast-line">
+                        <span class="product-features__roast-divider active active--left"></span>
+                        <span class="product-features__roast-divider "></span>
+                        <span class="product-features__roast-divider "></span>
+                        <span class="product-features__roast-divider "></span>
+                    </div>
+
+                    <div class="product__roast-values sub-font">
+                        <span class="product__roast-value active active--left fw-bold">Light</span>
+                        <span class="product__roast-value">Med Lt</span>
+                        <span class="product__roast-value">Med</span>
+                        <span class="product__roast-value">Med Dark</span>
+                        <span class="product__roast-value">Dark</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- flavor profile section end -->
+
+<!-- shopify section start -->
+<section class="product__story__section grid">
+    <div class="row no-gutters">
+        <div class="col l-6 m-6 c-12">
+            <div class="bg__wrapper por">
+                <div class="bg__img abs-full banner-cover"
+                    style="background-image: url('/assets/image/banners/original_story.webp');"></div>
+            </div>
+        </div>
+        <div class="col l-6 m-6 c-12 flex v-center">
+            <div class="p60 flex-column g20 tal">
+                <h3 class="headline-small fw-bold ttu flex v-center">
+                    <div class="icon">
+                        <svg width="46" height="43" viewBox="0 0 46 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M44.9745 41.352C43.1676 42.325 41.5691 41.6995 40.1097 41.0045C38.1638 40.0316 36.2873 38.8501 34.4804 37.6687C29.0596 34.1243 24.5423 34.1243 19.052 37.5992C16.6196 39.1281 13.9787 40.4486 11.3378 41.6995C10.6429 42.047 9.66991 41.8385 8.83595 41.908C8.76645 41.6995 8.76645 41.5605 8.69695 41.352C8.97494 41.1435 9.25293 40.796 9.53092 40.796C12.5193 40.4486 14.9517 38.9891 17.3146 37.2517C19.5385 35.6532 21.8319 34.3328 24.6118 33.8463C25.0983 33.7768 25.5153 33.1513 26.0018 32.7344C25.4458 32.4564 24.9593 31.9004 24.4033 31.9004C20.164 31.8309 15.8552 31.9004 11.6158 31.9004C7.09851 31.9004 6.61203 31.4834 6.47304 27.0356C4.80511 26.6881 2.85919 26.2016 2.78969 24.1167C2.78969 22.1708 2.37271 20.5724 1.33025 18.9044C0.357286 17.2365 1.60824 15.5686 4.11014 14.4566C4.04064 14.0396 3.90164 13.6226 3.90164 13.1362C3.62365 10.9122 4.9441 9.24431 7.16801 9.17481C10.1564 9.10532 13.1448 9.17481 16.1332 9.10532C16.6196 9.10532 17.1061 9.03582 17.8706 9.03582C17.4536 8.34085 17.1756 7.85437 16.9671 7.36789C16.2026 5.83895 16.0637 4.31001 16.8976 2.71157C17.8706 0.835149 19.3995 0.418166 20.9285 1.87761C23.4304 4.24051 26.4187 5.83895 29.5461 7.22889C37.1908 10.7038 40.1097 18.6264 36.4263 26.2016C34.9669 29.329 32.3955 31.1359 28.9901 31.7614C28.3647 31.9004 27.8782 32.4564 27.3222 32.8039C27.8087 33.1513 28.2952 33.5683 28.8511 33.8463C31.1445 34.9583 33.6464 35.7922 35.8009 37.1127C38.3723 38.6416 40.8742 40.3096 43.932 40.796C44.349 40.8655 44.627 41.213 44.9745 41.352ZM26.0018 25.0897C26.0018 22.7268 26.4882 20.7113 24.8203 18.8349C23.4304 17.2365 23.9863 14.8041 25.6543 13.2751C26.4187 12.5802 27.0442 12.5802 27.7392 13.2751C29.6156 15.0821 29.8241 17.306 28.2257 19.4604C27.8087 20.0164 27.3917 20.6419 27.3917 21.2673C27.3222 23.9777 27.3222 26.6881 27.3222 29.3985C27.3222 30.302 27.8087 30.7884 28.6426 30.5105C30.2411 29.885 31.9785 29.3985 33.2295 28.356C38.9282 23.4217 37.2603 12.4412 30.1716 8.96632C26.6272 7.22889 23.0829 5.69995 20.164 2.92007C19.2605 2.0166 18.4961 2.43359 18.0096 3.47604C17.2451 5.07448 17.8706 7.0204 19.6775 8.47984C20.164 8.89682 20.6505 9.31381 21.4844 10.1478C20.3725 10.2868 19.747 10.4258 19.191 10.4258C15.4382 10.4258 11.6853 10.4258 7.93248 10.4258C6.05606 10.4258 5.15259 11.1207 5.15259 12.5107C5.15259 13.8311 6.05606 14.5956 7.93248 14.5956C10.0869 14.6651 12.3108 14.5956 14.4652 14.5956C15.0212 14.5956 15.6467 14.7346 16.2026 14.8041C16.2026 15.0126 16.2721 15.2211 16.2721 15.4296C15.7162 15.5686 15.0907 15.777 14.5347 15.777C11.4073 15.8465 8.27997 15.777 5.22209 15.777C3.34567 15.777 2.37271 16.472 2.37271 17.7925C2.30321 19.1824 3.34567 19.9469 5.29159 20.0164C8.62745 20.0164 11.9633 20.0164 15.2992 20.0859C15.8552 20.0859 16.4111 20.2944 17.0366 20.4334C17.0366 20.6419 17.0366 20.8503 16.9671 21.0588C16.4111 21.1283 15.8552 21.2673 15.2297 21.2673C12.3803 21.2673 9.46142 21.2673 6.61203 21.2673C5.15259 21.2673 4.11014 21.6843 3.97114 23.2827C3.90164 24.6727 4.80511 25.4372 6.68153 25.4372C9.8784 25.4372 13.0058 25.4372 16.2026 25.4372C16.8281 25.4372 17.4536 25.6456 18.0791 25.7151C18.0791 25.9236 18.0791 26.1321 18.0791 26.2711C17.5231 26.4101 16.9671 26.6186 16.4111 26.6186C14.5347 26.6881 12.7278 26.6186 10.8514 26.6186C10.5039 26.6186 10.1564 26.6186 9.80891 26.6186C8.62745 26.6881 7.72399 27.1746 7.72399 28.4255C7.72399 29.746 8.55796 30.3715 9.80891 30.3715C14.5347 30.3715 19.2605 30.3715 23.9863 30.3715C24.6118 30.3715 25.7933 30.024 25.7933 29.746C25.9323 28.7035 26.0018 27.3136 25.4458 26.6881C24.4033 25.6456 22.8744 24.6032 21.2759 23.9082C18.913 22.7963 17.7316 20.5724 18.7045 18.14C18.913 17.723 19.747 17.2365 20.2335 17.2365C22.7354 17.5145 24.3338 19.5994 23.9168 22.1013C23.7083 23.7692 24.4728 24.4642 26.0018 25.0897ZM26.7662 14.3176C24.9593 15.916 24.9593 17.167 26.6272 18.8349C28.5037 17.6535 28.5731 16.1245 26.7662 14.3176ZM22.3184 22.6573C22.8744 21.0588 22.6659 19.8079 21.2759 18.9739C20.303 18.4179 19.747 18.7654 19.6775 19.8774C19.6775 21.5453 20.581 22.3793 22.3184 22.6573Z"
+                                fill="#ED1C24" stroke="#ED1C24" stroke-width="0.629451"></path>
+                        </svg>
+                    </div>
+                    Origin Story
+                </h3>
+                <h4 class="title-small ttu fw-bold">Diego Baraona</h4>
+                <p class="body-medium sub-font fw-light">
+                    Named in honor of the Pyrenees, the mountain range that serves as a natural border between Spain and
+                    France, Finca Los Pirineos is the mountainous divide between the coffee towns of Santiago de María
+                    and Berlín, located in central El Salvador on the slopes of Tecapa Volcano. By some accounts,
+                    cultivation of coffee on the farm started in 1890, but whatever the exact date, the farm has been
+                    owned by the Baraona family for well over a century. Although specializing in heirloom variety
+                    Bourbon, an additional 94 varieties of coffee are maturing in a test nursery next to the mill.
+                    Initial results of these experimental plots are beginning to come in, with the goal of identifying
+                    the best varieties for planting elsewhere on the farm. In the coming years, we look forward to
+                    seeing how these new coffee varieties naturalize on the farm.
+                </p>
+                <div class="info__lines flex-column g20">
+                    <div class="info__line g20">
+                        <div class="icon">
+                            <img src="/assets/image/icons/altitude_2.png" alt="">
+                        </div>
+                        <div class="flex g20 flex-full">
+                            <span class="body-small fw-bold">Altitude</span>
+                            <span class="body-small sub-font fw-light">6,200 feet</span>
+                        </div>
+                    </div>
+                    <div class="info__line g20">
+                        <div class="icon">
+                            <img src="/assets/image/icons/variety_1_1.png" alt="">
+                        </div>
+                        <div class="flex g20 flex-full">
+                            <span class="body-small fw-bold">Variety</span>
+                            <span class="body-small sub-font fw-light">Pacamara</span>
+                        </div>
+                    </div>
+                    <div class="info__line g20">
+                        <div class="icon">
+                            <img src="/assets/image/icons/process_1.png" alt="">
+                        </div>
+                        <div class="flex g20 flex-full">
+                            <span class="body-small fw-bold">Processing</span>
+                            <span class="body-small sub-font fw-light">Red Honey</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters wrap-reverse">
+        <div class="col l-6 m-6 c-12 flex v-center">
+            <div class="p60 flex-column g20 tal">
+                <h3 class="headline-small fw-bold ttu flex v-center">
+                    Why We Love This Coffee
+                </h3>
+                <p class="body-medium sub-font fw-light">
+                    We are happy to present another fine coffee from Finca Los Pirineos, a testament to the long-lasting
+                    partnership with the Baraona family that started over a decade ago. This red-honey processed Orange
+                    Pacamara variety lot is the first of two coffees that we will be featuring from Finca Los Pirineos
+                    this year. After harvesting and pulping, trace amounts of fruit were left clinging to the beans,
+                    classifying this lot as a red-honey processed coffee, so named for its sticky, honey-like
+                    appearance. Honey processed coffees from Central America are often given a color classification to
+                    help
+                    differentiate them determined by the amount of fruit left on the beans – the darker the color, the
+                    more fruit there is clinging to the beans during drying.
+                    <br />
+                    Unlike traditional Pacamara varieties whose fruit ripens to a deep red color, the fruit of Orange
+                    Pacamara turns orange once ripe. While this coffee’s fruit looks distinctly different when ripe on
+                    the tree, the flavor showcases the classic complex blend of fruit forward and savory flavors of
+                    traditional Red Pacamaras.
+                    <br />
+
+                    Pacamara is a cultivar that is a cross between the Typica derived Maragogype variety, which produces
+                    very large beans, and Pacas, a compact-growing selection of the heirloom variety Bourbon. As a
+                    result of this parentage, Pacamara plants are small in stature, but produce enormous beans known for
+                    their high cup quality and being notoriously challenging to roast.
+                </p>
+                <div class="flex-column flex-center tac" style="width: min-content">
+                    <div class="icon">
+                        <img src="/assets/image/partners/sustainably-sourced.webp" alt="">
+                    </div>
+                    <p class="body-medium sub-font fw-bold">Sustainably Sourced</p>
+                </div>
+            </div>
+        </div>
+        <div class="col l-6 m-6 c-12">
+            <div class="bg__wrapper por">
+                <div class="bg__img abs-full banner-cover"
+                    style="background-image: url('/assets/image/banners/coffee_origin.webp');"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col l-6 m-6 c-12">
+            <div class="bg__wrapper por">
+                <div class="bg__img abs-full banner-cover"
+                    style="background-image: url('/assets/image/banners/Good_Coffee_Better_Planet-2_1_1080x.webp">
+                </div>
+            </div>
+        </div>
+        <div class="col l-6 m-6 c-12 flex v-center">
+            <div class="p60 flex-column g20 tal">
+                <h3 class="headline-small fw-bold ttu flex v-center">
+                    Good Coffee, Better Planet
+                </h3>
+                <p class="body-medium sub-font fw-light">
+                    We treasure our relationships in the global coffee community and invest in projects at origin to
+                    support our partners in their commitment to environmental sustainability and social welfare. We also
+                    invest in reducing our day-to-day impact, through initiatives like energy-efficient Loring Smart
+                    Roasters to reduce carbon emissions per batch by 80%.
+                    <br />
+                    <br />
+                    As a certified B Corporation, we are a leader in sustainable practices that impact people and the
+                    planet. This third-party certification requires us to demonstrate transparency and accountability
+                    throughout our supply chain and quantify the impact our business creates for our employees, the
+                    community, and the environment. We are proud to be part of this community working together toward
+                    one unifying goal: using business as a force for good.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- shopify section end -->
+
+<!-- you may also enjoy start-->
+<section class="section full product__section grid wide">
+    <h3 class="headline-large fw-bold ttu mb30">You may also enjoy</h3>
+    <div class="row product__wrapper">
+        <!-- single product card start -->
+        <div class="product primary__product col l-4 m-6 c-12 flex-center">
+            <a href="" class="product__link">
+                <div class="product__inner flex-column flex-full height-full">
+                    <div class="product__banner__wrapper por oh">
+                        <div class="product__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif')">
+                        </div>
+                        <div class="product__banner product__banner--sub__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/ElSalvadorLosPirineosOrangePacamara-TastingNotes2023_540x.webp')">
+                        </div>
+                        <button class="add-cart-btn hover btn primary-fill-btn width-full poa"
+                            style="max-width: none;"><i class="fa fa-plus"></i> Add to cart</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__name ttu tal label-medium fw-bold mt6 text">Peru Chirinos Regenerative
+                            Organic Certified™</div>
+                        <div class="product__price tal body-small mt6 text">$18.19</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- single product card end -->
+        <!-- single product card start -->
+        <div class="product primary__product col l-4 m-6 c-12 flex-center">
+            <a href="" class="product__link">
+                <div class="product__inner flex-column flex-full height-full">
+                    <div class="product__banner__wrapper por oh">
+                        <div class="product__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif')">
+                        </div>
+                        <div class="product__banner product__banner--sub__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/ElSalvadorLosPirineosOrangePacamara-TastingNotes2023_540x.webp')">
+                        </div>
+                        <button class="add-cart-btn hover btn primary-fill-btn width-full poa"
+                            style="max-width: none;"><i class="fa fa-plus"></i> Add to cart</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__name ttu tal label-medium fw-bold mt6 text">Peru Chirinos Regenerative
+                            Organic Certified™</div>
+                        <div class="product__price tal body-small mt6 text">$18.19</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- single product card end -->
+        <!-- single product card start -->
+        <div class="product primary__product col l-4 m-6 c-12 flex-center">
+            <a href="" class="product__link">
+                <div class="product__inner flex-column flex-full height-full">
+                    <div class="product__banner__wrapper por oh">
+                        <div class="product__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif')">
+                        </div>
+                        <div class="product__banner product__banner--sub__banner banner-contain poa"
+                            style="background-image: url('/assets/image/products/ElSalvadorLosPirineosOrangePacamara-TastingNotes2023_540x.webp')">
+                        </div>
+                        <button class="add-cart-btn hover btn primary-fill-btn width-full poa"
+                            style="max-width: none;"><i class="fa fa-plus"></i> Add to cart</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__name ttu tal label-medium fw-bold mt6 text">Peru Chirinos Regenerative
+                            Organic Certified™</div>
+                        <div class="product__price tal body-small mt6 text">$18.19</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- single product card end -->
+    </div>
+</section>
+<!-- you may also enjoy end -->
+
+<!-- shopify section start -->
+<section class="shopify__section--full">
+    <div class="bg__wrapper por">
+        <div class="poa abs-full bg__content bg-content--left flex-column z10 p60 flex-column j-center">
+            <h3 class="headline-large fw-bold ttu">HOW TO BREW</h3>
+            <p class="sub-font fw-light body-medium">Learn about and discover the right brewing technique for you </p>
+            <button class="btn btn-fit fw-bold primary-fill-btn hover-outline">brew guides </button>
+        </div>
+        <div class="bg__img abs-full banner-cover"
+            style="background-image: url(/assets/image/banners/howtobrewcoffee.webp);"></div>
+    </div>
+</section>
+<!-- shopify section end -->
+
+<!-- shopify section start -->
+<section class="shopify__section--full mt60">
+    <div class="bg__wrapper por">
+        <div class="poa abs-full bg__content bg-content--right flex-column z10 p60 flex-column j-center a-end">
+            <h3 class="headline-large fw-bold ttu">Subscribe & Save</h3>
+            <p class="sub-font fw-light body-medium">Start your first curated coffee subscription today and get 30% off
+                the first bag. </p>
+            <button class="btn btn-fit fw-bold primary-fill-btn hover-outline">subscriptions </button>
+        </div>
+        <div class="bg__img abs-full banner-cover"
+            style="background-image: url(/assets/image/banners/Equator-Subscription-Ad-Block-2_1_1950x.webp);">
+        </div>
+    </div>
+</section>
+<!-- shopify section end -->
+
+<!-- sign up section start -->
+<section class="sign-up-widget flex-center flex-wrap g12">
+    <span class="body-medium fw-bold widget-text">Sign up for Black Friday & Cyber Monday deals: </span>
+    <form action="#" class="form hero-contact__form">
+        <input type="submit" value="" hidden id="hero-email">
+        <div class="form__group flex por">
+            <input type="text" class="input email__input flex-full body-large sub-font fw-light"
+                placeholder="EMAIL ADDRESS">
+            <label for="hero-email" class="submit__label text fw-bold body-large poa">
+                <button class="btn text-btn">join</button>
+            </label>
+        </div>
+    </form>
+</section>
+<!-- sign up section end -->
+
+<script src="/js/singleProduct.js"></script>

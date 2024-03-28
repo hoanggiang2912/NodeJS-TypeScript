@@ -1,0 +1,155 @@
+<div class="admin__panel">
+    <div class="admin__title">
+        <h4 class="display-small fw-bold ttc">Order Details</h4>
+    </div>
+
+    <main class="admin__panel__main product-detail__panel row mt60">
+        <div class="col l-4 m-6 c-12">
+            <div class="col__inner">
+                <h4 class="title-large fw-bold ttc tal">Product list</h4>
+                <div class="bill__product__wrapper mt30">
+                    {{#each bill.products}}
+                        <!-- single product start -->
+                        <div class="admin__product admin__product--bill">
+                            <div class="admin__product__inner glass rounded-8 oh p20 flex-column g12">
+                                <div class="flex">
+                                    <div class="admin__product__image por">
+                                        <div class="abs-full banner-cover"
+                                            style="background-image: url('/uploads/{{this.image}}');">
+                                        </div>
+                                    </div>
+                                    <div class="admin__product__info flex-column flex-between g20">
+                                        <h4 class="admin__product__name text body-large fw-smb ttu">{{this.title}}</h4>
+                                        <div class="flex-between">
+                                            <div class="admin__product__price flex g20 v-center">
+                                                {{#if this.salePrice}}
+                                                    <span class="admin__product__price__old text body-large fw-medium"><del>${{this.price}}</del></span>
+                                                    <span class="admin__product__price__new text body-large fw-smb">${{this.salePrice}}</span>
+                                                {{else}}
+                                                    <span class="admin__product__price__new text body-large fw-smb">${{this.price}}</span>
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- single product end -->
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+        <div class="col l-8 m-6 c-12">
+            <form class="col__inner form order-info-form">
+                <h4 class="title-large fw-bold ttc tal">Order Informations</h4>
+                <div class="order-infor__main mt30 p20 rounded-16 oh glass">
+                    <div class="message message--update fw-smb body-medium success-text"></div>
+                    <div class="flex-between v-center">
+                        <h4 class="title-medium fw-bold ttc">Tracking ID: <span
+                                class="fw-normal bill__tracking__id">#{{bill._id}}</span></h4>
+                        <div class="form__group width-fit">
+                            <select name="billStatus" id="billStatus"
+                                class="form__input form__input--bill-status no-effect">
+                                <option value="pending">Pending</option>
+                                <option value="delivered">Delivered</option>
+                                <option value="canceled">Canceled</option>
+                                <option value="processing">Processing</option>
+                                <option value="returned">Returned</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="order-infor-box__wrapper row">
+                        <div class="order-infor__box col l-4 m-6 c-12">
+                            <div class="col__inner">
+                                <div class="infor__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Full Name</h5>
+                                    <input type="text"
+                                        class="form__input form__input--fullname form__input--transparent neutral-text40"
+                                        value="{{bill.firstName}} {{bill.lastName}}">
+                                </div>
+                                <div class="infor__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Address</h5>
+                                    <input type="text"
+                                        class="form__input form__input--address form__input--transparent neutral-text40"
+                                        value="{{bill.address}}">
+                                </div>
+                                <div class="infor__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Phone</h5>
+                                    <input type="text"
+                                        class="form__input form__input--phone form__input--transparent neutral-text40"
+                                        value="{{bill.phone}}">
+                                </div>
+                                <div class="infor__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Email</h5>
+                                    <input type="text"
+                                        class="form__input form__input--email form__input--transparent neutral-text40"
+                                        value="{{bill.email}}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-infor__box col l-4 m-6 c-12">
+                            <div class="col__inner">
+                                <div class="infor__group form__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Shipping Method</h5>
+                                    <select name="billShippingMethod" id="billShippingMethod"
+                                        class="form__input form__input--shipping-method mt12 border no-padding no-effect" value="{{bill.shippingMethod}}">
+                                        <option value="Free Shipping USPS">Free Shipping USPS</option>
+                                        <option value="USPS Priority Mail">USPS Priority Mail</option>
+                                        <option value="UPS® Ground">UPS® Ground</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-infor__box col l-4 m-6 c-12">
+                            <div class="col__inner">
+                                <div class="infor__group form__group mt20">
+                                    <h5 class="body-large fw-smb ttc">Payment Method</h5>
+                                    <select name="billPaymentMethod" id="billPaymentMethod"
+                                        class="form__input form__input--payment-method mt12 border no-padding no-effect">
+                                        <option value="{{bill.paymentMethod}}">Cash</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="order-infor__box col l-12 m-12 c-12 flex j-end">
+                            <div class="col__inner">
+                                <div class="flex mt30 flex-between" style="width: 300px">
+                                    <h5 class="body-large fw-smb ttc">Sub Total</h5>
+                                    <p class="body-large fw-normal neutral-text40">${{bill.subTotal}}</p>
+                                </div>
+                                <div class="flex mt30 flex-between" style="width: 300px">
+                                    <h5 class="body-large fw-smb ttc">Shipping Fee</h5>
+                                    <p class="body-large fw-normal neutral-text40">${{bill.shippingFee}}</p>
+                                </div>
+                                <div class="flex mt30 flex-between" style="width: 300px">
+                                    <h5 class="body-large fw-smb ttc">Total</h5>
+                                    <p class="body-large fw-normal neutral-text40">${{bill.total}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="flex-between v-center mt60">
+        <a href="/admin/orders" class="btn primary-text-btn fw-bold back-btn flex g12">
+            <i class="fas fa-arrow-left"></i>
+            Back to Orders
+        </a>
+        <div class="flex g20">
+            <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center    ">
+                <i class="fal fa-times"></i>
+                Cancel
+            </button>
+            <button class="btn save-btn rounded-8 g12 flex auto-set-width v-center  ">
+                <i class="fal fa-save"></i>
+                Save
+            </button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="/js/adminOrderDetail.js"></script>

@@ -1,0 +1,54 @@
+<!-- page content start -->
+<main class="main user__order__main header__next">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-3 m-0 c-0">
+                <div class="user__sidebar mt60">
+                    {{!-- user sidebar content will go here --}}
+                </div>
+            </div>
+            <div class="col l-9 m-12 c-12">
+                <div class="row mt60">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="page__title">
+                            <h1 class="title-large fw-bold ttu">Account Details</h1>
+                        </div>
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <div class="user__account__details__wrapper mt30">
+                            <form action="#" class="form user__account__details__form">
+                                <div class="form__group">
+                                    <label class="label form__label flex-column" for="first-name">First Name:</label>
+                                    <input type="text" class="input form__input form__input--transparent flex-full"
+                                        id="first-name" value="" placeholder="Enter your first name">
+                                    <span class="form__message label-medium fw-smb"></span>
+                                </div>
+                                <div class="form__group">
+                                    <label class="label form__label flex-column" for="last-name">Last Name:</label>
+                                    <input type="text" class="input form__input form__input--transparent flex-full"
+                                        id="last-name" value="" placeholder="Enter your last name">
+                                    <span class="form__message label-medium fw-smb"></span>
+                                </div>
+                                <div class="form__group">
+                                    <label class="label form__label flex-column" for="email">Email:</label>
+                                    <input type="text" class="input form__input form__input--transparent flex-full"
+                                        id="email" value="{{user.email}}" placeholder="Your Email address">
+                                    <span class="form__message label-medium fw-smb"></span>
+                                </div>
+
+                                <div class="flex width-full mt20 g20">
+                                    <button
+                                        class="save-change-btn btn primary-fill-btn hover form__btn fw-normal auto-set-width">Save
+                                        changes</button>
+                                    <button
+                                        class="back-btn btn primary-text-btn hover form__btn fw-normal neutral-text30 auto-set-width">Return</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- page content end -->

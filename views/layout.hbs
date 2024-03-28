@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="/assets/image/favicon.webp" type="image/x-icon">
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- flickity slider link -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
+    <link rel='stylesheet' href='/css/app.css'/>
+</head>
+
+<body>
+    <!-- header start -->
+    <header class="header header__mobile hide-on-desktop flex-center pof">
+        <div class="header__inner por width-full flex-between v-center">
+            <div class="header__bar flex-center">
+                <button class="icon-btn hamburger-icon por">
+                    <span class="hamburger-line line-1 poa"></span>
+                    <span class="hamburger-line line-2 poa"></span>
+                    <span class="hamburger-line line-3 poa"></span>
+                </button>
+            </div>
+            <div class="header__bar header__logo flex-center">
+                <a href="#" class="header__link">
+                    <img src="/assets/image/logo.svg" alt="equator logo" class="logo">
+                </a>
+            </div>
+            <div class="header__bar">
+                <button class="icon-btn toggle-cart-btn hover por">
+                    <i class="far fa-shopping-cart"></i>
+                    <span class="cart__amount poa label-medium primary-text"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- header respon nav start -->
+    <div class="mp-pusher hide-on-desktop" id="mp-pusher">
+        <!-- mp-menu -->
+        <nav id="mp-menu" class="mp-menu">
+            <div class="mp-level">
+                <form class="search__popdown__form" action="/search" method="get" role="search">
+                    <button class="search__popdown__form__button" type="submit">
+                        <span class="visually-hidden">Search</span>
+                        <!-- /snippets/social-icon.liquid -->
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12.8906 2.20205C9.97197 -0.734017 5.16164 -0.734017 2.18897 2.20205C-0.729656 5.13812 -0.729656 9.9772 2.18897 12.9676C4.94545 15.7406 9.32338 15.9037 12.242 13.5114L18.4576 19.7641C18.6086 19.9155 18.8133 20.0004 19.0265 20C19.2397 19.9996 19.444 19.9141 19.5946 19.7622C19.7451 19.6102 19.8294 19.4044 19.8291 19.1899C19.8287 18.9754 19.7436 18.7698 19.5926 18.6184L13.4311 12.3657C15.8092 9.37523 15.6509 4.97112 12.8906 2.19817V2.20205ZM11.7015 11.7715C10.873 12.605 9.81747 13.1726 8.66829 13.4026C7.51911 13.6326 6.32794 13.5146 5.24541 13.0636C4.16288 12.6126 3.23763 11.8487 2.58665 10.8687C1.93567 9.8886 1.58821 8.73637 1.58821 7.55766C1.58821 6.37895 1.93567 5.22672 2.58665 4.24666C3.23763 3.26661 4.16288 2.50277 5.24541 2.05172C6.32794 1.60068 7.51911 1.48269 8.66829 1.71269C9.81747 1.94269 10.873 2.51034 11.7015 3.34386C14.0256 5.68184 14.0256 9.49174 11.7015 11.7715Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </button>
+                    <input type="search" class="input form__input" data-predictive-search-input="search-popdown-results"
+                        name="q" value="" placeholder="Search" aria-label="Search our store">
+                </form>
+                <ul>
+                    <li class="icon icon-arrow-left mp__item">
+                        <div class="flex-center mp__item__title por">
+                            <a class="icon icon-display ttu text" href="#">Shop</a>
+                            <div class="mp__item__chevron mp__item__chevron--right  poa">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="mp-level">
+                            <div class="flex-center mp__level__title mp-back por">
+                                <a class="icon icon-display ttu text" href="#">Shop</a>
+                                <div class="mp__item__chevron mp__item__chevron--left  poa">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">Coffee</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">Coffee</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">new arrivals</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Shop by roast</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Blends</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Single
+                                                    origins</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Espressos</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Chef collabs</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Decaf</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Cold brew</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Instant</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Espresso Pods</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Variety sets</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">subcribe</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">subcribe</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Subscription
+                                                    Coffees</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Curated blend</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Curated single
+                                                    origin</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Curated
+                                                    espresso</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Curated fair
+                                                    trade organic</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Seasonal
+                                                    blend</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Gift a
+                                                    subscription</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Manage my
+                                                    subscription</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">gifts</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">gifts</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Gift Bundles</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Gifts Under
+                                                    $20</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Gift a
+                                                    Subscription</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Home brew
+                                                    equipment</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Drinkware</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Apparel &
+                                                    accessories</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Organic
+                                                    matcha</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Artisan teas</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Gift cards</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="icon icon-arrow-left mp__item">
+                        <div class="flex-center mp__item__title por">
+                            <a class="icon icon-display ttu text" href="#">visit cafes</a>
+                            <div class="mp__item__chevron mp__item__chevron--right  poa">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="mp-level">
+                            <div class="flex-center mp__level__title mp-back por">
+                                <a class="icon icon-display ttu text" href="#">visit cafes</a>
+                                <div class="mp__item__chevron mp__item__chevron--left  poa">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">order ahead</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">order ahead</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Mill Valley</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Sausalito</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Proof Lab</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Larkspur</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Fort Mason</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Round House</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">SOMA</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Burlingame</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Lake Merritt</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Culver City</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Fairfax LA</a>
+                                            </li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Laguna Beach</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="icon icon-arrow-left mp__item">
+                        <div class="flex-center mp__item__title por">
+                            <a class="icon icon-display ttu text" href="#">wholesale</a>
+                            <div class="mp__item__chevron mp__item__chevron--right  poa">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="mp-level">
+                            <div class="flex-center mp__level__title mp-back por">
+                                <a class="icon icon-display ttu text" href="#">wholesale</a>
+                                <div class="mp__item__chevron mp__item__chevron--left  poa">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Inquiries</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Wholesale login</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="icon icon-arrow-left mp__item">
+                        <div class="flex-center mp__item__title por">
+                            <a class="icon icon-display ttu text" href="#">brew guides</a>
+                            <div class="mp__item__chevron mp__item__chevron--right  poa">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="mp-level">
+                            <div class="flex-center mp__level__title mp-back por">
+                                <a class="icon icon-display ttu text" href="#">brew guides</a>
+                                <div class="mp__item__chevron mp__item__chevron--left  poa">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Aeropress</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Chemex</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Clever</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Cold brew</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">French press</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Hario mizudashi</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Hario V60</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Kalita wave</a>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <a class="icon icon-display ttu text mp__link" href="#">Origami</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="icon icon-arrow-left mp__item">
+                        <div class="flex-center mp__item__title por">
+                            <a class="icon icon-display ttu text" href="#">about</a>
+                            <div class="mp__item__chevron mp__item__chevron--right  poa">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </div>
+                        </div>
+                        <div class="mp-level">
+                            <div class="flex-center mp__level__title mp-back por">
+                                <a class="icon icon-display ttu text" href="#">about</a>
+                                <div class="mp__item__chevron mp__item__chevron--left  poa">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </div>
+                            </div>
+                            <ul>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">about</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">about</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">About us</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Careers</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">FAQ</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Impact</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Tiger
+                                                    collective</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Women in
+                                                    coffee</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Cafe rewards</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="icon icon-arrow-left mp__item">
+                                    <div class="flex-center mp__item__title por">
+                                        <a class="icon icon-display ttu text" href="#">blog</a>
+                                        <div class="mp__item__chevron mp__item__chevron--right poa">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mp-level">
+                                        <div class="flex-center mp__level__title mp-back por">
+                                            <a class="icon icon-display ttu text" href="#">blog</a>
+                                            <div class="mp__item__chevron mp__item__chevron--left poa">
+                                                <i class="fa-solid fa-chevron-left"></i>
+                                            </div>
+                                        </div>
+                                        <ul>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Cafe</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Coffee
+                                                    education</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Friends of
+                                                    Equator</a></li>
+                                            <li class="mp__item"><a href="#" class="mp__link ttu text">Origin
+                                                    stories</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- header respon nav end -->
+
+    <header class="header header__desktop hide-on-tablet hide-on-mobile">
+        <div class="header__inner por">
+            <div class="header__bar header__desktop__bar header__bar--l">
+                <div class="header__logo flex-center">
+                    <a href="/" class="header__link">
+                        <img src="/assets/image/logo.svg" alt="equator logo" class="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="header__bar header__desktop__bar header__bar--c">
+                <nav class="header__menu flex-center">
+                    <div class="header__menu__inner flex">
+                        <div class="menu__item flex-center">
+                            <a href="/shop" class="menu__link top-level__link ttu label-small fw-bold">Cửa hàng</a>
+                            <div class="header__dropdown__wrapper poa width-full">
+                                <div class="header__dropdown__inner p60 grid">
+                                    <div class="row">
+                                        <div class="header__dropdown__links">
+                                            <div class="row flex-between">
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">Cà phê</a>
+                                                    <ul class="pb20">
+                                                        {{#each data.categories}}
+                                                            <li><a href="/shop/category/{{this.id}}" class="menu__link body-small fw-smb text">{{this.name}}</a></li>
+                                                        {{/each}}
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                                <div class="col col-4 link__item" style="transition-delay: .4s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">Đăng ký</a>
+                                                    <ul class="pb20">
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Subscription
+                                                                Coffees</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Curated
+                                                                blend</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Curated single
+                                                                origin</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Curated
+                                                                espresso</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Seasonal
+                                                                blend</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Manage
+                                                                my subscription</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col col-4 link__item" style="transition-delay: .5s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">Quà tặng</a>
+                                                    <ul class="pb20">
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Gift
+                                                                Bundles</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Gifts
+                                                                Under $20</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Gift a
+                                                                Subscription</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Home
+                                                                brew equipment</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Drinkware</a>
+                                                        </li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Apparel &
+                                                                accessories</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Organic
+                                                                matcha</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Artisan
+                                                                teas</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Gift
+                                                                cards</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="header__dropdown__image--wrapper flex-full oh">
+                                            <div class="banner-cover dropdown__banner"
+                                                style="padding-top: 50%;background-image: url('/assets/image/banners/Subscribe_Save-Nav_1_900x.webp'); width: 100%; height: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu__item flex-center">
+                            <a href="#" class="menu__link top-level__link ttu label-small fw-bold">Chi nhánh</a>
+                            <div class="header__dropdown__wrapper poa width-full">
+                                <div class="header__dropdown__inner p60 grid">
+                                    <div class="row g60">
+                                        <div
+                                            class="col col-6 header__dropdown__image--wrapper flex-full flex-column oh">
+                                            <a href="#"
+                                                class="menu__link dropdown__link__title title-large fw-bold ttu text">find
+                                                a cafe</a>
+                                            <div class="banner-cover dropdown__banner mt30"
+                                                style="padding-top: 50%;background-image: url('/assets/image/banners/Mega_Menu_Visit_Us_900x.webp'); width: 100%; height: 100%;">
+                                            </div>
+                                        </div>
+                                        <div class="col col-6 header__dropdown__links"
+                                            style="padding-left: clamp(10rem, 6.429rem + 9.524vw, 15rem);">
+                                            <a href="#"
+                                                class="menu__link dropdown__link__title title-large fw-bold ttu text">Order
+                                                ahead</a>
+                                            <div class="row flex-between">
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <ul class="pb20">
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Mill
+                                                                Valley</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Sausalito</a>
+                                                        </li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Proof
+                                                                Lab</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Larkspur</a>
+                                                        </li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Fort
+                                                                Mason</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Round
+                                                                House</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <ul class="pb20">
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">SOMA</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Burlingame</a>
+                                                        </li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Lake
+                                                                Merritt</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Culver
+                                                                City</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Fairfax LA</a>
+                                                        </li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Laguna
+                                                                Beach</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu__item flex-center">
+                            <a href="#" class="menu__link top-level__link ttu label-small fw-bold">Bán sỉ</a>
+                            <div class="header__dropdown__wrapper poa width-full">
+                                <div class="header__dropdown__inner p60 grid">
+                                    <div class="row">
+                                        <div class="header__dropdown__links"
+                                            style="width: 30%; padding-left: clamp(8rem, 5.143rem + 7.619vw, 12rem);">
+                                            <div class="row flex-between">
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">wholesale</a>
+                                                    <ul class="pb20">
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Inquiries</a>
+                                                        </li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Wholesale
+                                                                login</a></li>
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                            </div>
+                                        </div>
+                                        <div class="header__dropdown__image--wrapper flex-full flex-column oh por">
+                                            <div class="banner-cover dropdown__banner"
+                                                style="padding-top: 30%;background-image: url('/assets/image/banners/nicola-parisi_equator-coffee_fall2019_1384_1.webp'); width: 100%; height: 100%;">
+                                            </div>
+                                            <div class="float-text poa"
+                                                style="width: 200px; top: 55%; right: 25%; color: white; text-shadow: 0 0 0 2px #000">
+                                                <div class="body-large fw-bold">Need a coffe partner</div>
+                                                <div class="body-small fw-light">We'll work with you to create a
+                                                    customized program with
+                                                    best-in-class training & support.</div>
+                                            </div>
+                                            <a href="#" class="menu__link body-small fw-smb text pt12">Wholesale
+                                                Inquiries</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu__item flex-center">
+                            <a href="#" class="menu__link top-level__link ttu label-small fw-bold">H.D Pha chế</a>
+                            <div class="header__dropdown__wrapper poa width-full">
+                                <div class="header__dropdown__inner p60 grid">
+                                    <div class="row">
+                                        <div class="header__dropdown__links"
+                                            style="width: 30%; padding-left: clamp(8rem, 5.143rem + 7.619vw, 12rem);">
+                                            <a href="#"
+                                                class="menu__link dropdown__link__title title-large fw-bold ttu text">Brew
+                                                guides</a>
+                                            <div class="row flex-between">
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <ul class="pb20">
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Aeropress</a>
+                                                        </li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Chemex</a>
+                                                        </li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Clever</a>
+                                                        </li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Cold
+                                                                brew</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">French
+                                                                press</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Hario
+                                                                mizudashi</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col col-4 link__item" style="transition-delay: .4s;">
+                                                    <ul class="pb20">
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Hario
+                                                                V60</a></li>
+                                                        <li><a href="#" class="menu__link body-small fw-smb text">Kalita
+                                                                wave</a></li>
+                                                        <li><a href="#"
+                                                                class="menu__link body-small fw-smb text">Origami</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                            </div>
+                                        </div>
+                                        <div class="header__dropdown__image--wrapper flex-full flex-column oh por">
+                                            <div class="banner-cover dropdown__banner"
+                                                style="padding-top: 30%;background-image: url('/assets/image/banners/Brew-Guides-Megamenu-Header_2_1296x.webp'); width: 100%; height: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu__item flex-center">
+                            <a href="#" class="menu__link top-level__link ttu label-small fw-bold">Về chúng tôi</a>
+                            <div class="header__dropdown__wrapper poa width-full">
+                                <div class="header__dropdown__inner p60 grid">
+                                    <div class="row">
+                                        <div class="header__dropdown__links"
+                                            style="width: 50%; padding-inline: clamp(8rem, 5.143rem + 7.619vw, 12rem);">
+                                            <div class="row flex-between">
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">about</a>
+                                                    <ul class="pb20">
+                                                        <li>
+                                                            <About href="#" class="menu__link body-small fw-smb text">
+                                                                About us</a>
+                                                        </li>
+                                                        <li>
+                                                            <Careers href="#" class="menu__link body-small fw-smb text">
+                                                                Careers</a>
+                                                        </li>
+                                                        <li>
+                                                            <FAQ href="#" class="menu__link body-small fw-smb text">
+                                                                FAQ</a>
+                                                        </li>
+                                                        <li>
+                                                            <Impact href="#" class="menu__link body-small fw-smb text">
+                                                                Impact</a>
+                                                        </li>
+                                                        <li>
+                                                            <Tiger href="#" class="menu__link body-small fw-smb text">
+                                                                Tiger collective</a>
+                                                        </li>
+                                                        <li>
+                                                            <Women href="#" class="menu__link body-small fw-smb text">
+                                                                Women in coffee</a>
+                                                        </li>
+                                                        <li>
+                                                            <Cafe href="#" class="menu__link body-small fw-smb text">
+                                                                Cafe rewards</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                                <!-- single children list start -->
+                                                <div class="col col-4 link__item" style="transition-delay: .3s;">
+                                                    <a href="#"
+                                                        class="menu__link dropdown__link__title title-large fw-bold ttu text">blog</a>
+                                                    <ul class="pb20">
+                                                        <li>
+                                                            <Cafe href="#" class="menu__link body-small fw-smb text">
+                                                                Cafe</a>
+                                                        </li>
+                                                        <li>
+                                                            <Coffee href="#" class="menu__link body-small fw-smb text">
+                                                                Coffee education</a>
+                                                        </li>
+                                                        <li>
+                                                            <Friends href="#" class="menu__link body-small fw-smb text">
+                                                                Friends of Equator</a>
+                                                        </li>
+                                                        <li>
+                                                            <Origin href="#" class="menu__link body-small fw-smb text">
+                                                                Origin stories</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <!-- single children list end -->
+                                            </div>
+                                        </div>
+                                        <div class="header__dropdown__image--wrapper flex-full flex-column oh por">
+                                            <div class="banner-cover dropdown__banner"
+                                                style="padding-top: 50%;background-image: url('/assets/image/banners/She-Owns-Certified_1_900x.webp'); width: 100%; height: 100%;">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="header__bar header__desktop__bar header__bar--l flex-full j-end v-center">
+                <div class="header__button__bar row">
+                    <button class="icon-btn hover open-searchbox"><i class="far fa-search"></i></button>
+                    <button class="icon-btn hover close-searchbox display-none"><i class="fas fa-times"></i></button>
+                    <button class="icon-btn hover user-btn por">
+                        <i class="far fa-user"></i>
+                        <div class="poa t100-10 dropdown__list dropdown__list--user rounded-8 primary-bg box-shadow1">
+                            <div class="dropdown__list__inner">
+                                <div class="dropdown__list__item">
+                                    <a href="/template/login.html"
+                                        class="dropdown__list__link width-max body-small fw-smb text display-block p12">Log
+                                        in</a>
+                                </div>
+                                <div class="dropdown__list__item">
+                                    <a href="/template/signup.html"
+                                        class="dropdown__list__link width-max body-small fw-smb text display-block p12">Sign
+                                        up</a>
+                                </div>
+                            </div>
+                        </div>
+                    </button>
+                    <button class="icon-btn hover toggle-cart-btn por">
+                        <i class="far fa-shopping-cart"></i>
+                        <span class="cart__amount poa label-medium"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header search box start -->
+    <div class="header__search-box pof">
+        <form class="search__popdown__form search-popdown-form-header por mb30" action="/template/search.html"
+            method="get" role="search" style="padding-inline: 100px;">
+            <input type="search" data-predictive-search-input="search-popdown-results" name="q" value=""
+                placeholder="Search" aria-label="Search our store" class="search__popdown__input">
+            <button class="icon-btn search-btn poa" type="submit">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12.8906 2.20205C9.97197 -0.734017 5.16164 -0.734017 2.18897 2.20205C-0.729656 5.13812 -0.729656 9.9772 2.18897 12.9676C4.94545 15.7406 9.32338 15.9037 12.242 13.5114L18.4576 19.7641C18.6086 19.9155 18.8133 20.0004 19.0265 20C19.2397 19.9996 19.444 19.9141 19.5946 19.7622C19.7451 19.6102 19.8294 19.4044 19.8291 19.1899C19.8287 18.9754 19.7436 18.7698 19.5926 18.6184L13.4311 12.3657C15.8092 9.37523 15.6509 4.97112 12.8906 2.19817V2.20205ZM11.7015 11.7715C10.873 12.605 9.81747 13.1726 8.66829 13.4026C7.51911 13.6326 6.32794 13.5146 5.24541 13.0636C4.16288 12.6126 3.23763 11.8487 2.58665 10.8687C1.93567 9.8886 1.58821 8.73637 1.58821 7.55766C1.58821 6.37895 1.93567 5.22672 2.58665 4.24666C3.23763 3.26661 4.16288 2.50277 5.24541 2.05172C6.32794 1.60068 7.51911 1.48269 8.66829 1.71269C9.81747 1.94269 10.873 2.51034 11.7015 3.34386C14.0256 5.68184 14.0256 9.49174 11.7015 11.7715Z"
+                        fill="currentColor"></path>
+                </svg>
+            </button>
+        </form>
+        <div class="grid wide scroll-x">
+            <div class="search__result__wrapper row">
+
+            </div>
+        </div>
+    </div>
+    <!-- header search box end -->
+
+    <!-- cart box start -->
+    <div class="header__cart-box pof flex j-end">
+        <div class="header__cart__inner rounded-8 flex-column por">
+            <div class="flex flex-between v-center p20">
+                <h3 class="header__cart__title title-large fw-bold ttu tac">Giỏ hàng</h3>
+                <button class="icon-btn hover toggle-cart-btn"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="scroll-y flex-full flex-column">
+                <div class="cart__product__wrapper p20 flex-full flex-column">
+                    <!-- single cart product start -->
+                    <!-- <div class="cart__product flex width-full pb12">
+                                      <div class="cart__product__banner">
+                                          <div class="banner-cover" style="background-image: url(/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif); height: 100%"></div>
+                                      </div>
+                                      <div class="cart__product__info pl20 flex-column flex-full">
+                                          <div class="flex-between v-center">
+                                              <h4 class="title-small ttc">Decaf Shakeout Organic Blend</h4>
+                                              <button class="icon-btn cart__product__remove-btn"><i class="far fa-trash"></i></button>
+                                          </div>
+                                          <p class="body-small cart__product__category fw-light">Whole Bean / 12oz</p>
+                                          <div class="flex-between v-center">
+                                              <form action="#" class="form qty-form flex-between v-center">
+                                                  <button class="icon-btn minus-btn"><i class="fas fa-minus"></i></button>
+                                                  <input type="number" class="qty-input tac" value="1">
+                                                  <button class="icon-btn plus-btn"><i class="fas fa-plus"></i></button>
+                                              </form>
+                                              <div class="cart__product__price body-medium fw-light">$17.89</div>
+                                          </div>
+                                      </div>
+                                  </div> -->
+                    <!-- single cart product end -->
+                    <!-- single cart product start -->
+                    <!-- <div class="cart__product flex width-full pb12">
+                                      <div class="cart__product__banner">
+                                          <div class="banner-cover" style="background-image: url(/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif); height: 100%"></div>
+                                      </div>
+                                      <div class="cart__product__info pl20 flex-column flex-full">
+                                          <div class="flex-between v-center">
+                                              <h4 class="title-small ttc">Decaf Shakeout Organic Blend</h4>
+                                              <button class="icon-btn cart__product__remove-btn"><i class="far fa-trash"></i></button>
+                                          </div>
+                                          <p class="body-small cart__product__category fw-light">Whole Bean / 12oz</p>
+                                          <div class="flex-between v-center">
+                                              <form action="#" class="form qty-form flex-between v-center">
+                                                  <button class="icon-btn minus-btn"><i class="fas fa-minus"></i></button>
+                                                  <input type="number" class="qty-input tac" value="1">
+                                                  <button class="icon-btn plus-btn"><i class="fas fa-plus"></i></button>
+                                              </form>
+                                              <div class="cart__product__price body-medium fw-light">$17.89</div>
+                                          </div>
+                                      </div>
+                                  </div> -->
+                    <!-- single cart product end -->
+                </div>
+                <div class="p20 recommended__product__wrapper">
+                    <h3 class="header__cart__title title-small fw-bold ttu tac">Sảnn phẩm đề xuất</h3>
+                    <!-- single cart product start -->
+                    <div class="cart__product flex width-full pb12">
+                        <div class="cart__product__banner">
+                            <div class="banner-cover"
+                                style="background-image: url(/assets/image/products/decaf-shakeout-organic-blend-389818_240x240.avif); height: 100%">
+                            </div>
+                        </div>
+                        <div class="cart__product__info pl20 flex-full v-center flex-between">
+                            <div class="flex-between v-center width-full">
+                                <div class="flex-column">
+                                    <h4 class="title-small ttc">Decaf Shakeout Organic Blend</h4>
+                                    <div class="cart__product__price body-medium fw-light">$17.89</div>
+                                </div>
+                                <button class="add-cart-btn btn primary-fill-btn hover"
+                                    style="min-width: unset; width: fit-content">Thêm vào giỏ hàng</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- single cart product end -->
+                </div>
+            </div>
+            <div class="header__cart__summary p20">
+                <form action="#" class="form coupon__form">
+                    <div class="form__group flex g12">
+                        <input class="input form__input coupon__input flex-full" placeholder="Mã giảm giá">
+                        <button class="coupon-btn btn primary-fill-btn hover"
+                            style="max-width: unset; min-width: unset; width: unset">Nhập</button>
+                    </div>
+                </form>
+                <div class="flex-between mb12 mt12">
+                    <div class="label-medium fw-smb item__amount">Tạm tính (3 sản phẩm)</div>
+                    <div class="label-medium fw-smb cart__subtotal">$17.89</div>
+                </div>
+                <button class="checkout-btn btn primary-fill-btn hover form__btn fw-light width-full"
+                    style="max-width: unset; min-width: unset">Đi đến thanh toán</button>
+            </div>
+        </div>
+    </div>
+    <!-- cart box end -->
+    <!-- header end -->
+    
+    {{{body}}}
+
+    <!-- footer start -->
+    <footer class="footer p60 por">
+        <div class="footer__inner grid wide por">
+            <div class="footer__top">
+                <div class="logo" style="max-height: 12rem;">
+                    <a href="#" class="logo__link">
+                        <img src="/assets/image/logo.svg" alt="">
+                    </a>
+                </div>
+            </div>
+            <main class="footer__content row no-gutters">
+                <div class="col l-6 m-6 c-12 mt30 text-block">
+                    <p class="sub-font body-medium fw-light">Equator Coffees được đặt tên theo khu vực trồng cà phê, nhưng nó còn mang nhiều ý nghĩa hơn thế. Đó là con đường vòng
+                    quanh hành tinh kết nối tất cả chúng ta.</p>
+                    <p class="sub-font body-medium fw-light mt6">Khi chúng tôi bước đi trên con đường từ hạt đậu đến ngụm, chúng tôi cố gắng làm cho mọi thứ chúng tôi chạm vào trở nên
+                    tốt hơn. Bởi vì chúng tôi tin rằng uống cà phê ngon sẽ dẫn đến những điều tốt đẹp.</p>
+                </div>
+                <div class="col l-6 m-6 c-12 mt30">
+                    <div class="row">
+                        <div class="col l-3 m-12 c-12">
+                            <ul class="footer__links">
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Contact</a></li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Careers</a></li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Locations</a>
+                                </li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">FAQ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l-3 m-12 c-12">
+                            <ul class="footer__links">
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Become an
+                                        Affiliate</a></li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Exchanges</a>
+                                </li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Privacy
+                                        Policy</a></li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Terms &
+                                        Conditions</a></li>
+                                <li class="footer__link__item"><a href="#"
+                                        class="footer__link text label-medium fw-bold">Do Not Sell My
+                                        Personal Information</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <ul class="row mt30" style="max-width: 200px">
+                        <li class="col l-2-4 m-2-4 c-2-4 footer__link__item"><a href="#" class="footer__link active"><i
+                                    class="fa-brands fa-facebook"></i></a></li>
+                        <li class="col l-2-4 m-2-4 c-2-4 footer__link__item"><a href="#" class="footer__link active"><i
+                                    class="fa-brands fa-instagram"></i></a></li>
+                        <li class="col l-2-4 m-2-4 c-2-4 footer__link__item"><a href="#" class="footer__link active"><i
+                                    class="fa-brands fa-linkedin"></i></a></li>
+                        <li class="col l-2-4 m-2-4 c-2-4 footer__link__item"><a href="#" class="footer__link active"><i
+                                    class="fa-brands fa-tiktok"></i></a></li>
+                        <li class="col l-2-4 m-2-4 c-2-4 footer__link__item"><a href="#" class="footer__link active"><i
+                                    class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+            </main>
+        </div>
+        <div class="poa b0 r0 z-1">
+            <div class="footer__widget por" style="min-width: 200px; min-height: 200px;">
+                <div class="widget__img poa banner-contain abs-full z0"
+                    style="background-image: url('/assets/image/banners/Vector.avif'); padding-top: 56.25%"></div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="footer all__award__footer width-full flex-center">
+        <div class="row p10" style="max-width: calc(100vw - 30%);">
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/2018-B-Corp-Logo-White-L_1_1.webp" alt="">
+            </div>
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/BeSt_of_Panama_1.webp" alt="">
+            </div>
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/Coffee_Roasters_Guild_Logo-Black_2.webp" alt="">
+            </div>
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/gf-logo-awards_BW_1_1.png" alt="">
+            </div>
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/SHEowns_white_TM_b178f560-d90c-4dea-b037-3c15f6f13cd6.webp" alt="">
+            </div>
+            <div class="col l-2 m-2 c-2 flex-center">
+                <img src="/assets/image/awards/Specialty_Coffee_Association-Logo-Black_1.png" alt="">
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+
+    <div class="overlay overlay--main fixed-full">
+        <div class="loader--track">
+            <div class="loader--bar"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- javascript link -->
+<script src="/js/modernizr.custom.js"></script>
+<script src="/js/classie.js"></script>
+<script src="/js/mlpushmenu.js"></script>
+<script type="module" src="/js/main.js"></script>
+<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+<script src="/js/jquery.js"></script>
+
+<script>
+    new mlPushMenu(document.getElementById('mp-menu'), document.querySelector('.hamburger-icon'), {
+        type: 'cover'
+    });
+</script>
+
+<script>
+    const heroSlider = document.querySelector('.hero__slider__holder');
+    if (heroSlider) {
+        const flkty = new Flickity(heroSlider, {
+            // options
+            cellAlign: 'left',
+            contain: true
+        });
+    }
+</script>
+
+<script>
+    if (document.querySelector('.gallery__spotlight')) {
+        // Initialize Flickity for spotlight image
+        var spotlight = new Flickity('.gallery__spotlight', {
+            cellAlign: 'left',
+            contain: true,
+            wrapAround: true,
+            prevNextButtons: false,
+            pageDots: false
+        });
+
+        const thumbnails = document.querySelectorAll('.gallery__thumbnail');
+
+        // Handle Flickity change event
+        spotlight.on('change', function () {
+            const currentSlideIndex = spotlight.selectedIndex;
+            const spotlightHolders = document.querySelectorAll('.gallery__spotlight__holder');
+
+            // Highlight the current thumbnail
+            thumbnails.forEach(function (thumbnail, index) {
+                thumbnail.classList.remove('active');
+                if (index === currentSlideIndex) {
+                    thumbnail.classList.add('active');
+                }
+            });
+
+            // Delay the addition of fade-in class to spotlight image holder
+            setTimeout(function () {
+                spotlightHolders.forEach(function (holder, index) {
+                    if (index === currentSlideIndex) {
+                        holder.classList.add('fade-in');
+                    } else {
+                        holder.classList.remove('fade-in');
+                    }
+                });
+            }, 300); // Adjust the delay duration as needed
+        });
+
+        // Handle thumbnail click event
+        thumbnails.forEach(function (thumbnail, index) {
+            thumbnail.addEventListener('click', function () {
+                spotlight.select(index);
+            });
+        });
+
+        // Handle swipe event
+        spotlight.on('dragEnd', function () {
+            var direction = spotlight.x < 0 ? 'next' : 'previous';
+            if (spotlight.isFreeScrolling) {
+                var currentSlideIndex = spotlight.selectedIndex;
+                var numSlides = spotlight.slides.length;
+
+                // Infinite loop for swipe
+                if (direction === 'next' && currentSlideIndex === numSlides - 1) {
+                    spotlight.select(0);
+                } else if (direction === 'previous' && currentSlideIndex === 0) {
+                    spotlight.select(numSlides - 1);
+                }
+            }
+        });
+    }
+</script>

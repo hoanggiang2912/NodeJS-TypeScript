@@ -1,0 +1,45 @@
+.product-features__roast {
+    .product-features__roast-line {
+        display: flex;
+        width: 100%;
+        max-width: 228px;
+        margin: 0 auto 10px;
+        height: 10px;
+        border-radius: 100px;
+        background-image: linear-gradient(to left, #5d3c28, #b99076);
+        .product-features__roast-divider {
+            position: relative;
+            width: 25%;
+            border-right: 1px solid #ffffff;
+        }
+        .product-features__roast-divider.active::after {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: -3px;
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 0 2.00622px #0000002e;
+        }
+        .product-features__roast-divider.active--left::after {
+            left: 4px;
+        }
+    }
+    .product__roast-values {
+        width: 100%;
+        max-width: 247px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        .product__roast-value {
+            font-size: 8px;
+            font-weight: lighter;
+        }
+        .product__roast-value.active {
+            font-weight: bold !important;
+        }
+    }
+}

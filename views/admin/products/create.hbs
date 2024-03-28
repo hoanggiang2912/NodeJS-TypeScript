@@ -1,0 +1,114 @@
+<div class="admin__panel">
+    <div class="admin__title">
+        <h4 class="display-small fw-bold ttc">Add new product</h4>
+    </div>
+
+    <form class="form admin__add__product__form rounded-16 admin__panel__main product-detail__panel row">
+        <div class="col l-4 m-6 c-12">
+            <div class="col__inner admin__product__wrapper">
+                <div
+                    class="admin__product admin__product__image-upload admin__product--detail-page mt60 flex-column g20">
+                    <div class="admin__product__inner glass rounded-8 oh p20 g12">
+                        <div class="flex-column g20">
+                            <div class="flex-column g12">
+                                <h4 class="text body-large fw-smb ttc">Product gallery</h4>
+                                <span class="label-medium fw-smb">
+                                    <span class="primary-text">*</span>
+                                    We will take the first images as the product banner
+                                </span>
+                                <span class="label-medium fw-smb">
+                                    <span class="primary-text">*</span>
+                                    Please upload at least 2 images
+                                </span>
+                            </div>
+                            <div class="admin__product__gallery row">
+                                
+
+                                <input type="file" multiple hidden
+                                    accept="image/png, image/jpeg, image/jpg, image/webp, image/gif"
+                                    id="product-gallery" name="productImages">
+                                <div class="flex-center width-full">
+                                    <label for="product-gallery" class="btn add__gallery__btn flex-center g6">
+                                        <i class="fal fa-plus"></i>
+                                        Add gallery
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col l-8 m-6 c-12 mt60">
+            <span class="form__error__message body-large fw-smb alert-text"></span>
+            <div class="row">
+                <div class="col l-6 m-6 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Name</h4>
+                        <input type="text" class="form__input form__input--name">
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="col l-6 m-6 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Category</h4>
+                        <select name="category" required id="category" class="form__input form__input--category ttc">
+                            <option value="#" selected>--Select your product's category --</option>
+                            {{#each categories}}
+                                <option value="{{this._id}}">{{this.name}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+                <div class="col l-4 m-6 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Price</h4>
+                        <input type="number" class="form__input form__input--price" name="price">
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="col l-4 m-6 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Promotion</h4>
+                        <input type="number" class="form__input form__input--promotion">
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="col l-4 m-12 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">quantity</h4>
+                        <input type="number" class="form__input form__input--quantity">
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="col l-12 m-12 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Description</h4>
+                        <textarea name="description" id="description" cols="30" rows="10"
+                            class="form__input form__input--description"></textarea>
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-between width-full v-center mt30">
+            <button class="btn primary-text-btn fw-bold back-btn flex g12">
+                <i class="fas fa-arrow-left"></i>
+                Back to product
+            </button>
+            <div class="flex g20">
+                <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center    ">
+                    <i class="fal fa-times"></i>
+                    Cancel
+                </button>
+                <button class="btn save-btn add-product-btn rounded-8 g12 flex auto-set-width v-center  ">
+                    <i class="fal fa-plus"></i>
+                    Add Product
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="module" src="/js/adminAddProduct.js"></script>

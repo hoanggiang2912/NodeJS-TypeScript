@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" data-page-id="2">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equator - Admin Dashboard</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="/assets/image/favicon.webp" type="image/x-icon">
+    <!-- css styling link -->
+    <link rel="stylesheet" href="/css/app.css" />
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+</head>
+
+<body class="por third-font">
+    <div class="container">
+        <div class="admin__layout admin__wrapper p20 flex-center banner-cover grid">
+            <div class="admin__inner pi20 flex" style="min-height: 100vh">
+                <div class="admin__sidebar admin__sidebar--desktop" style="min-height: 100vh;">
+                    <div class="admin__sidebar__inner flex-column g60 pb60 flex-center">
+                        <button class="open__sidebar__btn hide-on-desktop hide-on-tablet por oh">
+                            <div class="btn__background banner-cover abs-full"></div>
+                            <i class="fa-solid fa-bars abs-center"></i>
+                        </button>
+                        <a href="#" class="logo__link hide-on-tablet hide-on-mobile">
+                            <img src="/assets/image/icon-logo.png" alt="Equator logo with icon" class="sidebar__logo" width="90px">
+                        </a>
+                        <nav class="sidebar__nav">
+                            <ul class="flex-column g30">
+                                <li class="sidebar__item flex v-center rounded-4" data-active="dashboard">
+                                    <div class="sidebar__item__icon">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9.57399L12 2.57399L21 9.57399V20.574C21 21.1044 20.7893 21.6131 20.4142 21.9882C20.0391 22.3633 19.5304 22.574 19 22.574H5C4.46957 22.574 3.96086 22.3633 3.58579 21.9882C3.21071 21.6131 3 21.1044 3 20.574V9.57399Z" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 22.574V12.574H15V22.574" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                    </div>
+                                    <a href="/admin/dashboard" class="sidebar__item__link hide-on-table hide-on-mobile text body-large fw-medium">Dashboard</a>
+                                </li>
+                                <li class="sidebar__item flex v-center rounded-4" data-active="products">
+                                    <div class="sidebar__item__icon">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21 8.57399V21.574H3V8.57399" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M23 3.57399H1V8.57399H23V3.57399Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M10 12.574H14" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+                                    </div>
+                                    <a href="/admin/products" class="sidebar__item__link hide-on-table hide-on-mobile text body-large fw-medium">Products</a>
+                                </li>
+                                <li class="sidebar__item flex v-center rounded-4" data-active="categories">
+                                    <div class="sidebar__item__icon">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M16 4.57399H18C18.5304 4.57399 19.0391 4.7847 19.4142 5.15978C19.7893 5.53485 20 6.04356 20 6.57399V20.574C20 21.1044 19.7893 21.6131 19.4142 21.9882C19.0391 22.3633 18.5304 22.574 18 22.574H6C5.46957 22.574 4.96086 22.3633 4.58579 21.9882C4.21071 21.6131 4 21.1044 4 20.574V6.57399C4 6.04356 4.21071 5.53485 4.58579 5.15978C4.96086 4.7847 5.46957 4.57399 6 4.57399H8" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M15 2.57399H9C8.44772 2.57399 8 3.02171 8 3.57399V5.57399C8 6.12627 8.44772 6.57399 9 6.57399H15C15.5523 6.57399 16 6.12627 16 5.57399V3.57399C16 3.02171 15.5523 2.57399 15 2.57399Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                    </div>
+                                    <a href="/admin/categories" class="sidebar__item__link hide-on-table hide-on-mobile text body-large fw-medium">Categories</a>
+                                </li>
+                                <li class="sidebar__item flex v-center rounded-4" data-active="orders">
+                                    <div class="sidebar__item__icon">
+                                        <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M21.21 16.464C20.5739 17.9685 19.5788 19.2942 18.3119 20.3253C17.045 21.3564 15.5448 22.0614 13.9425 22.3788C12.3401 22.6961 10.6845 22.6161 9.12018 22.1458C7.55591 21.6754 6.13066 20.8291 4.96906 19.6806C3.80745 18.5322 2.94485 17.1167 2.45667 15.5579C1.96849 13.9991 1.8696 12.3445 2.16863 10.7386C2.46767 9.13277 3.15553 7.62462 4.17208 6.34602C5.18863 5.06742 6.50292 4.05731 8.00004 3.40399" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M22 12.574C22 11.2608 21.7413 9.96041 21.2388 8.74716C20.7362 7.5339 19.9997 6.43151 19.0711 5.50292C18.1425 4.57434 17.0401 3.83774 15.8268 3.33519C14.6136 2.83265 13.3132 2.57399 12 2.57399V12.574H22Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                    </div>
+                                    <a href="/admin/orders" class="sidebar__item__link hide-on-table hide-on-mobile text body-large fw-medium">Orders</a>
+                                </li>
+                                <li class="sidebar__item flex v-center rounded-4" data-active="users">
+                                    <div class="sidebar__item__icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
+                                                stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            <path
+                                                d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
+                                                stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <a href="/admin/users" class="sidebar__item__link hide-on-table hide-on-mobile text body-large fw-medium">Users</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                {{{body}}}
+            </div>
+        </div>
+        <div class="sidebar__overlay fixed-full">
+            <div class="admin__sidebar admin__sidebar--mobile hide-on-desktop pof" style="min-height: 100vh;">
+                <!-- <div class="admin__sidebar__inner flex-column g60 pb60 flex-center por">
+                    <button class="icon-btn close__sidebar__btn">
+                        <i class="fal fa-times"></i>
+                    </button>
+                    <a href="index.html" class="logo__link">
+                        <img src="/assets/image/icon-logo.png" alt="Equator logo with icon" class="sidebar__logo" width="90px">
+                    </a>
+                    <nav class="sidebar__nav">
+                        <ul class="flex-column g30">
+                            <li class="sidebar__item active flex v-center rounded-4">
+                                <div class="sidebar__item__icon">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 9.57399L12 2.57399L21 9.57399V20.574C21 21.1044 20.7893 21.6131 20.4142 21.9882C20.0391 22.3633 19.5304 22.574 19 22.574H5C4.46957 22.574 3.96086 22.3633 3.58579 21.9882C3.21071 21.6131 3 21.1044 3 20.574V9.57399Z" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 22.574V12.574H15V22.574" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <a href="#" class="sidebar__item__link text body-large fw-medium">Dashboard</a>
+                            </li>
+                            <li class="sidebar__item flex v-center rounded-4">
+                                <div class="sidebar__item__icon">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 8.57399V21.574H3V8.57399" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M23 3.57399H1V8.57399H23V3.57399Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 12.574H14" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                </div>
+                                <a href="#" class="sidebar__item__link text body-large fw-medium">Products</a>
+                            </li>
+                            <li class="sidebar__item flex v-center rounded-4">
+                                <div class="sidebar__item__icon">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M16 4.57399H18C18.5304 4.57399 19.0391 4.7847 19.4142 5.15978C19.7893 5.53485 20 6.04356 20 6.57399V20.574C20 21.1044 19.7893 21.6131 19.4142 21.9882C19.0391 22.3633 18.5304 22.574 18 22.574H6C5.46957 22.574 4.96086 22.3633 4.58579 21.9882C4.21071 21.6131 4 21.1044 4 20.574V6.57399C4 6.04356 4.21071 5.53485 4.58579 5.15978C4.96086 4.7847 5.46957 4.57399 6 4.57399H8" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M15 2.57399H9C8.44772 2.57399 8 3.02171 8 3.57399V5.57399C8 6.12627 8.44772 6.57399 9 6.57399H15C15.5523 6.57399 16 6.12627 16 5.57399V3.57399C16 3.02171 15.5523 2.57399 15 2.57399Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                </div>
+                                <a href="#" class="sidebar__item__link text body-large fw-medium">Categories</a>
+                            </li>
+                            <li class="sidebar__item flex v-center rounded-4">
+                                <div class="sidebar__item__icon">
+                                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21.21 16.464C20.5739 17.9685 19.5788 19.2942 18.3119 20.3253C17.045 21.3564 15.5448 22.0614 13.9425 22.3788C12.3401 22.6961 10.6845 22.6161 9.12018 22.1458C7.55591 21.6754 6.13066 20.8291 4.96906 19.6806C3.80745 18.5322 2.94485 17.1167 2.45667 15.5579C1.96849 13.9991 1.8696 12.3445 2.16863 10.7386C2.46767 9.13277 3.15553 7.62462 4.17208 6.34602C5.18863 5.06742 6.50292 4.05731 8.00004 3.40399" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22 12.574C22 11.2608 21.7413 9.96041 21.2388 8.74716C20.7362 7.5339 19.9997 6.43151 19.0711 5.50292C18.1425 4.57434 17.0401 3.83774 15.8268 3.33519C14.6136 2.83265 13.3132 2.57399 12 2.57399V12.574H22Z" stroke="#656565" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+                                </div>
+                                <a href="#" class="sidebar__item__link text body-large fw-medium">Orders</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay overlay--popup fixed-full">
+        <div class="popup popup--delete abs-center p20 rounded-8 primary-bg box-shadow1 z100">
+            <div class="popup__inner tac">
+                <div class="popup__heading title-large fw-bold ttu mb20 neutral-text20">Delete Product</div>
+                <div class="popup__img ma width-fit">
+                    <img src="/assets/image/banners/delete.svg" alt="" width="160px" height="160px">
+                </div>
+                <div class="popup__text text body-large fw-medium mt20 neutral-text60">Are you sure to delete this category!
+                </div>
+                <div class="popup__text primary-text text body-large fw-medium mt20 neutral-text60">All of products of this
+                    category will be delete too!</div>
+                <div class="popup__text primary-text text body-large fw-medium mt20 neutral-text60">Please to be careful
+                    before made your decision. We can't undo!</div>
+                <div class="flex-center g12 width-full mt20">
+                    <button class="btn discard-btn rounded-8 fw-smb">Not now</button>
+                    <button class="btn confirm-btn rounded-8 fw-smb">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-message__container">
+        {{!-- success toast message --}}
+        {{!-- <div class="toast-message toast-message--success">
+            <div class="toast-message__inner flex g20 p20 v-center">
+                <div class="toast-message__icon">
+                    <i class="fal fa-check-circle"></i>
+                </div>
+                <div class="toast-message__text body-large fw-medium">Success!</div>
+            </div>
+        </div> --}}
+        {{!-- failure toast message --}}
+        {{!-- <div class="toast-message toast-message--failure">
+            <div class="toast-message__inner flex g20 p20 v-center">
+                <div class="toast-message__icon">
+                    <i class="fal fa-check-circle"></i>
+                </div>
+                <div class="toast-message__text body-large fw-medium">Success!</div>
+            </div>
+        </div> --}}
+    </div>
+</body>
+
+</html>
+<script type="module" src="/js/main.js"></script>
+<script>
+    // Add active class to sidebar item
+    const sidebarItems = document.querySelectorAll('.sidebar__item');
+    const page = location.pathname.split('/')[2];
+
+    sidebarItems.forEach(item => {
+        if (item.getAttribute('data-active') === page) {
+            item.classList.add('active');
+        }
+    });
+</script>

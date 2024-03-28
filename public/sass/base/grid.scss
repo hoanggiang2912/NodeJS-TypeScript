@@ -1,0 +1,377 @@
+// /* 
+// Column: .col
+// Prefix class:
+//     - c -> column: mobile
+//     - m -> medium: tablet
+//     - l -> large: desktop
+// */
+
+.grid {
+    display: block;
+    width: 100%;
+    padding: 0;
+}
+.grid.wide {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-inline: -4px;
+}
+.row.no-wrap {
+    flex-wrap: nowrap;
+}
+.row.no-gutters {
+    margin-inline: 0;
+}
+.row.wrap-reverse {
+    flex-wrap: wrap-reverse;
+}
+.row.no-gutters .col {
+    padding-inline: 0;
+}
+.col {
+    padding-inline: 4px;
+}
+.c-0 {
+    display: none;
+}
+.c-2-4 {
+    flex: 0 0 20%;
+    max-width: 20%;
+}
+@for $i from 1 through 12 {
+    .c-#{$i} {
+        flex: 0 0 calc(100% / 12 * $i);
+        max-width: calc(100% / 12 * $i);
+    }
+}
+@for $i from 1 through 12 {
+    .c-o-#{$i} {
+        margin-left: calc(100% / 12 * $i);
+    }
+}
+// || Responsive 
+/* Tablet : with > 740px */
+@media only screen and (min-width: 740px) {
+    .row {
+        margin-inline: -8px;
+    }
+
+    .col {
+        padding-inline: 8px;
+    }
+
+    .m-0 {
+        display: none;
+    }
+
+    .m-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+
+    @for $i from 1 through 12 {
+        .m-#{$i} {
+            display: block
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .m-#{$i} {
+            flex: 0 0 calc(100% / 12 * $i);
+            max-width: calc(100% / 12 * $i);
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .m-o-#{$i} {
+            margin-left: calc(100% / 12 * $i);
+        }
+    }
+}
+
+/* Mobile and Tablet: width < 1024px */
+@media only screen and (max-width: 740px) {
+    .hide-on-mobile {
+        display: none !important;
+    }
+}
+
+/* Tablet - PC low resolution */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+    .hide-on-tablet {
+        display: none !important;
+    }
+}
+
+/* PC low resolution */
+@media only screen and (min-width: 1024px) and (max-width: 1239px) {
+    .wide {
+        width: 984px;
+    }
+    .wide.row {
+        margin-inline: -12px;
+    }
+    .wide.row {
+        padding-inline: -12px;
+    }
+    .wide .l-0 {
+        display: none;
+    }
+    .wide .l-2-4 {
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    @for $i from 1 through 12 {
+        .wide .l-#{$i} {
+            display: block;
+        }
+    }
+    @for $i from 1 through 12 {
+        .wide .l-#{$i} {
+            flex: 0 0 calc(100% / 12 * $i);
+            max-width: calc(100% / 12 * $i);
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .wide .l-o-#{$i} {
+            margin-left: calc(100% / 12 * $i);
+        }
+    }
+}
+
+/* PC: width >= 1024px */
+@media only screen and (min-width: 1024px) {
+    .hide-on-desktop {
+        display: none !important;
+    }
+}
+/* PC: width >= 1113px */
+@media only screen and (min-width: 1113px) {
+    .row {
+        margin-inline: -12px;
+    }
+    .col {
+        padding-inline: 12px;
+    }
+    .l-0 {
+        display: none;
+    }
+    .l-2-4 {
+        display: block;
+        flex: 0 0 20%;
+        max-width: 20%;
+    }
+    @for $i from 1 through 12 {
+        .l-#{$i} {
+            display: block
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .l-#{$i} {
+            flex: 0 0 calc(100% / 12 * $i);
+            max-width: calc(100% / 12 * $i);
+        }
+    }
+
+    @for $i from 1 through 12 {
+        .l-o-#{$i} {
+            margin-left: calc(100% / 12 * $i);
+        }
+    }
+}
+// || grid system
+// $grid-columns: 12;
+// $grid-gutter-width: 30px;
+// $breakpoints: (
+//     sm: 576px,
+//     md: 768px,
+//     lg: 992px,
+//     mxl: 1113,
+//     xl: 1200px
+// );
+// $gutter-widths: (
+//     mobile: 12px,
+//     tablet: 24px,
+//     desktop: 32px
+// );
+
+
+// .hide-on-mobile {
+//     display: none;
+
+//     @media only screen and (max-width: 740px) {
+//         display: block;
+//     }
+// }
+
+// .hide-on-tablet {
+//     display: none;
+
+//     @media (min-width: 740px) and (max-width: 1023px) {
+//         display: block;
+//     }
+// }
+
+// .hide-on-desktop {
+//     display: none;
+
+//     @media only screen and (min-width: 1024px) {
+//         display: block;
+//     }
+// }
+
+// @mixin make-row($gutter-widths) {
+//     .row {
+//         display: flex;
+//         flex-wrap: wrap;
+//         margin: 0; // Reset margin
+//         padding: 0 (map-get($gutter-widths, desktop) / 2); // Apply padding for gutter
+
+//         @media only screen and (max-width: 740px) {
+//             padding: 0 (map-get($gutter-widths, mobile) / 2);
+//         }
+
+//         @media only screen and (min-width: 740px) and (max-width: 1023px) {
+//             padding: 0 (map-get($gutter-widths, tablet) / 2);
+//         }
+
+//         @media only screen and (min-width: 1024px) {
+//             padding: 0 (map-get($gutter-widths, desktop) / 2);
+//         }
+//     }
+// }
+
+// @mixin make-columns() {
+//     .grid {
+//         display: block;
+//         padding: 0;
+//         width: 100%;
+//     }
+//     .grid.wide {
+//         width: 1200px; // Default width
+//         margin: 0 auto;
+    
+//         @media only screen and (min-width: 740px) {
+//             width: 644px; // Width for tablet
+//         }
+    
+//         @media only screen and (min-width: 1024px) {
+//             width: 984px; // Width for desktop
+//         }
+    
+//         @media only screen and (min-width: 1239px) {
+//             width: 1200px; // Width for large desktop
+//         }
+//     }
+
+//     .col-5 {
+//         flex: 0 0 20%;
+//         max-width: 20%;
+//         margin-right: $grid-gutter-width / 2;
+//         margin-left: $grid-gutter-width / 2;
+
+//         @media only screen and (max-width: 740px) {
+//             margin-right: map-get($gutter-widths, mobile) / 2;
+//             margin-left: map-get($gutter-widths, mobile) / 2;
+//         }
+    
+//         @media only screen and (min-width: 740px) and (max-width: 1023px) {
+//             margin-right: map-get($gutter-widths, tablet) / 2;
+//             margin-left: map-get($gutter-widths, tablet) / 2;
+//         }
+    
+//         @media only screen and (min-width: 1024px) {
+//             margin-right: map-get($gutter-widths, desktop) / 2;
+//             margin-left: map-get($gutter-widths, desktop) / 2;
+//         }
+//     }
+
+//     .no-gutter {
+//         margin-right: 0;
+//         margin-left: 0;
+//     }
+
+//     @for $i from 1 through $grid-columns {
+//         .col-#{$i} {
+//             flex: 0 0 percentage($i / $grid-columns);
+//             max-width: percentage($i / $grid-columns);
+//             margin-right: $grid-gutter-width / 2;
+//             margin-left: $grid-gutter-width / 2;
+
+//             @media only screen and (max-width: 740px) {
+//                 margin-right: map-get($gutter-widths, mobile) / 2;
+//                 margin-left: map-get($gutter-widths, mobile) / 2;
+//             }
+        
+//             @media only screen and (min-width: 740px) and (max-width: 1023px) {
+//                 margin-right: map-get($gutter-widths, tablet) / 2;
+//                 margin-left: map-get($gutter-widths, tablet) / 2;
+//             }
+        
+//             @media only screen and (min-width: 1024px) {
+//                 margin-right: map-get($gutter-widths, desktop) / 2;
+//                 margin-left: map-get($gutter-widths, desktop) / 2;
+//             }
+//         }
+//     }
+// }
+
+// @mixin make-offsets() {
+//     @for $i from 1 through $grid-columns {
+//         .offset-#{$i} {
+//             margin-left: percentage($i / $grid-columns);
+//         }
+//     }
+//     .offset-center {
+//         margin-left: auto;
+//         margin-right: auto;
+//     }
+// }
+
+// @mixin make-responsive() {
+//     @each $breakpoint, $value in $breakpoints {
+//         @media (min-width: $value) {
+//             @for $i from 1 through $grid-columns {
+//                 .col-#{$breakpoint}-#{$i} {
+//                     flex: 0 0 percentage($i / $grid-columns);
+//                     max-width: percentage($i / $grid-columns);
+//                     margin-right: $grid-gutter-width / 2;
+//                     margin-left: $grid-gutter-width / 2;
+
+//                     @media only screen and (max-width: 740px) {
+//                         margin-right: - map-get($gutter-widths, mobile) / 2;
+//                         margin-left: - map-get($gutter-widths, mobile) / 2;
+//                     }
+                
+//                     @media only screen and (min-width: 740px) and (max-width: 1023px) {
+//                         margin-right: - map-get($gutter-widths, tablet) / 2;
+//                         margin-left: - map-get($gutter-widths, tablet) / 2;
+//                     }
+                
+//                     @media only screen and (min-width: 1024px) {
+//                         margin-right: - map-get($gutter-widths, desktop) / 2;
+//                         margin-left: - map-get($gutter-widths, desktop) / 2;
+//                     }
+//                 }
+
+//                 .offset-#{$breakpoint}-#{$i} {
+//                     margin-left: percentage($i / $grid-columns);
+//                 }
+//             }
+//         }
+//     }
+// }
+
+// @include make-columns();
+// @include make-offsets();
+// @include make-responsive();
+// @include make-row($gutter-widths);

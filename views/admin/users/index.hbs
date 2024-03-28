@@ -1,0 +1,54 @@
+<div class="admin__panel">
+    <div class="admin__title flex-between v-center">
+        <h4 class="display-small fw-bold ttc">User</h4>
+        <div class="flex g20">
+            <form action="" class="form form--search glass height-full" style="min-height: 45px;">
+                <div class="form__group form__group--collapse flex v-center">
+                    <input type="text" class="form__input form__input--search form__input--transparent"
+                        placeholder="Search for users">
+                    <!-- <button class="icon-btn search__btn">
+                                        <i class="fal fa-search"></i>
+                                    </button> -->
+                </div>
+            </form>
+            <a href="/admin/users/create"
+                class="text add-product-btn glass rounded-8 flex-center tooltips-btn--open por"
+                style="height: 45px; width: 45px; border-radius: 100%;">
+                <i class="fal fa-plus"></i>
+                <div class="tooltips tooltips--left">Add new user</div>
+            </a>
+        </div>
+    </div>
+
+    <main class="admin__panel__main order__main mt30">
+        <table class="table user__table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>User name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- order item render here -->
+                {{#each users}}                
+                    <tr>
+                        <td>{{@index}}</td>
+                        <td>{{this.firstName}} {{this.lastName}}</td>
+                        <td>{{this.email}}</td>
+                        <td>
+                            <span class="role role--{{this.role}}">
+                                {{this.role}}
+                            </span>
+                        </td>
+                        <td class="flex-center">
+                            <a href="/admin/users/detail/{{this._id}}" class="btn primary-text-btn detail-btn">Detail</a>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </main>
+</div>

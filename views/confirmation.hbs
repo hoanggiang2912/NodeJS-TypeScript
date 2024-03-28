@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="/assets/image/favicon.webp" type="image/x-icon">
+    <!-- css styling link -->
+    <link rel="stylesheet" href="/css/app.css" />
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- javascript link -->
+    <script type="module" src="/js/main.js" defer></script>
+    <script type="module" src="/js/confirmation.js" defer></script>
+</head>
+
+<body class="por">
+    <div class="container third-font">
+        <!-- page content start -->
+        <section class="checkout__wrapper">
+            <main class="checkout__main grid">
+                <div class="row no-gutters">
+                    <div class="checkout__info__side col l-7 m-6 c-12 flex">
+                        <div class="inner p60">
+                            <div class="logo" style="max-width: 9rem; max-inline-size: 9rem;">
+                                <img src="/assets/image/icon-logo.png" alt="">
+                            </div>
+                            <div class="respon__checkout__box width-full hide-on-desktop hide-on-tablet mt30">
+                                <div
+                                    class="toggle__respon__box secondary-bg flex-between v-center width-full p20 border-bottom">
+                                    <button class="primary-text-btn flex g12 v-center">
+                                        <i class="fab fa-opencart"></i>
+                                        Show order summary
+                                        <i class="fal fa-chevron-down" style="font-size: 12px;"></i>
+                                    </button>
+                                    <p class="body-large fw-smb total">${{bill.total}}</p>
+                                </div>
+                                <div
+                                    class="respon__checkout__box--inner secondary-bg hide-on-desktop hide-on-tablet p20">
+                                    <div class="bill__products flex-column g20">
+                                        {{#each bill.products}} 
+                                            <!-- single bill product start -->
+                                            <div class="bill__product flex v-center g20">
+                                                <div class="bill__product__banner__wrapper por">
+                                                    <div class="banner-contain bill__product__banner poa abs-full"
+                                                        style="background-image: url('/uploads/{{this.image}}')">
+                                                    </div>
+                                                    <span class="label-small poa bill__product__qty">{{this.qty}}</span>
+                                                </div>
+                                                <div class="bill__product__info flex-full flex-between v-center g12">
+                                                    <div class="flex-column">
+                                                        <div class="title-medium fw-normal bill__product__name">{{this.title}}</div>
+                                                        <div class="label-medium fw-normal bill__product__category neutral-text60">{{this.idCategory.name}}</div>
+                                                    </div>
+                                                    <div class="label-large fw-normal bill__product__price">
+                                                        {{#if this.salePrice}}
+                                                            ${{this.salePrice}}
+                                                        {{else}}
+                                                            ${{this.price}}
+                                                        {{/if}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- single bill product end -->
+                                        {{/each}}
+                                    </div>
+                                    <form action="" class="form discount__form mt20">
+                                        <div class="form__group flex g12">
+                                            <input type="text" class="form__input">
+                                            <button class="secondary-fill-btn">Apply</button>
+                                        </div>
+                                    </form>
+                                    <div class="summary mt20">
+                                        <div class="summary__row flex-between v-center">
+                                            <p class="body-medium fw-medium">Subtotal</p>
+                                            <p class="body-medium fw-medium subtotal">$42</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="body-medium fw-medium">Shipping</p>
+                                            <p class="body-small fw-medium neutral-text60 shipping__fee">$12</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="title-medium fw-medium">Total</p>
+                                            <p class="title-medium fw-medium total">$42</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="body-large fw-light neutral-text40 mt20 text">Mã xác nhận <span
+                                    class="trackingId">{{bill._id}}</span> </div>
+                            <div class="title-large fw-normal text">Cảm ơn <span class="customer__name">{{bill.firstName}} {{bill.lastName}}</span> </div>
+
+                            <div class="mt30 rounded-8 border">
+                                <div class="p20">
+                                    <p class="body-large fw-normal">Your ordered has been accepted</p>
+                                    <p class="body-medium fw-normal mt6 text">Our staff will call to cofirm your order!
+                                    </p>
+                                </div>
+                                <div class="flex p20 g6 custom__checkbox__wrapper v-center border-top secondary-bg">
+                                    <input type="" style="display: none !important" name="" id="contactCheckbox" />
+                                    <div class="oh custom__checkbox contact__checkbox flex-center"><i
+                                            class="fa-solid fa-check checkbox__icon"></i></div>
+                                    <label for="contactCheckbox"
+                                        class="body-medium fw-normal custom__checkbox__label">Email me with news and
+                                        offers</label>
+                                </div>
+                            </div>
+
+                            <div class="mt30 rounded-8 border p20">
+                                <div class="body-large fw-normal">Customer Informations</div>
+
+                                <div class="mt30 text-group">
+                                    <div class="body-medium fw-smb">Contact Information</div>
+                                    <div class="body-medium fw-normal text mt12 user__email">{{bill.email}}</div>
+                                </div>
+                                <div class="mt30 text-group">
+                                    <div class="body-medium fw-smb">Payment Method</div>
+                                    <div class="body-medium fw-normal text mt12 payment__method__name">{{bill.paymentMethod}}</div>
+                                </div>
+                                <div class="mt30 text-group">
+                                    <div class="body-medium fw-smb">Shipping Method</div>
+                                    <div class="body-medium fw-normal text mt12 shipping__method__name">{{bill.shippingMethod}}</div>
+                                </div>
+                                <div class="mt30 text-group">
+                                    <div class="body-medium fw-smb">Address</div>
+                                    <div class="body-medium fw-normal text mt12 user__address">{{bill.address}}</div>
+                                </div>
+                            </div>
+
+                            <div class="flex width-full mt20 j-end width-full">
+                                <a href="/" class="btn continue-btn primary-fill-btn hover-fade rounded-8"
+                                    style="max-width: unset; width: fit-content; padding-block: 20px">
+                                    Continue Shopping
+                                    <i class="fal fa-chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout__product__side col l-5 m-6 c-12 flex hide-on-mobile">
+                        <div class="inner">
+                            <div class="bill__products flex-column g20">
+                                {{#each bill.products}}
+                                    <!-- single bill product start -->
+                                    <div class="bill__product flex v-center g20">
+                                        <div class="bill__product__banner__wrapper por" style="min-width: 90px">
+                                            <div class="banner-contain bill__product__banner poa abs-full"
+                                                style="background-image: url('/uploads/{{this.image}}')">
+                                            </div>
+                                            <span class="label-small poa bill__product__qty">{{this.qty}}</span>
+                                        </div>
+                                        <div class="bill__product__info flex-full v-center g12">
+                                            <div class="flex-column flex-full">
+                                                <div class="title-medium fw-normal bill__product__name flex-full ttu">{{this.title}}</div>
+                                                <div class="label-medium fw-normal bill__product__category neutral-text60 ttc">{{this.idCategory.name}}</div>
+                                            </div>
+                                            <div class="label-large fw-normal bill__product__price">
+                                                {{#if this.salePrice}}
+                                                    ${{this.salePrice}}
+                                                {{else}}
+                                                    ${{this.price}}
+                                                {{/if}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single bill product end -->
+                                {{/each}}
+                            </div>
+                            <div class="summary mt20">
+                                <div class="summary__row flex-between v-center">
+                                    <p class="body-medium fw-medium">Subtotal</p>
+                                    <p class="body-medium fw-medium subtotal">${{bill.subTotal}}</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="body-medium fw-medium">Shipping</p>
+                                    <p class="body-small fw-medium neutral-text60 shipping__fee">${{bill.shippingFee}}</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="title-medium fw-medium">Total</p>
+                                    <p class="title-medium fw-medium total">${{bill.total}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <!-- page content end -->
+    </div>
+</body>
+
+</html>

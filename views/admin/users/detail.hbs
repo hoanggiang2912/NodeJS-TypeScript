@@ -1,0 +1,188 @@
+<div class="admin__panel">
+    <div class="admin__title flex-between v-center">
+        <h4 class="display-small fw-bold ttc">User Details</h4>
+        {{!-- <form action="" class="form form--search glass">
+            <div class="form__group form__group--collapse flex v-center">
+                <input type="text" class="form__input form__input--transparent" placeholder="Search for ">
+                <button class="icon-btn search__btn">
+                    <i class="fal fa-search"></i>
+                </button>
+            </div>
+        </form> --}}
+    </div>
+
+    <form action="#" class="form admin__user__form">
+        <main class="admin__panel__main product-detail__panel row">
+            <div class="col l-4 m-6 c-12">
+                <div class="col__inner admin__product__wrapper">
+                    <!-- single user start -->
+                    <div class="glass p20 rounded-8 mt60 admin__user">
+                        <div class="flex g20">
+                            <div class="admin__user__image por" style="width: 100px; height: 100px;">
+                                <img src="/assets/image/banners/default-avt.jpg" alt="Product image"
+                                    class="admin__user__img abs-full rounded-8">
+                            </div>
+                            <div class="admin__user__info flex-column flex-between">
+                                <div class="info__row flex g12">
+                                    <h4 class="title-medium fw-bold ttc tal">Name:</h4>
+                                    <p class="text body-large admin__user__info--userName">{{user.firstName}} {{user.lastName}}</p>
+                                </div>
+                                <div class="info__row flex v-center g12">
+                                    <h4 class="title-medium fw-bold ttc tal">Role:</h4>
+                                    <div class="form__group">
+                                        <select type="text"
+                                            class="form__input form__input--role form__input--transparent">
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- <div class="mt12">
+                            <div class="info__row flex g12">
+                                <h4 class="title-medium fw-bold ttc tal">Email:</h4>
+                                <p class="text body-large admin__user__info--email">{{user.email}}</p>
+                            </div>
+                            <div class="info__row flex mt12 g12">
+                                <h4 class="title-medium fw-bold ttc tal">Password:</h4>
+                                <p class="text body-large admin__user__info--password">{{user.password}}</p>
+                            </div>
+                        </div> --}}
+                    </div>
+                    <!-- single user end -->
+                    <div class="mt20">
+                        <button type="button" class="reset-password__strigger cp width-full glass p20 rounded-8 flex flex-center g6 tooltips-btn--open por">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M22 2L11 13" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="black" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </svg>
+                            Reset Password Strigger
+
+                            <div class="tooltips tooltips--bottom">
+                                We will send an email to the user with new passwowd!
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-8 m-6 c-12 mt60">
+                <div class="row">
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">First name</h4>
+                            <input type="text" class="form__input form__input--firstName" value="{{user.firstName}}">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Last name</h4>
+                            <input type="text" class="form__input form__input--lastName" value="{{user.lastName}}">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Email</h4>
+                            <input type="text" class="form__input form__input--email" value="{{user.email}}">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    {{!-- <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Password</h4>
+                            <input type="text" class="form__input form__input--password">
+                            <span class="form__message"></span>
+                        </div>
+                    </div> --}}
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Phone</h4>
+                            <input type="text" class="form__input form__input--phone" value="{{user.phone}}">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">User note</h4>
+                            <textarea type="text" rows="10" class="form__input form__input--note">{{user.note}}</textarea>
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="flex-between v-center mt30">
+            <a href="/admin/users" class="btn primary-text-btn fw-bold back-btn flex g12">
+                <i class="fas fa-arrow-left"></i>
+                Back to Users
+            </a>
+            <div class="flex g20">
+                <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center    ">
+                    <i class="fal fa-times"></i>
+                    Cancel
+                </button>
+                <button class="btn save-btn save-user-info-btn rounded-8 g12 flex auto-set-width v-center  ">
+                    <i class="fal fa-save"></i>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+
+    <div class="admin__title flex-between v-center mt30">
+        <h4 class="display-small fw-bold ttc">User's Bill</h4>
+        <div class="flex g12">
+            <form action="" class="form form--search glass">
+                <div class="form__group form__group--collapse flex v-center">
+                    <input type="text" class="form__input form__input--transparent" placeholder="Search for user's bill">
+                    <button class="icon-btn search__btn">
+                        <i class="fal fa-search"></i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <main class="admin__panel__main user-bill__panel row mt30">
+        <table class="table order__table">
+            <tbody>
+                <tr>
+                    <th>Tracking ID</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+        
+                <!-- order item render here -->
+                {{#if userBills.length}}
+                    {{#each userBills}}
+                    <!-- single product start -->
+                    <tr>
+                        <td>#{{this._id}}</td>
+                        <td>{{this.products.length}}</td>
+                        <td>{{ this.date }}</td>
+                        <td>
+                            <span class="status status--{{this.status}}">{{this.status}}</span>
+                        </td>
+                        <td>
+                            <a href="/admin/orders/detail/{{this._id}}" class="btn primary-text-btn detail-btn">Detail</a>
+                        </td>
+                    </tr>
+                    <!-- single product end -->
+                    {{/each}}
+
+                    {{else}}
+                    <tr>
+                        <td colspan="5" class="width-full flex-center tac">No bill found</td>
+                    </tr>
+                {{/if}}
+            </tbody>
+        </table>
+    </main>
+</div>
+
+<script type="module" src="/js/adminUserDetail.js"></script>

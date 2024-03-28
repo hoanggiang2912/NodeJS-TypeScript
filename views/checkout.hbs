@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Equator</title>
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="/assets/image/favicon.webp" type="image/x-icon">
+    <!-- css styling link -->
+    <link rel="stylesheet" href="/css/app.css" />
+    <!-- font awesome link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
+
+    <!-- jquery link -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- javascript link -->
+    <script type="module" src="/js/main.js" defer></script>
+    <script type="module" src="/js/checkout.js" defer></script>
+</head>
+
+<body class="por">
+    <div class="container third-font">
+
+        <!-- page content start -->
+        <section class="checkout__wrapper">
+            <main class="checkout__main grid">
+                <div class="row no-gutters">
+                    <div class="checkout__info__side col l-7 m-6 c-12 flex j-end">
+                        <div class="inner">
+                            <div class="logo" style="max-width: 9rem; max-inline-size: 9rem;">
+                                <img src="/assets/image/icon-logo.png" alt="">
+                            </div>
+                            <div class="respon__checkout__box width-full mt30 hide-on-desktop hide-on-tablet">
+                                <div
+                                    class="toggle__respon__box secondary-bg flex-between v-center width-full p20 border-bottom">
+                                    <button class="primary-text-btn flex g12 v-center">
+                                        <i class="fab fa-opencart"></i>
+                                        Show order summary
+                                        <i class="fal fa-chevron-down" style="font-size: 12px;"></i>
+                                    </button>
+                                    <p class="body-large fw-smb subtotal">$92</p>
+                                </div>
+                                <div
+                                    class="respon__checkout__box--inner secondary-bg hide-on-desktop hide-on-tablet p20">
+                                    <div class="bill__products flex-column g20">
+
+                                    </div>
+                                    <form action="" class="form discount__form mt20">
+                                        <div class="form__group flex g12">
+                                            <input type="text" class="form__input">
+                                            <button class="secondary-fill-btn">Apply</button>
+                                        </div>
+                                    </form>
+                                    <div class="summary mt20">
+                                        <div class="summary__row flex-between v-center">
+                                            <p class="body-medium fw-medium">Subtotal</p>
+                                            <p class="body-medium fw-medium subtotal">$</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="body-medium fw-medium">Shipping</p>
+                                            <p class="body-small fw-medium neutral-text60">Calculated at next step</p>
+                                        </div>
+                                        <div class="summary__row flex-between mt12 v-center">
+                                            <p class="title-medium fw-medium">Total</p>
+                                            <p class="title-medium fw-medium total">$</p>
+                                        </div>
+                                    </div>
+                                    <div class="bill__products--bought-together mt20">
+                                        <h4 class="title-medium fw-bold ttu tac">FREQUENTLY BOUGHT TOGETHER</h4>
+                                        <div class="bill__products__holder mt20 flex-column g20">
+                                            <!-- single bill product start -->
+                                            <!-- <div class="bill__product border flex v-center g20 p20 rounded-8">
+                                                <div class="bill__product__banner__wrapper por">
+                                                    <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/assets/image/products/curated-single-origin-subscription-20231221_1_3000x.webp')"></div>
+                                                </div>
+                                                <div class="bill__product__info flex-full flex-between v-center g12">
+                                                    <div class="flex-column">
+                                                        <div class="title-medium fw-normal bill__product__name">El Salvador Los Pirineos Orange Pacamara</div>
+                                                        <div class="label-medium fw-normal bill__product__category neutral-text60">Whole Bean / 12oz</div>
+                                                        <div class="label-large fw-normal bill__product__price primary-text">$42.00</div>
+                                                    </div>
+                                                    <button class="add-bill-btn secondary-fill-btn hover primary-text">Add</button>
+                                                </div>
+                                            </div> -->
+                                            <!-- single bill product end -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <nav class="nav checkout__nav label-medium fw-normal flex g12 v-center mt20">
+                                <div class="nav__item active">
+                                    <a href="" class="nav__link">Cart</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item current">
+                                    <a href="" class="nav__link">Information</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item">
+                                    <a href="" class="nav__link">Shipping</a>
+                                </div>
+                                <i class="far fa-chevron-right"></i>
+                                <div class="nav__item">
+                                    <a href="" class="nav__link">Payment</a>
+                                </div>
+                            </nav>
+                            <form action="" class="form checkout__form mt30">
+                                <div class="form__error__message primary-text body-medium fw-smb alert-text"></div>
+                                <div class="form__group">
+                                    <div class="flex-between">
+                                        <h4 class="title-medium fw-smb">Contact</h4>
+                                        <p class="body-medium fw-medium">Have an account? <a href="/login"
+                                                class="primary-text">Login</a></p>
+                                    </div>
+                                    <input type="text" class="form__input email__input mt12">
+                                    <span class="form__message"></span>
+                                    <div class="flex g6 custom__checkbox__wrapper v-center mt20">
+                                        <input type="" style="display: none !important" name="" id="contactCheckbox" />
+                                        <div class="custom__checkbox contact__checkbox flex-center"><i
+                                                class="fa-solid fa-check checkbox__icon"></i></div>
+                                        <label for="contactCheckbox"
+                                            class="body-medium fw-normal custom__checkbox__label">Email me with news and
+                                            offers</label>
+                                    </div>
+                                </div>
+                                <h4 class="title-medium fw-smb mt30">Shipping address</h4>
+                                <div class="flex g12">
+                                    <div class="form__group mt20">
+                                        <input type="text" class="form__input firstname__input"
+                                            placeholder="First name">
+                                        <span class="form__message"></span>
+                                    </div>
+                                    <div class="form__group mt20">
+                                        <input type="text" class="form__input lastname__input" placeholder="Last name">
+                                        <span class="form__message"></span>
+                                    </div>
+                                </div>
+                                <div class="form__group form__group--icon oh rounded-8 mt20 border por">
+                                    <input type="text" placeholder="Address"
+                                        class="input form__input form__input--icon address__input form__input--transparent no-effect"/>
+                                    <button class="icon abs-centerY"><i class="far fa-search"></i></button>
+                                    <span class="form__message"></span>
+                                </div>
+                                <div class="form__group mt20">
+                                    <input type="text" class="form__input subaddress__input"
+                                        placeholder="Apartment, suite, etc.(optional)">
+                                </div>
+                                <div class="form__group mt20">
+                                    <input type="text" class="form__input phone__input" placeholder="Phone">
+                                    <span class="form__message"></span>
+                                </div>
+                                <div class="flex flex-between width-full mt20">
+                                    <button class="primary-text-btn hover-fade">
+                                        <i class="fal fa-chevron-left"></i>
+                                        Return to cart
+                                    </button>
+                                    <button class="btn primary-fill-btn continue-btn hover-fade rounded-8"
+                                        style="max-width: unset; width: fit-content; padding-block: 20px">
+                                        Continue to shipping
+                                        <i class="fal fa-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="checkout__product__side col l-5 m-6 c-12 flex hide-on-mobile">
+                        <div class="inner">
+                            <div class="bill__products flex-column g20">
+                                <!-- single bill product start -->
+                                <!-- <div class="bill__product flex v-center g20">
+                                    <div class="bill__product__banner__wrapper por">
+                                        <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/assets/image/products/curated-single-origin-subscription-20231221_1_3000x.webp')"></div>
+                                        <span class="label-small poa bill__product__qty">2</span>
+                                    </div>
+                                    <div class="bill__product__info flex-full flex-between v-center g12">
+                                        <div class="flex-column">
+                                            <div class="title-medium fw-normal bill__product__name">El Salvador Los Pirineos Orange Pacamara</div>
+                                            <div class="label-medium fw-normal bill__product__category neutral-text60">Whole Bean / 12oz</div>
+                                        </div>
+                                        <div class="label-large fw-normal bill__product__price">$42.00</div>
+                                    </div>
+                                </div> -->
+                                <!-- single bill product end -->
+                            </div>
+                            <form action="" class="form discount__form mt20">
+                                <div class="form__group flex g12">
+                                    <input type="text" class="form__input">
+                                    <button class="secondary-fill-btn">Apply</button>
+                                </div>
+                            </form>
+                            <div class="summary checkout__summary mt20">
+                                <div class="summary__row flex-between v-center">
+                                    <p class="body-medium fw-medium">Subtotal</p>
+                                    <p class="body-medium fw-medium subtotal">$42</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="body-medium fw-medium">Shipping</p>
+                                    <p class="body-small fw-medium neutral-text60">Calculated at next step</p>
+                                </div>
+                                <div class="summary__row flex-between mt12 v-center">
+                                    <p class="title-medium fw-medium">Total</p>
+                                    <p class="title-medium fw-medium total">$42</p>
+                                </div>
+                            </div>
+                            <div class="bill__products--bought-together mt20">
+                                <h4 class="title-medium fw-bold ttu tac">FREQUENTLY BOUGHT TOGETHER</h4>
+                                <div class="bill__products__holder mt20 flex-column g20">
+                                    <!-- single frequently bought together product start -->
+                                    <!-- <div class="bill__product border flex v-center g20 p20 rounded-8">
+                                        <div class="bill__product__banner__wrapper por">
+                                            <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/assets/image/products/curated-single-origin-subscription-20231221_1_3000x.webp')"></div>
+                                        </div>
+                                        <div class="bill__product__info flex-full flex-between v-center g12">
+                                            <div class="flex-column">
+                                                <div class="title-medium fw-normal bill__product__name">El Salvador Los Pirineos Orange Pacamara</div>
+                                                <div class="label-medium fw-normal bill__product__category neutral-text60">Whole Bean / 12oz</div>
+                                                <div class="label-large fw-normal bill__product__price primary-text">$42.00</div>
+                                            </div>
+                                            <button class="add-bill-btn secondary-fill-btn hover primary-text">Add</button>
+                                        </div>
+                                    </div> -->
+                                    <!-- single frequently bought together product end -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <!-- page content end -->
+    </div>
+</body>
+
+</html>

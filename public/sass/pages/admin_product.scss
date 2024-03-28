@@ -1,0 +1,62 @@
+.glass {
+    border: 1px solid #FFF;
+    box-shadow: 0px 0px 4px 2px rgba(255, 255, 255, 0.25);
+    background: linear-gradient(92deg, rgba(255, 255, 255, 0.60) 0%, rgba(255, 255, 255, 0.60) 105.54%);
+}
+
+.overlay--popup {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+
+    .popup {
+        transform: translateY(100px) translate(-50%, -50%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease-in-out;
+
+        &.show {
+            transform: translateY(0) translate(-50%, -50%);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.admin__panel__main.product__panel {
+    margin-inline: -6px;
+    .col {
+        padding-inline: 6px;
+        margin-top: 12px;
+    }
+}
+
+.form--search {
+    display: flex;
+    width: 36rem;
+    overflow: hidden;
+    padding: .2rem 1.2rem;
+    border-radius: 10rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .form__group--collapse {
+        .form__input--transparent {
+            padding: 0;
+            padding-inline: 1rem;
+
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+}

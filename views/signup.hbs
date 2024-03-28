@@ -1,0 +1,33 @@
+<main class="main signup__main third-font header__next flex-center p60">
+    <form action="" method="post" class="form form--signup form--user__info flex-column g20">
+        <div class="tac">
+            <h2 class="display-small ttu fw-bold">create account</h2>
+            <p class="body-small fw-normal mt12 mb12">Already have an account? <a href="/login" class="primary-text">Log in
+                    here</a></p>
+        </div>
+        <span class="form__error__message alert-text body-medium fw-smb p12"></span>
+        <div class="form__group">
+            <input type="text" class="form__input email__input" placeholder="Email">
+            <span class="form__group__title fw-bold label-medium">Email</span>
+            <span class="form__message"></span>
+        </div>
+        <div class="form__group">
+            <input type="text" class="form__input phone__input" placeholder="Phone">
+            <span class="form__group__title fw-bold label-medium">Phone</span>
+            <span class="form__message"></span>
+        </div>
+        <div class="form__group form__group--icon">
+            <span class="form__group__title fw-bold label-medium">Password</span>
+            <div class="flex v-center">
+                <input type="password" class="form__input form__input--password password__input" placeholder="Password">
+                <button type="button" class="toggle-password"><i class="fal fa-eye"></i></button>
+            </div>
+            <span class="form__message"></span>
+        </div>
+        <div class="form__group">
+            <button class="btn signup-btn form__btn primary-fill-btn hover auto-set-width fw-bold">Create</button>
+        </div>
+    </form>
+</main>
+
+<script type="module" src="/js/signup.js"></script>

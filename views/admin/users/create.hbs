@@ -1,0 +1,114 @@
+<div class="admin__panel">
+    <div class="admin__title">
+        <h4 class="display-small fw-bold ttc">Add user</h4>
+    </div>
+
+    <form action="#" class="form admin__user__form">
+        <main class="admin__panel__main product-detail__panel row">
+            <div class="col l-4 m-6 c-12">
+                <div class="col__inner admin__product__wrapper">
+                    <!-- single user start -->
+                    <div class="glass p20 rounded-8 mt60 admin__user">
+                        <div class="flex g20">
+                            <div class="admin__user__image por" style="width: 100px; height: 100px;">
+                                <img src="/assets/image/banners/default-avt.jpg" alt="Product image"
+                                    class="admin__user__img abs-full rounded-8">
+                            </div>
+                            <div class="admin__user__info flex-column flex-between">
+                                <div class="info__row flex g12">
+                                    <h4 class="title-medium fw-bold ttc tal">Name:</h4>
+                                    <p class="text body-large admin__user__info--userName"></p>
+                                </div>
+                                <div class="info__row flex v-center g12">
+                                    <h4 class="title-medium fw-bold ttc tal">Role:</h4>
+                                    <div class="form__group">
+                                        <select type="text"
+                                            class="form__input form__input--role form__input--transparent">
+                                            <option value="user">User</option>
+                                            <option value="admin">Admin</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {{!-- <div class="mt12">
+                            <div class="info__row flex g12">
+                                <h4 class="title-medium fw-bold ttc tal">Email:</h4>
+                                <p class="text body-large admin__user__info--email"></p>
+                            </div>
+                            <div class="info__row flex mt12 g12">
+                                <h4 class="title-medium fw-bold ttc tal">Password:</h4>
+                                <p class="text body-large admin__user__info--password"></p>
+                            </div>
+                        </div> --}}
+                    </div>
+                    <!-- single user end -->
+                </div>
+            </div>
+            <div class="col l-8 m-6 c-12 mt60">
+                <div class="row">
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">First name</h4>
+                            <input type="text" class="form__input form__input--firstName">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Last name</h4>
+                            <input type="text" class="form__input form__input--lastName">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Email <span class="alert-text">*</span></h4>
+                            <input type="text" class="form__input form__input--email">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Password <span class="alert-text">*</span></h4>
+                            <input type="text" class="form__input form__input--password">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Phone <span class="alert-text">*</span></h4>
+                            <input type="text" class="form__input form__input--phone">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                    <div class="col l-6 m-6 c-12">
+                        <div class="form__group glass p12 rounded-8 oh mb24">
+                            <h4 class="title-medium fw-bold ttc tal mb12">Note</h4>
+                            <input type="text" class="form__input form__input--note">
+                            <span class="form__message"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <div class="flex-between v-center mt30">
+            <a href="/admin/users" class="btn primary-text-btn fw-bold back-btn flex g12">
+                <i class="fas fa-arrow-left"></i>
+                Back to users
+            </a>
+            <div class="flex g20">
+                <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center    ">
+                    <i class="fal fa-times"></i>
+                    Cancel
+                </button>
+                <button class="btn form__btn form__btn--addUser save-btn rounded-8 g12 flex auto-set-width v-center  ">
+                    <i class="fal fa-plus"></i>
+                    Add User
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="module" src="/js/adminAddUser.js"></script>

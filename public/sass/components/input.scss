@@ -1,0 +1,110 @@
+.input {
+    border: 1px solid $neutral30;
+    padding: 14px 20px;
+}
+.select__input {
+    background: $bg;
+    border: 1px solid $border;
+    padding: 10px 12px;
+}
+
+.form__input--transparent {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+}
+
+.form__group--icon {
+    border: 1px solid $border;
+    padding-right: 20px;
+    
+    input {
+        border: none !important;
+    }
+}
+
+.form__group {
+    width: 100%;
+
+    .form__message {
+        margin-top: 12px !important;
+    }
+
+    .form__input {
+        border: 1px solid $neutral90;
+        border-radius: 8px;
+        width: 100%;
+        padding: 12px 14px;
+        transition: .25s linear;
+
+        &:focus {
+            box-shadow: 0 0 0 2px $primary;
+        }
+
+        &.no-effect {
+            &:focus {
+                box-shadow: none;
+            }
+        }
+    }
+
+    .form__input--icon {
+        padding-right: 40px;
+    }
+
+    .discount__btn {
+        padding: 20px;
+        background: $light-gray;
+        border-radius: 8px;
+        color: $neutral60;
+        border: 1px solid $neutral80;
+    }
+}
+.form__group.invalid {
+    .form__input {
+        border: 1px solid $primary;
+    }
+    .form__message {
+        color: $primary;
+    }
+}
+.form__group--icon {
+    .icon {
+        right: 20px;
+    }
+}
+.form--user__info {
+    min-width: min(500px , 100%);
+
+    .form__group {
+        position: relative;
+
+        &__title {
+            background: $bg;
+            padding: 6px;
+            position: absolute;
+            top: 0;
+            transform: translateY(-60%);
+            left: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease-in-out;
+        }
+        &__title.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .form__input {
+            border-radius: 0;
+            border: 1px solid $border;
+            padding: 8px 16px;
+    
+            &:focus {
+                border-color: $border-dark;
+                box-shadow: none;
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,22 @@
+.user__account__details__form {
+    display: grid;
+    grid-template-rows: 1fr;
+    
+    .form__group {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+
+        .form__label {
+            line-height: 43px;
+        }
+
+        .form__input {
+            font-weight: lighter;
+            color: $neutral30;
+        }
+
+        .form__message {
+            grid-column: span 2;
+        }
+    }
+}

@@ -1,0 +1,132 @@
+<!-- page content start -->
+
+<!-- hero banner start -->
+<div class="hero__banner--mini width-full por header__next">
+    <div class="abs-full z-1">
+        <div class="background__wrapper por width-full height-full">
+            <div class="background__img abs-full banner-cover"
+                style="background-image: url(/assets/image/banners/all-481102_46949ae4-c0b3-4318-a997-96e1dbadf37f_1950x.webp);">
+            </div>
+        </div>
+    </div>
+    <div class="hero__banner__overlay abs-full z-10 flex-center">
+        <div class="tac text-white">
+            <h2 class="headline-large fw-bold ttc">{{categoryName}}</h2>
+            <p class="body-large sub-font fw-light">Free Shipping on All $40+ Orders</p>
+        </div>
+    </div>
+</div>
+<!-- hero banner end -->
+
+<!-- shop main start -->
+<main class="section full shop__section">
+    <section class="grid wide filter__bar flex-between">
+        <span class="label-medium sub-font fw-light result__amount">{{products.length}} sản phẩm</span>
+        <div class="flex g20">
+            <select name="shop__filter--category" id="shop__filter--category" class="select__input form__input ttc">
+                <option value="0" selected>Danh mục: Tất cả</option>
+                {{#each categories}}
+                    <option class="ttc" value="{{this._id}}">{{this.name}}</option>
+                {{/each}}
+            </select>
+            <select name="shop__filter--price" id="shop__filter--price" class="select__input">
+                <option value="0" selected>Giá: Mặc định</option>
+                <option value="1">Giá: Thấp tới cao</option>
+                <option value="2">Giá: Cao tới thấp</option>
+            </select>
+        </div>
+    </section>
+    <section class="product__section mt30">
+        <div class="grid wide">
+            <div class="product__wrapper row">
+                {{#each products}}
+                    <!-- single product start -->
+                    <div class="product primary__product col l-4 m-6 c-12 mt20 flex-center">
+                        <a href="/singleProduct/{{this.id}}" class="product__link width-full">
+                            <div class="product__inner flex-column flex-full height-full">
+                                <div class="product__banner__wrapper por oh">
+                                    <div class="product__banner banner-contain poa"
+                                        style="background-image: url('/uploads/{{this.background.main}}')">
+                                    </div>
+                                    <div class="product__banner product__banner--sub__banner banner-contain poa"
+                                        style="background-image: url('/uploads/{{this.background.sub}}')">
+                                    </div>
+                                    <button class="add-cart-btn hover btn primary-fill-btn width-full poa" style="max-width: none;" data-id="{{this.id}}" data-name="{{this.title}}" data-price="{{this.price}}" data-img="{{this.background.main}}" data-id-category="{{this.idCategory._id}}"><i
+                                            class="fa fa-plus"></i> Add to cart</button>
+                                </div>
+                                <div class="product__info">
+                                    <div class="product__name ttu tal label-medium fw-bold mt6 text">{{this.title}}</div>
+                                    <div class="product__price tal body-small mt6 text">${{this.price}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- single product end -->
+                {{/each}}
+            </div>
+        </div>
+    </section>
+    <div class="pagination__wrapper width-full mt30 flex-center">
+        <div class="pagination__inner flex">
+            <button class="pagination__item pagination__prev">
+                <a href="#" class="pagination__link"><i class="fal fa-chevron-left"></i></a>
+            </button>
+            <div class="pagination__item pagination__ind__wrapper">
+                {{#each pages}} 
+                    <div class="pagination__ind" data-page="{{this}}"><a href="/shop?page={{this}}" class="pagination__link active">{{this}}</a></div>
+                {{/each}}
+            </div>
+            <button class="pagination__item pagination__next">
+                <a href="#" class="pagination__link"><i class="fal fa-chevron-right"></i></a>
+            </button>
+        </div>
+    </div>
+</main>
+<!-- shop main end -->
+
+<!-- shopify section start -->
+<section class="section full shopify__section">
+    <div class="grid wide">
+        <div class="row no-gutters wrap-reverse">
+            <div class="col l-6 m-6 c-12 flex v-center text-block">
+                <div class="tal">
+                    <div class="flex-column g30">
+                        <h2 class="display-small fw-black ttu">COFFEE, MADE EASY</h2>
+                        <p class="body-large sub-font fw-light">Subscribe and receive all of your favorite coffees
+                            delivered fresh, straight to your doorstep.</p>
+                        <button class="btn primary-fill-btn hover-outline ttu fw-bold ttc">explore subscription
+                            coffees</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-6 m-6 c-12" style="min-height: 300px;">
+                <div class="background__wrapper por width-full height-full" style="padding-top: 70%">
+                    <div class="background__img poa abs-full banner-cover"
+                        style="background-image: url('/assets/image/banners/20210106_EquatorCoffees_Subscrip_1.webp')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- shopify section end -->
+
+<!-- sign up section start -->
+<section class="sign-up-widget flex-center flex-wrap g12">
+    <span class="body-small fw-bold widget-text">Sign up for Black Friday & Cyber Monday deals: </span>
+    <form action="#" class="form hero-contact__form">
+        <input type="submit" value="" hidden id="hero-email">
+        <div class="form__group flex por">
+            <input type="text" class="input email__input flex-full body-medium sub-font fw-light"
+                placeholder="EMAIL ADDRESS" style="min-width: 300px;">
+            <label for="hero-email" class="submit__label text fw-bold body-large abs-centerY">
+                <button class="btn text-btn">join</button>
+            </label>
+        </div>
+    </form>
+</section>
+<!-- sign up section end -->
+
+
+<!-- page content end -->
+<script type="module" src="/js/shop.js"></script>

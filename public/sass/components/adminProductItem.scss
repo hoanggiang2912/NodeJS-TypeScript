@@ -1,0 +1,33 @@
+.admin__product {
+    margin-top: 24px;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 4;
+    
+    .admin__product__inner {
+        .admin__product__image {
+            width: 9rem;
+            height: 9rem;
+            flex-shrink: 0;
+            border-radius: 2rem;
+            overflow: hidden;
+            margin-right: 2rem;
+            border: 1px solid $--gray;
+        }
+
+        .product__description,
+        .product__category__name {
+            &:hover {
+                color: #232323;
+            }
+        }
+    }
+
+    &:hover {
+        .admin__product__name {
+            text-decoration: underline;
+            text-decoration-color: $primary;
+        }
+    }
+}

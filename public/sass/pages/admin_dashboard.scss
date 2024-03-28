@@ -1,0 +1,69 @@
+.admin__wrapper {
+    background-image: url('/assets/image/banners/admin_background-1.svg');
+    min-height: 100vh;
+    .admin__inner {
+        width: 100%;
+        border-radius: 6rem;
+        border: 1px solid #FFF;
+        background: linear-gradient(119deg, rgba(255, 255, 255, 0.36) 0.86%, rgba(255, 255, 255, 0.36) 100%);
+        box-shadow: 0px -2px 10px 1px #EEE;
+        backdrop-filter: blur(30px);
+
+        .admin__panel {
+            padding: 6rem 0rem 2rem 2rem;
+            flex: 1 0 0;
+        }
+    }
+}
+
+.admin__panel {
+    .panel__left {
+        .statis__boxes {
+            .statis__box {
+                padding-inline: 6px;
+                padding-block: 6px;
+                // min-width: 220px;
+                transition: .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+            .statis__box--sales {
+                .statis__box__inner {
+                    background: linear-gradient(180deg, #9747FF -6.31%, #A45EFF 100%);
+                }
+            }
+            .statis__box--revenue {
+                .statis__box__inner {
+                    background: linear-gradient(180deg, #FF9D9C -6.31%, #FF4D4B 100%);
+                }
+            }
+            .statis__box--expenses {
+                .statis__box__inner {
+                    background: linear-gradient(180deg, #FFC96C -6.31%, #FFB638 100%);
+                }
+            }
+        }
+
+        
+    }
+}
+
+.status {
+    &--pending {
+        color: $-yellow;
+    }
+    &--delivered {
+        color: $--darkgray;
+    }
+    &--returned {
+        color: $--gray;
+    }
+    &--cancelled {
+        color: $--rose;
+    }
+    &--processing {
+        color: $--blue;
+    }
+}

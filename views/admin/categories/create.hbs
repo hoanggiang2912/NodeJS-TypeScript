@@ -1,0 +1,67 @@
+<div class="admin__panel">
+    <div class="admin__title">
+        <h4 class="display-small fw-bold ttc">Add Category</h4>
+    </div>
+
+    <form action="/category-upload" method="post" class="form pb20 add-category__form admin__panel__main category-detail__panel row mt30">
+        <div class="admin__category__wrapper col l-4 m-6 c-12">
+            <!-- single category start -->
+            <div class="admin__category">
+                <div class="admin__product__inner glass rounded-8 oh p20 flex-column g12">
+                    <div class="flex flex-column">
+                        <h4 class="text body-large fw-smb ttc mb20">Category banner</h4>
+                        <div class="admin__category__banner por pb-full oh">
+                            <input enctype="multipart/form-data" type="file" required name="category-banner" id="category-banner"
+                                class="form__input--category__banner" hidden>
+                        </div>
+                        <div class="flex-center width-full mt20">
+                            <label for="category-banner" class="btn add__gallery__btn flex-center g6">
+                                <i class="fal fa-plus"></i>
+                                Add banner
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single category end -->
+        </div>
+
+        <div class="col l-8 m-6 c-12">
+            <div class="row">
+                <div class="col l-12 m-12 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb24">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Name</h4>
+                        <input type="text" class="form__input form__input--category__name">
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+                <div class="col l-12 m-12 c-12">
+                    <div class="form__group glass p12 rounded-8 oh mb12">
+                        <h4 class="title-medium fw-bold ttc tal mb12">Description</h4>
+                        <textarea name="description" id="description" cols="30" rows="10"
+                            class="form__input form__input--category__description"></textarea>
+                        <span class="form__message"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex-between v-center flex-full mt30">
+            <button class="btn primary-text-btn fw-bold back-btn flex g12">
+                <i class="fas fa-arrow-left"></i>
+                Back to category
+            </button>
+            <div class="flex g20">
+                <button class="btn cancel-btn rounded-8 g12 flex auto-set-width v-center fw-bold">
+                    <i class="fal fa-times"></i>
+                    Cancel
+                </button>
+                <button class="btn save-btn add__category__btn rounded-8 g12 flex auto-set-width v-center fw-bold mr12" type="submit">
+                    <i class="fal fa-save"></i>
+                    Save
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script type="module" src="/js/adminAddCategory.js"></script>

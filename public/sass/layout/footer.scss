@@ -1,0 +1,26 @@
+.footer {
+    .footer__links {
+        .footer__link__item {
+            margin-bottom: 8px;
+        }
+    }
+    .footer__link {
+        color: $text;
+        &:hover {
+            color: $primary;
+        }
+    }
+    .footer__content {
+        .text-block {
+            p {
+                max-width: 80%;
+                @media (max-width: 768px) {
+                    max-width: none;
+                }
+            }
+        }
+    }
+}
+.all__award__footer {
+    background: $-black !important;
+}

@@ -1,0 +1,44 @@
+<div class="admin__panel">
+    <div class="admin__title flex-between v-center">
+        <h4 class="display-small fw-bold ttc">Orders</h4>
+        <form action="" class="form form--search glass">
+            <div class="form__group form__group--collapse flex v-center">
+                <input type="text" class="form__input form__input--transparent" placeholder="Search for order">
+                <button class="icon-btn search__btn">
+                    <i class="fal fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <main class="admin__panel__main order__main mt30">
+        <table class="table order__table">
+            <tbody>
+                <tr>
+                    <th>Tracking ID</th>
+                    <th>Product</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+
+                <!-- order item render here -->
+                {{#each bills}}
+                <!-- single product start -->
+                <tr>
+                    <td>#{{this._id}}</td>
+                    <td>{{this.products.length}}</td>
+                    <td>{{ this.date }}</td>
+                    <td>
+                        <span class="status status--{{this.status}}">{{this.status}}</span>
+                    </td>
+                    <td>
+                        <a href="/admin/orders/detail/{{this._id}}" class="btn primary-text-btn detail-btn">Detail</a>
+                    </td>
+                </tr>
+                <!-- single product end -->
+                {{/each}}
+            </tbody>
+        </table>
+    </main>
+</div>

@@ -1,0 +1,17 @@
+.admin__product__gallery.row {
+    .col {
+        padding-inline: 6px !important;
+        margin-bottom: 12px;
+
+        .col__inner.admin__product__image {
+            width: 100% !important;
+            padding-top: 100%;
+            object-fit: cover !important;
+            margin: 0 !important;
+        }
+    }
+
+}
+.admin__product__gallery__item__preview {
+    background-image: url('/assets/image/banners/no-img.png');
+}

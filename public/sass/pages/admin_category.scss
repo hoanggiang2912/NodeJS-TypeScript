@@ -1,0 +1,15 @@
+.admin__category__statis__text {
+    color: $-blue;
+}
+
+.admin__category {
+    .admin__category__image {
+        width: 9rem;
+        height: 9rem;
+        flex-shrink: 0;
+        border-radius: 2rem;
+        overflow: hidden;
+        margin-right: 2rem;
+        border: 1px solid $--gray;
+    }
+}

@@ -1,0 +1,41 @@
+.bill__info {
+    .bill__info__row {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+    }
+}
+.custom__radio__parent {
+    .custom__radio {
+        border: 1px solid $neutral87;
+        border-radius: 100rem;
+        width: 20px;
+        height: 20px;
+        background-color: transparent;
+        transition: .5s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+}
+.custom__radio__parent.checked {
+    .custom__radio {
+        box-shadow: inset 0 0 0 6px $primary;
+    }
+}
+.radio__boxes {
+    .radio__boxes__holder {
+        .custom__radio__parent {
+            transition: .3s cubic-bezier(0.19, 1, 0.22, 1);
+            &:first-child {
+                border-top-right-radius: 8px;
+                border-top-left-radius: 8px;
+            }
+        
+            &:last-child {
+                border-bottom-right-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+        }
+        .custom__radio__parent.checked {
+            border-color: $primary;
+            background: rgba($color: $primary, $alpha: .05);
+        }
+    }
+}

@@ -1,0 +1,68 @@
+
+<!-- page content start -->
+<main class="main user__order__main header__next">
+    <div class="grid wide">
+        <div class="row">
+            <div class="col l-3 m-0 c-0">
+                <div class="user__sidebar mt60">
+                    {{!-- user sidebar content will go here --}}
+                </div>
+            </div>
+            <div class="col l-9 m-12 c-12">
+                <div class="row mt60">
+                    <div class="col l-12 m-12 c-12">
+                        <div class="page__title">
+                            <h1 class="title-large fw-bold ttu">Order History</h1>
+                        </div>
+                    </div>
+                    <div class="col l-12 m-12 c-12">
+                        <div class="order__wrapper mt30">
+                            {{#each bills}} 
+                                <!-- single order start -->
+                                <div class="order__item sub-font pb20 border-top por">
+                                    <div class="order__item__header flex-between v-center">
+                                        <div class="order__item__id label-large fw-bold">Order #{{this._id}}</div>
+                                        <div class="order__item__date label-medium fw-smb">{{this.date}}</div>
+                                    </div>
+                                    <div class="order__item__body">
+                                        <div class="order__item__content mt30">
+                                            <div class="order__item__content__header">
+                                                <div class="order__item__content__header__title label-medium fw-bold">Order details</div>
+                                            </div>
+                                            <div class="order__item__content__body mt12">
+                                                <div class="order__item__content__body__item flex-between mt6 v-center">
+                                                    <div class="order__item__content__body__item__title label-medium fw-bold">Order number:</div>
+                                                    <div class="order__item__content__body__item__value label-medium fw-smb">#{{this._id}}</div>
+                                                </div>
+                                                <div class="order__item__content__body__item flex-between mt6 v-center">
+                                                    <div class="order__item__content__body__item__title label-medium fw-bold">Date:</div>
+                                                    <div class="order__item__content__body__item__value label-medium fw-smb">{{this.date}}</div>
+                                                </div>
+                                                <div class="order__item__content__body__item flex-between mt6 v-center">
+                                                    <div class="order__item__content__body__item__title label-medium fw-bold">Total:</div>
+                                                    <div class="order__item__content__body__item__value label-medium fw-smb">${{this.total}}</div>
+                                                </div>
+                                                <div class="order__item__content__body__item flex-between mt6 v-center">
+                                                    <div class="order__item__content__body__item__title label-medium fw-bold">Payment method:</div>
+                                                    <div class="order__item__content__body__item__value label-medium fw-smb">{{this.paymentMethod}}</div>
+                                                </div>
+                                                <div class="order__item__content__body__item flex-between mt6 v-center">
+                                                    <div class="order__item__content__body__item__title label-medium fw-bold">Status:</div>
+                                                    <div class="order__item__content__body__item__value status status--delivered label-medium fw-smb">{{this.status}}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- single order end -->
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- page content end -->
+
+<script type="module" src="/js/orderHistory.js"></script>

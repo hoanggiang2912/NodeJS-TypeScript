@@ -1,0 +1,19 @@
+.checkout__nav {
+    .nav__item {
+        .nav__link {
+            color: $-gray;
+            cursor: auto;
+        }
+    }
+    .nav__item.active {
+        .nav__link {
+            color: $primary;
+            cursor: pointer;
+        }
+    }
+    .nav__item.current {
+        .nav__link {
+            color: $text;
+        }
+    }
+}

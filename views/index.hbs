@@ -1,0 +1,513 @@
+<!-- hero slider start -->
+<div class="hero__slider under header__next">
+    <div class="hero__slider__holder">
+        <div class="carousel-cell">
+            <img src="/assets/image/carousels/20231218_Panama_Elida_Estate_Natural_-_Homepage_Header_1_1950x.webp"
+                alt="">
+        </div>
+        <div class="carousel-cell">
+            <img src="/assets/image/carousels/20231220_Gift_a_Subscription_-_Homepage_Header_1_1950x.webp" alt="">
+        </div>
+        <div class="carousel-cell">
+            <img src="/assets/image/carousels/20231222_Peru_Chirinos_ROC_LAUNCH_-_Homepage_Header_1_1950x.webp"
+                alt="">
+        </div>
+        <div class="carousel-cell">
+            <img src="/assets/image/carousels/Holiday_Blend_-_Homepage_Header_1_4c6ce405-25c9-42b7-bfef-ef412fe6663e_1950x.webp"
+                alt="">
+        </div>
+        <div class="carousel-cell">
+            <img src="/assets/image/carousels/Subscribe_Save_-_Homepage_Header_1_1950x.webp" alt="">
+        </div>
+    </div>
+</div>
+<!-- hero slider end -->
+
+
+
+<!-- coffee subscription section start -->
+<section class="pb30 logo__section logo__container flex-column flex-center under">
+    <h4 class="primary-text header-medium fw-bold tac">
+        "Gói đăng ký cà phê tốt nhất trong năm"
+    </h4>
+    <div class="logo__slider pb30 row width-full">
+        <div class="logo__item__wrapper carousel-cell col c-2-4 l-2 m-2-4 m-2-4">
+            <div class="logo__item banner-contain"
+                style="background-image: url('/assets/image/partners/Bon_Appetit_logo_180x.webp');"></div>
+        </div>
+        <div class="logo__item__wrapper carousel-cell col c-2-4 l-2-4 m-2-4">
+            <div class="logo__item banner-contain"
+                style="background-image: url('/assets/image/partners/CNET-Logo_180x.avif');"></div>
+        </div>
+        <div class="logo__item__wrapper carousel-cell col c-2-4 l-2-4 m-2-4">
+            <div class="logo__item banner-contain"
+                style="background-image: url('/assets/image/partners/CNN_underscored_180x.avif');"></div>
+        </div>
+        <div class="logo__item__wrapper carousel-cell col c-2-4 l-2-4 m-2-4">
+            <div class="logo__item banner-contain"
+                style="background-image: url('/assets/image/partners/Forbes_logo_180x.avif');"></div>
+        </div>
+        <div class="logo__item__wrapper carousel-cell col c-2-4 l-2-4 m-2-4">
+            <div class="logo__item banner-contain"
+                style="background-image: url('/assets/image/partners/vice-logo-transparent_e07dcb6d-22cc-4d38-ba60-61ca511d94fd_180x.avif');">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- coffee subscription section end -->
+
+<!-- shop by category section start -->
+<section class="section category__section grid under">
+    <h2 class="section__title headline-medium fw-bold ttu tac">Mua sắm theo danh mục</h2>
+    <div class="row category__wrapper mt30">
+        {{#each categories}}
+            <!-- single item start -->
+            <div class="category__item col carousel-cell l-2" data-id="{{this.id}}">
+                <a href="/shop/category/{{this.id}}" class="category__link">
+                    <div class="category__item__banner__wrapper por">
+                        <div class="category__item__banner banner-cover poa"
+                            style="background-image: url('/assets/image/categories/{{this.banner}}');"></div>
+                    </div>
+                    <h5 class="category__item__name label-medium ttc tac mt12">{{this.name}}</h5>
+                </a>
+            </div>
+            <!-- single item end -->
+        {{/each}}
+    </div>
+</section>
+<!-- shop by category section end -->
+
+<!-- benefit section start -->
+<section class="benefit__section section full grid under">
+    <h2 class="section__title headline-medium fw-bold ttu tac">"Cà phê ngon, vì con người và hành tinh"</h2>
+    <div class="row no-gutter benefit__wrapper mt30">
+        <div class="benefit__item col l-2-4 m-2-4 flex-center width-full">
+            <div class="benefit__item__inner flex-center flex-column g12">
+                <div class="benefit__icon">
+                    <div class="benefit__icon__inner banner-contain"
+                        style="background-image: url('/assets/image/icons/Icon_Sourced_2096fd58-c61c-4e17-99e6-7455a80d1509_180x.avif')">
+                    </div>
+                </div>
+                <div class="benefit__title text title-large fw-smb">Nguồn gốc</div>
+                <div class="benefit__text text body-medium fw-light">Mối quan hệ chặt chẽ với các nhà sản xuất cam kết về sự xuất sắc, bền vững và trồng trọt có trách nhiệm</div>
+            </div>
+        </div>
+        <div class="benefit__item col l-2-4 m-2-4 flex-center width-full">
+            <div class="benefit__item__inner flex-center flex-column g12">
+                <div class="benefit__icon">
+                    <div class="benefit__icon__inner banner-contain"
+                        style="background-image: url('/assets/image/icons/Icon_roasted_da684176-1ba4-4427-a4f4-c7881a2f3c9b_180x.avif')">
+                    </div>
+                </div>
+                <div class="benefit__title text title-large fw-smb">Rang</div>
+                <div class="benefit__text text body-medium fw-light">Cà phê chất lượng cao, được rang tươi theo đơn đặt hàng trên máy rang Loring Smart tiết kiệm năng lượng</div>
+            </div>
+        </div>
+        <div class="benefit__item col l-2-4 m-2-4 flex-center width-full">
+            <div class="benefit__item__inner flex-center flex-column g12">
+                <div class="benefit__icon">
+                    <div class="benefit__icon__inner banner-contain"
+                        style="background-image: url('/assets/image/icons/Icon_Brewed_abb65a5c-9716-4e40-8b94-9b0cbde52c64_180x.avif')">
+                    </div>
+                </div>
+                <div class="benefit__title text title-large fw-smb">Pha chế</div>
+                <div class="benefit__text text body-medium fw-light">Những nhà lãnh đạo ngành công nghiệp hoàn thiện phương pháp chiết xuất & đổ latte bằng thiết bị hiện đại</div>
+            </div>
+        </div>
+        <div class="benefit__item col l-2-4 m-2-4 flex-center width-full">
+            <div class="benefit__item__inner flex-center flex-column g12">
+                <div class="benefit__icon">
+                    <div class="benefit__icon__inner banner-contain"
+                        style="background-image: url('/assets/image/icons/Icon_Shared_180x.avif')"></div>
+                </div>
+                <div class="benefit__title text title-large fw-smb">Chia sẻ</div>
+                <div class="benefit__text text body-medium fw-light">Kết nối mọi người qua cà phê và văn hóa của lòng tốt. Ủng hộ đa dạng và công bằng trong khi luôn cố gắng trở nên tốt hơn</div>
+            </div>
+        </div>
+        <div class="benefit__item col l-2-4 m-2-4 flex-center width-full">
+            <div class="benefit__item__inner flex-center flex-column g12">
+                <div class="benefit__icon">
+                    <div class="benefit__icon__inner banner-contain"
+                        style="background-image: url('/assets/image/icons/Icon_Certified_b49621ea-b539-4e80-bfbb-5180dbc700c5_180x.avif')">
+                    </div>
+                </div>
+                <div class="benefit__title text title-large fw-smb">Chứng nhận</div>
+                <div class="benefit__text text body-medium fw-light">Là nhà rang cà phê đầu tiên tại California được chứng nhận là Tổ chức B, chúng tôi nỗ lực hết mình từ hạt đến ngụm cà phê</div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- benefit section end -->
+
+<!-- new arrival products section start -->
+<section class="section product__section new__arrival__section">
+    <h2 class="section__title headline-medium fw-bold ttu tac">Sản phẩm mới</h2>
+    <div class="product__wrapper product__wrapper--all new__arrival__wrapper row mt30" id="product__wrapper">
+        {{#each recentProducts}}
+            <!-- single product card start -->
+            <div class="product primary__product col l-3 m-6 c-6 flex-center">
+                <a href="/singleProduct/{{this._id}}" class="product__link width-full">
+                    <div class="product__inner flex-column flex-full height-full">
+                        <div class="product__banner__wrapper por oh">
+                            <div class="product__banner banner-contain poa"
+                                style="background-image: url('/uploads/{{this.background.main}}')"></div>
+                            <div class="product__banner product__banner--sub__banner banner-contain poa"
+                                style="background-image: url('/uploads/{{this.background.sub}}')">
+                            </div>
+                            <button class="add-cart-btn hover btn primary-fill-btn width-full poa" style="max-width: none;" data-id="{{this.id}}" data-name="{{this.title}}" data-price="{{this.price}}" data-img="{{this.background.main}}" data-id-category="{{this.idCategory._id}}"><i
+                                    class="fa fa-plus"></i> Thêm vào giỏ hàng</button>
+                        </div>
+                        <div class="product__info">
+                            <div class="product__name ttu tal label-medium fw-bold mt6 text">{{this.title}}</div>
+                            <div class="product__price tal body-small mt6 text">${{this.price}}</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <!-- single product card end -->
+        {{/each}}
+    </div>
+</section>
+<!-- new arrival products section end -->
+
+<!-- certificate section start -->
+<section class="block width-full secondary-bg">
+    <section class="section certificate__section">
+        <div class="row">
+            <div class="col l-6 m-6 c-12 tal flex-column g30">
+                <p class="label-small sub-font fw-light">Chứng nhận hữu cơ</p>
+                <h2 class="display-small fw-bold ttu">Holiday Blend</h2>
+                <p class="body-medium fw-light sub-font">Organic Holiday Blend của chúng tôi dành cho tất cả mọi người, bất kể bạn ăn mừng như thế nào. Loại cà phê này được tạo
+                ra bởi những gương mặt thân thiện trên túi của chúng tôi, với hy vọng rằng mỗi tách cà phê sẽ mang đến cho bạn cơ hội
+                kết nối với mọi người trong cuộc sống của bạn theo những cách mới và ý nghĩa
+                </p>
+                <p class="body-medium fw-bold">Năm nay, 5% doanh thu từ Bộ sưu tập Holiday Blend và Merch Collection của chúng tôi sẽ được chuyển trực tiếp đến các đối tác
+                gốc của chúng tôi tại CODECH ở Guatemala.</p>
+                <p class="body-medium fw-light sub-font">Thưởng thức và tận hưởng hương vị lễ hội của bánh bơ giòn, mứt nam việt quất và lê luộc.</p>
+                <button class="btn primary-outline-btn hover ttu fw-bold" style="width: fit-content">Đặt hàng ngay</button>
+            </div>
+            <div class="col l-6 m-6 c-12 certificate__product__wrapper">
+                <div class="single__product__wrapper p30">
+                    <!-- single product card start -->
+                    <div class="product primary__product flex-center">
+                        <a href="" class="product__link">
+                            <div class="product__inner flex-column flex-full height-full">
+                                <div class="product__banner__wrapper por oh">
+                                    <div class="product__banner banner-contain poa"
+                                        style="background-image: url('/uploads/decaf-shakeout-organic-blend-389818_240x240.avif')">
+                                    </div>
+                                    <div class="product__banner product__banner--sub__banner banner-contain poa"
+                                        style="background-image: url('/uploads/ElSalvadorLosPirineosOrangePacamara-TastingNotes2023_540x.webp')">
+                                    </div>
+                                    <button class="add-cart-btn hover btn primary-fill-btn width-full poa"
+                                        style="max-width: none;"><i class="fa fa-plus"></i> Thêm vào giỏ hàng</button>
+                                    <!-- product labels -->
+                                    <span
+                                        class="product__label product__new__label ttu poa body-small sub-font fw-light">mới</span>
+                                </div>
+                                <div class="product__info">
+                                    <div class="product__name ttu tal label-medium fw-bold mt6 text">Peru Chirinos
+                                        Regenerative Organic Certified™</div>
+                                    <div class="product__price tal body-small mt6 text">$18.19</div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- single product card end -->
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!-- certificate section end -->
+
+<!-- new arrival products section start -->
+<section class="section product__section most__views__section">
+    <h2 class="section__title headline-medium fw-bold ttu tac">Xem Nhiều Nhất</h2>
+    <div class="product__wrapper product__wrapper--most-views row mt30" id="product__wrapper">
+        {{#each mostViewsProduct}}
+        <!-- single product card start -->
+        <div class="product primary__product col l-3 m-6 c-6 flex-center">
+            <a href="/singleProduct/{{this._id}}" class="product__link width-full">
+                <div class="product__inner flex-column flex-full height-full">
+                    <div class="product__banner__wrapper por oh">
+                        <div class="product__banner banner-contain poa"
+                            style="background-image: url('/uploads/{{this.background.main}}')"></div>
+                        <div class="product__banner product__banner--sub__banner banner-contain poa"
+                            style="background-image: url('/uploads/{{this.background.sub}}')">
+                        </div>
+                        <button class="add-cart-btn hover btn primary-fill-btn width-full poa" style="max-width: none;"
+                            data-id="{{this.id}}" data-name="{{this.title}}" data-price="{{this.price}}"
+                            data-img="{{this.background.main}}" data-id-category="{{this.idCategory._id}}"><i
+                                class="fa fa-plus"></i> Thêm vào giỏ hàng</button>
+                    </div>
+                    <div class="product__info">
+                        <div class="product__name ttu tal label-medium fw-bold mt6 text">{{this.title}}</div>
+                        <div class="product__price tal body-small mt6 text">${{this.price}}</div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- single product card end -->
+        {{/each}}
+    </div>
+</section>
+<!-- new arrival products section end -->
+
+<!-- introduction video start -->
+<section class="introduction__video__wrapper por">
+    <button class="video__btn motion-reduce-btn poa t0 l0 width-full height-full">
+        <div class="introduction__video__thumbnail__wrapper with-full height-full por">
+            <div class="thumbnail banner-contain abs-full z1"
+                style="background-image: url('/assets/image/banners/Thumbnail-Sacacli_1_1950x.webp')"></div>
+        </div>
+        <span class="button__icon abs-center z1">
+            <svg width="56" height="70" viewBox="0 0 56 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M2.33325 2L53.6666 35L2.33325 68V2Z" stroke="white" stroke-width="4" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+            </svg>
+        </span>
+    </button>
+    <iframe src="https://www.youtube.com/embed/za49nqj6r5A?enablejsapi=1&amp;autoplay=1"
+        class="por js-youtube introduction__video" allow="autoplay; encrypted-media" allowfullscreen=""
+        title=""></iframe>
+</section>
+<!-- introduction video end -->
+
+<!-- comment section start -->
+<section class="section comment__section">
+    <div class="section__title pb30">
+        <h2 class="primary-text display-small fw-bold">Equator Coffees</h2>
+        <p class="body-medium sub-font text fw-l">Nhâm nhi cà phê ngon, đón đợi điều tốt lành</p>
+    </div>
+    <div class="comment__wrapper grid wide pt30">
+        <div class="row">
+            <!-- single comment item start -->
+            <div class="comment__item col l-4 m-6 c-12">
+                <div class="comment__item__inner">
+                    <div class="comment__item__top p16 flex g6">
+                        <div class="user__avt__wrapper">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="flex-full sub-font">
+                            <div class="user__info">
+                                <div class="user__info__name body-large fw-light">Gregory W</div>
+                                <div class="body-small fw-light mt6">Hooked on Brazil</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment__item__bottom p16 sub-font">
+                        <div class="flex">
+                            <div class="flex">
+                                <div class="flex sub-font g12">
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-up"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-down"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-full j-end v-center g6">
+                                <span class="body-large sub-font text fw-light">5 months ago</span>
+                                <i class="fas fa-thumbtack primary-text"></i>
+                            </div>
+                        </div>
+                        <div class="comment__content body-large fw-light text tal mt20">
+                            I cannot love this coffee more than I already do! I'm pretty much hooked on this Brazil 45
+                            (my second time ordering). An extremely satisfiying cup of coffee. My spouse, who is not a
+                            big coffee drinker, loves it too! Yummo!
+                        </div>
+                        <div class="flex g6 v-center mt20">
+                            <i class="fal fa-check primary-text"></i>
+                            <span class="text body-large fw-light">
+                                I recommend this product
+                            </span>
+                        </div>
+                        <div class="comment__product body-large fw-light text mt20 tal">
+                            Review left on:
+                            <a href="#" class="primary-text">Brazil 45 Espresso - Whole Bean / 2lb / Save 15% per oz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single comment item end -->
+            <!-- single comment item start -->
+            <div class="comment__item col l-4 m-6 c-12">
+                <div class="comment__item__inner">
+                    <div class="comment__item__top p16 flex g6">
+                        <div class="user__avt__wrapper">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="flex-full sub-font">
+                            <div class="user__info">
+                                <div class="user__info__name body-large fw-light">Gregory W</div>
+                                <div class="body-small fw-light mt6">Hooked on Brazil</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment__item__bottom p16 sub-font">
+                        <div class="flex">
+                            <div class="flex">
+                                <div class="flex sub-font g12">
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-up"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-down"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-full j-end v-center g6">
+                                <span class="body-large sub-font text fw-light">5 months ago</span>
+                                <i class="fas fa-thumbtack primary-text"></i>
+                            </div>
+                        </div>
+                        <div class="comment__content body-large fw-light text tal mt20">
+                            I cannot love this coffee more than I already do! I'm pretty much hooked on this Brazil 45
+                            (my second time ordering). An extremely satisfiying cup of coffee. My spouse, who is not a
+                            big coffee drinker, loves it too! Yummo!
+                        </div>
+                        <div class="flex g6 v-center mt20">
+                            <i class="fal fa-check primary-text"></i>
+                            <span class="text body-large fw-light">
+                                I recommend this product
+                            </span>
+                        </div>
+                        <div class="comment__product body-large fw-light text mt20 tal">
+                            Review left on:
+                            <a href="#" class="primary-text">Brazil 45 Espresso - Whole Bean / 2lb / Save 15% per oz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single comment item end -->
+            <!-- single comment item start -->
+            <div class="comment__item col l-4 m-6 c-12">
+                <div class="comment__item__inner">
+                    <div class="comment__item__top p16 flex g6">
+                        <div class="user__avt__wrapper">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="flex-full sub-font">
+                            <div class="user__info">
+                                <div class="user__info__name body-large fw-light">Gregory W</div>
+                                <div class="body-small fw-light mt6">Hooked on Brazil</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment__item__bottom p16 sub-font">
+                        <div class="flex">
+                            <div class="flex">
+                                <div class="flex sub-font g12">
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-up"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                    <div class="flex v-center">
+                                        <button class="icon-btn no-padding"><i
+                                                class="fa-solid fa-thumbs-down"></i></button>
+                                        <span class="fw-light body-medium">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-full j-end v-center g6">
+                                <span class="body-large sub-font text fw-light">5 months ago</span>
+                                <i class="fas fa-thumbtack primary-text"></i>
+                            </div>
+                        </div>
+                        <div class="comment__content body-large fw-light text tal mt20">
+                            I cannot love this coffee more than I already do! I'm pretty much hooked on this Brazil 45
+                            (my second time ordering). An extremely satisfiying cup of coffee. My spouse, who is not a
+                            big coffee drinker, loves it too! Yummo!
+                        </div>
+                        <div class="flex g6 v-center mt20">
+                            <i class="fal fa-check primary-text"></i>
+                            <span class="text body-large fw-light">
+                                I recommend this product
+                            </span>
+                        </div>
+                        <div class="comment__product body-large fw-light text mt20 tal">
+                            Review left on:
+                            <a href="#" class="primary-text">Brazil 45 Espresso - Whole Bean / 2lb / Save 15% per oz</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- single comment item end -->
+
+        </div>
+    </div>
+    <div class="width-full flex-center mt30">
+        <button class="btn primary-fill-btn hover ttu fw-bold rounded-8">See more review</button>
+    </div>
+</section>
+<!-- comment section end -->
+
+<!-- shopify section start -->
+<section class="section full shopify__section">
+    <div class="grid wide">
+        <div class="row no-gutters">
+            <div class="col l-6 m-6 c-12" style="min-height: 300px">
+                <div class="background__wrapper por width-full height-full" style="padding-top: 75%">
+                    <div class="background__img poa abs-full banner-cover"
+                        style="background-image: url('/assets/image/banners/20210106_EquatorCoffees_Subscrip_1.webp')">
+                    </div>
+                </div>
+            </div>
+            <div class="col l-6 m-6 c-12 flex v-center">
+                <div class="text-block tal">
+                    <div class="flex-column g30">
+                        <h2 class="display-small fw-black ttu">Cà phê của bạn. Lịch trình theo ý bạn.</h2>
+                        <p class="body-large sub-font fw-light">Bắt đầu gói đăng ký cà phê tuyển chọn đầu tiên của bạn hôm nay và nhận 30% giảm giá cho túi đầu tiên.</p>
+                        <button class="btn primary-fill-btn hover-outline ttu fw-bold">Đăng ký ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row no-gutters wrap-reverse">
+            <div class="col l-6 m-6 c-12 flex v-center text-block">
+                <div class="tal">
+                    <div class="flex-column g30">
+                        <h2 class="display-small fw-black ttu">Tham gia cùng chúng tôi</h2>
+                        <p class="body-large sub-font fw-light">Thể hiện niềm yêu thích cà phê của bạn! Chúng tôi rất vui được đồng hành cùng bạn!</p>
+                        <button class="btn primary-fill-btn hover-outline ttu fw-bold">Xem vị trí tuyển dụng</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col l-6 m-6 c-12" style="min-height: 300px;">
+                <div class="background__wrapper por width-full height-full" style="padding-top: 70%">
+                    <div class="background__img poa abs-full banner-cover"
+                        style="background-image: url('/assets/image/banners/Miller-Barista-Careers-Equator-Coffees_1080x.webp')">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- shopify section end -->
+
+<!-- sign up section start -->
+<section class="sign-up-widget flex-center flex-wrap g12">
+    <span class="body-medium fw-bold widget-text">Sign up for Black Friday & Cyber Monday deals: </span>
+    <form action="#" class="form hero-contact__form">
+        <input type="submit" value="" hidden id="hero-email">
+        <div class="form__group flex por">
+            <input type="text" class="input email__input flex-full body-large sub-font fw-light"
+                placeholder="EMAIL ADDRESS">
+            <label for="hero-email" class="submit__label text fw-bold body-large poa">
+                <button class="btn text-btn">join</button>
+            </label>
+        </div>
+    </form>
+</section>
+<!-- sign up section end -->

@@ -1,0 +1,199 @@
+.single__product__wrapper {
+    @media screen and (max-width: 768px) {
+        margin: 0 !important;
+    }
+}
+.product__gallery__wrapper {
+    padding: 40px 3.6vw 73px 3.6vw !important;
+    @media only screen and (max-width: 989px) {
+        .product__gallery__wrapper {
+            padding-left: 0;
+        }
+    }
+    @media only screen and (max-width: 749px) {
+        .product__gallery__wrapper {
+            padding: 20px 0 50px;
+        }
+    }
+    .gallery__thumbnails {
+        .gallery__thumbnail img {
+            width: 100px;
+            height: 125px;
+        }
+    }
+    .gallery__spotlight {
+        width: 100%;
+        height: 100%;
+        .gallery__spotlight__holder {
+            padding-bottom: 125%;
+            width: 100%;
+            img {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .product__gallery .gallery__spotlight__holder {
+        opacity: .1;
+        transition: opacity 1s linear;
+    }
+    .product__gallery .gallery__spotlight__holder.is-selected{
+        opacity: 1;
+    }
+
+    .product__gallery .gallery__spotlight__holder.fade-in {
+        opacity: 1;
+    }
+}
+.product__info__wrapper {
+    display: flex;
+    align-items: center;
+    background: $bg-secondary;
+    position: relative;
+    &::before {
+        position: absolute;
+        z-index: -1;
+        content: '';
+        width: 20vw;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+        background: $bg-secondary;
+        @media only screen and (max-width: 767px) {
+            .product__info__wrapper {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .product__info {
+        padding: 60px 60px 60px 25px;
+        max-width: 500px;
+        @media screen and (max-width: 768px) {
+            padding-inline: 25px;
+        }
+        .product__form {
+            .product__option--btn {
+                padding: 10px 36px 10px 16px;
+                border-top: 1px solid $border;
+                border-bottom: 1px solid $border;
+                margin-top: 20px;
+                &::before {
+                    position: absolute;
+                    top: 50%;
+                    right: 10px;
+                    content: "";
+                    display: inline-block;
+                    width: 6px;
+                    height: 6px;
+                    border-width: 0 0 2px 2px;
+                    border-style: solid;
+                    border-color: var(---color-text);
+                    margin: -7px 0 0;
+                    vertical-align: middle;
+                    transform: rotate(-45deg);
+                    transform-origin: 50% 50%;
+                    transition: all .4s;
+                }
+            }
+            .option__list {
+                border: 1px solid $border;
+                background: $bg;
+                transform: translateY(12px);
+                transition: .4s linear;
+                opacity: 0;
+                visibility: hidden;
+                .option__item {
+                    .option__link {
+                        padding-block: 12px;
+                        display: block;
+                        transition: .25s linear;
+                        &:hover {
+                            background: $neutral90 !important;
+                            color: $primary;
+                        }
+                    }
+                    .option__link.current-choosed {
+                        background: $neutral87 !important;
+                        font-weight: 800;
+                    }
+                }
+            }
+            .option__list.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(-1px);
+            }
+            .option__btn {
+                border: 2px solid $neutral80;
+            }
+            .option__btn.current-choosed {
+                background: $primary;
+                border-color: $primary;
+                color: white
+            }
+            .order__price {
+                padding: 10px 16px;
+                border-top: 1px solid $border;
+                border-bottom: 1px solid $border;
+                margin-top: 20px;
+            }
+            .product__submit__group {
+                margin-top: 20px;
+                .qty__selector {
+                    border: 1px solid $border;
+                    max-width: 30%;
+                    .qty__input {
+                        width: 80%;
+                        border: none;
+                        text-align: center;
+                    }
+                }
+                .submit__group__btns {
+                    .add-cart__btn {
+                        max-width: unset;
+                    }
+                }
+            }
+        }
+    }
+}
+.flavor__profile__section {
+    background: $bg-secondary;
+}
+.product__story__section {
+    .col {
+        min-height: 440px;
+        width: 100%;
+        .bg__wrapper {
+            height: 100%;
+            padding-top: 100%;
+        }
+        .info__lines {
+            .info__line {
+                display: grid;
+                grid-template-columns: 5% 95%;
+            }
+        }
+    }
+}
+.shopify__section--full {
+    .bg__wrapper {
+        padding-top: 44%;
+    }
+    .bg__content {
+        gap: clamp(1.6rem, 0.6rem + 2.667vw, 3rem);
+    }
+    .bg-content--right {
+        color: $-white;
+        background: rgba($color: #000000, $alpha: .4);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+}

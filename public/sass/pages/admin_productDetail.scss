@@ -1,0 +1,44 @@
+.admin__product__form {
+    .col {
+        padding-inline: 6px;
+    }
+
+    .form__group {
+        .form__input {
+            border: 1px solid $--white;
+
+            &:hover,
+            &:focus {
+                border-color: $primary;
+                box-shadow: none;
+            }
+        }
+    }
+}
+
+.cancel-btn {
+    background: $--rose;
+    color: $-white;
+}
+
+.save-btn {
+    color: $-white;
+    background: $-blue;
+}
+
+.save-btn,
+.cancel-btn {
+    transition: .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.back-btn {
+    color: $--darkgray;
+
+    &:hover {
+        color: $--black;
+    }
+}

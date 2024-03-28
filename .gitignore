@@ -2,6 +2,7 @@
 node_modules/
 
 template/
+
 # Ignore all text files
 *.txt
 

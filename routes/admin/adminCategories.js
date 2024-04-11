@@ -5,9 +5,11 @@ const CategoriesController = require('../../controllers/CategoriesController');
 
 router.get('/', async (req, res) => {
     const categories = await CategoriesController.getAll();
+    console.log(categories);
     res.render('admin/categories/index', { 
         categories, 
-        layout: 'admin/adminLayout' 
+        layout: 'admin/adminLayout',
+        title: 'Admin - Categories'
     });
 });
 

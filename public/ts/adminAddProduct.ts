@@ -3,14 +3,14 @@ import {
     categoriesEndpoint,
     getData,
     getJSON,
+    checkToken,
+    getNewToken,
     App
 } from "./main.js";
+import { Data_Image } from "./interfaces.js";
 const app = new App();
 
-import { Data_Image } from "./interfaces.js";
-
 const run = async () => {
-    
     // handle product gallery
     const galleryInput = document.getElementById('product-gallery') as HTMLInputElement;
     const productGalleryContainer = document.querySelector('.admin__product__gallery') as HTMLElement;
@@ -30,26 +30,12 @@ const run = async () => {
 
     if (galleryInput) {
         galleryInput.addEventListener('change', async (e: Event) => {
-            const target = e.target as HTMLInputElement;
-            const fileInput = target.closest('#product-gallery') as HTMLInputElement;
-            // console.log(new FormData(files));
-            // console.log(files);
-            const formData = new FormData();
-            for (let i = 0; i < fileInput.files!.length; i++) {
-                formData.append('productImages', fileInput.files![i]);
-            }
-            
-            const uploadAPI = `http://localhost:3000/upload/products`;
+            const uploadRes = await handleUploadImage(e);
 
-            const res = await fetch(uploadAPI, {
-                method: 'POST',
-                body: formData
-            });
-
-            if (!res.ok) {
-                throw new Error(`HTTP error! status: ${res.status}`);
+            if (!uploadRes.ok) {
+                throw new Error(`HTTP error! status: ${uploadRes.status}`);
             } else {
-                const data = await res.text();
+                const data = await uploadRes.text();
                 // console.log('data' + data);
                 if (data) {
                     // const data = [
@@ -84,7 +70,7 @@ const run = async () => {
                             
                             if (data.success) {
                                 app.handleToastMessage('success', 'Product added!');
-                                window.location.href = '/admin/products/create';
+                                // window.location.href = '/admin/products/create';
                             } else {
                                 app.handleToastMessage('failure', `Adding failed: ${data.message}`);
                             }
@@ -99,6 +85,27 @@ const run = async () => {
 }
 
 run();
+
+const handleUploadImage = async (e: Event) => {
+    const target = e.target as HTMLInputElement;
+    const fileInput = target.closest('#product-gallery') as HTMLInputElement;
+    // console.log(new FormData(files));
+    // console.log(files);
+    const formData = new FormData();
+    for (let i = 0; i < fileInput.files!.length; i++) {
+        formData.append('productImages', fileInput.files![i]);
+    }
+
+    const uploadAPI = `http://localhost:3000/upload/products`;
+    const token = localStorage.getItem('authToken');
+
+    const res = await fetch(uploadAPI, {
+        method: 'POST',
+        body: formData
+    });
+
+    return res;
+}
 
 // handle adding product
 const handleAddingProduct = async (gallery: string[]) => {
@@ -130,13 +137,37 @@ const handleAddingProduct = async (gallery: string[]) => {
 
     // console.log(newProduct);
     try {
+        let authToken = localStorage.getItem('authToken');
+        const refreshToken = localStorage.getItem('refreshToken');
+        const checkTokenRes = await checkToken(authToken as string);
+
+        const checkTokenData = await checkTokenRes.json();
+
+        if (checkTokenData.success == false || checkTokenData.message === 'Token expired') {
+            const newTokenRes = await getNewToken(refreshToken as string);
+
+            if (!newTokenRes || !newTokenRes.ok) {
+                app.handleToastMessage('failure', 'Unauthorized! Please login again!');
+                window.location.href = '/login';
+            }
+
+            const newTokenData = await newTokenRes.json();
+            authToken = newTokenData.authToken;
+            localStorage.setItem('authToken', newTokenData.authToken);
+        }
+        
         const res = await fetch(productsEndpoint, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${authToken}`
             },
             body: JSON.stringify(newProduct)
         });
+
+        if (!res.ok) {
+            throw new Error('Error adding product!');
+        }
 
         return res;
     } catch (error) {

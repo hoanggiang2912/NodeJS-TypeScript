@@ -6,9 +6,37 @@ const { loginValidator, registerValidator, updateProfileValidator, adminUserUpda
 const bcrypt = require('bcryptjs');
 const UsersModel = require('../../models/UsersModel.js');
 const UsersController = require('../../controllers/UsersController.js');
-const verify = require('./verifyToken.js');
+const {verify} = require('./verifyToken.js');
 
 // /api/v1/auth
+
+router.post('/check-token', (req, res) => {
+    const token = req.headers.authorization.split(' ')[1];
+    try {
+        const verify = jwt.verify(token, process.env.TOKEN_SECRET);
+        if (verify) {
+            res.json({ success: true });
+        }
+    } catch (err) {
+        if (err.name === 'TokenExpiredError') {
+            res.status(401).json({success: false, message: 'Token expired'});
+        } else {
+            res.status(403).json({success: false, message: 'Forbidden'});
+        }
+    }
+})
+
+router.post ('/refresh', (req, res) => {
+    const refreshToken = req.headers.authorization.split(' ')[1];
+    if (refreshToken == null) return res.status(401).json({message: 'Unauthorized'});
+
+    jwt.verify(refreshToken, process.env.TOKEN_SECRET, (err, user) => {
+        if (err) return res.status(403).json({message: 'Forbidden'});
+
+        const authToken = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 60 * 30});
+        res.json({authToken});
+    })
+})
 
 router.get('/', async (req, res, next) => {
     try {
@@ -94,7 +122,7 @@ router.post('/create', async (req, res, next) => {
     }
 });
 
-router.post('/login', async (req ,res, next) => {
+router.post('/login', async (req ,res) => {
     // Validate
     const { error } = loginValidator(req.body);
     if (error) return res.status(400).json({message: error.details[0].message});
@@ -104,13 +132,14 @@ router.post('/login', async (req ,res, next) => {
 
     // check password
     const validPass = await bcrypt.compare(req.body.password, user.password);
-    if (!validPass) return res.status(400).json({ message: 'Email or password is incorrect!' });
+    if (!validPass) return res.status(400).json({ message: 'Email or password is incorrect!'});
 
     // create and assign a token
-    const authToken = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 1*60});
-    const refeshToken = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 24*60*60*60});
-    res.header('auth-token', token).send({
-        refeshToken,
+    const authToken = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 60 * 5});
+    const refreshToken = jwt.sign({_id: user._id}, process.env.TOKEN_SECRET, {expiresIn: 60 * 60 * 24 * 365});
+
+    res.header('Authorization', authToken).send({
+        refreshToken,
         authToken,
         user
     });

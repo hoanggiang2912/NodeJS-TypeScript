@@ -84,10 +84,13 @@ const handleAddCategory = async (banner: string) => {
     // console.log(category);
 
     try {
+        const authToken = localStorage.getItem('authToken');
+        
         const res = await fetch(categoriesEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer + ${authToken}`
             },
             body: JSON.stringify(category)
         })

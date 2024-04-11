@@ -40,6 +40,24 @@ export async function getData(url, limit = 0) {
         return null;
     }
 }
+export const checkToken = async (token) => {
+    const res = await fetch(`/api/v1/auth/check-token`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
+    return res;
+};
+export const getNewToken = async (refreshToken) => {
+    const refreshRes = await fetch(`/api/v1/auth/refresh`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${refreshToken}`
+        }
+    });
+    return refreshRes;
+};
 class Cart {
     cart = JSON.parse(localStorage.getItem('userCart'))?.userCart || [];
     storage;
@@ -320,7 +338,6 @@ export class App {
         if (products) {
             products.forEach(product => {
                 product.addEventListener('click', async (e) => {
-                    e.preventDefault();
                     const productId = product.querySelector('.add-cart-btn')?.dataset.id;
                     if (productId) {
                         const productAPI = `${productsEndpoint}/${productId}/views`;
@@ -438,6 +455,10 @@ export class App {
                 {
                     name: 'Sign up',
                     link: '/signup'
+                },
+                {
+                    name: 'Forgot password',
+                    link: '/forgot-password'
                 }
             ],
             user: [
@@ -450,10 +471,14 @@ export class App {
                     link: `/user/account-detail/order-history/${this.userLoginInfo._id}`
                 },
                 {
+                    name: 'Forgot Password',
+                    link: '/forgot-password',
+                },
+                {
                     name: 'Logout',
                     link: '',
                     handler: "logout"
-                }
+                },
             ]
         };
         const renderOption = (options) => {
@@ -526,6 +551,9 @@ export class App {
                 </div>
                 <div class="user__sidebar__item mt12">
                     <a href="/user/account-detail/addresses/${this.userLoginInfo._id}" class="user__sidebar__link text label-medium fw-bold">Addresses</a>
+                </div>
+                <div class="user__sidebar__item mt12">
+                    <a href="/forgot-password/${this.userLoginInfo._id}" class="user__sidebar__link text label-medium fw-bold">Forgot password</a>
                 </div>
                 <div class="user__sidebar__item mt12">
                     <a href="#" data-handler="logout" class="user__sidebar__link text label-medium fw-bold">Log

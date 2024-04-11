@@ -211,7 +211,7 @@ table, td { color: #000000; } </style>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <!--[if mso]><table width="100%"><tr><td><![endif]-->
-    <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 400;"><span><span><span><span><span><span><span><span>Your new password is:</span></span></span></span></span></span></span></span></h1>
+    <h1 style="margin: 0px; line-height: 140%; text-align: left; word-wrap: break-word; font-family: 'Montserrat',sans-serif; font-size: 22px; font-weight: 400;"><span><span><span><span><span><span><span><span>Click here to reset your password:</span></span></span></span></span></span></span></span></h1>
   <!--[if mso]></td></tr></table><![endif]-->
 
       </td>
@@ -248,7 +248,9 @@ table, td { color: #000000; } </style>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <div>
-    <h2 style="text-align: center; padding: 12px; background: #d9d9d9">${option?.password}</h2>
+    <h2 style="text-align: center; padding: 12px; background: #d9d9d9">
+      <a href="http://127.0.0.1:3000/forgot-password${option?.link}">Click here!</a>
+    </h2>
   </div>
 
       </td>
@@ -285,7 +287,7 @@ table, td { color: #000000; } </style>
       <td style="overflow-wrap:break-word;word-break:break-word;padding:10px;font-family:arial,helvetica,sans-serif;" align="left">
 
   <div style="font-size: 14px; line-height: 140%; text-align: left; word-wrap: break-word;">
-    <p style="line-height: 140%;">This is our auto-generated password, you can change it yourself in "My Account" page.</p>
+    <p style="line-height: 140%;">This is our reset password link, you can click it to verify. If it secure, we will let you create your own new password</p>
   </div>
 
       </td>
@@ -344,7 +346,7 @@ table, td { color: #000000; } </style>
     const mailOptions = {
         from: 'Equator Coffee <hohoanggiang80@gmail.com>',
         to: email,
-      subject: `Your new password is: ${option?.password}`,
+      subject: `Your reset password link is here:`,
         html: html
     }
 

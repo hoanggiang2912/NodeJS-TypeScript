@@ -16,8 +16,6 @@
             try {
                 const data = await send();
 
-                // console.log(data);
-                
                 if (data.sendMail) {
                     const html = `
                         <span class="success-text body-medium fw-smb p12 width-full display-block tac" style="background: rgba(32, 227, 178, .2); color: #20E3B2; border: 1px solid #20E3B2">Sending email successfully!

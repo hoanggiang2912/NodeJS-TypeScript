@@ -1,8 +1,24 @@
 const CategoriesModel = require('../models/CategoriesModel');
+const ProductsModel = require('../models/ProductsModel');
 
 exports.getAll = async () => {
-    const categories = await CategoriesModel.find({});
-    return categories;
+    try {
+        const categories = await CategoriesModel.find()
+            .populate({
+                path: 'products',
+                model: ProductsModel
+            });
+
+        // const categoriesWithProductAmounts = categories.map(category => ({
+        //     ...category._doc,
+        //     productAmount: category.products.length
+        // }));
+
+        // return categoriesWithProductAmounts;
+        return categories;
+    } catch (err) {
+        console.error(err);
+    }
 }
 
 exports.getOne = async (id) => {

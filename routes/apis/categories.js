@@ -3,6 +3,7 @@ var router = express.Router();
 const CategoiesController = require('../../controllers/CategoriesController');
 const CategoriesModel = require('../../models/CategoriesModel');
 const { json } = require('body-parser');
+const {verify} = require('./verifyToken.js');
 
 
 // get all categories
@@ -16,7 +17,7 @@ router.get('/', async (req, res, next) => {
 });
 
 // submit a category
-router.post('/', async (req, res, next) => {
+router.post('/', verify, async (req, res, next) => {
     const category = new CategoriesModel({
         name: req.body.name,
         banner: req.body.banner,

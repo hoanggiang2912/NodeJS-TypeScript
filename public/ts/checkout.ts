@@ -7,8 +7,8 @@ import { CartProduct } from "./type";
                 return `
                     <!-- single bill product start -->
                         <div class="bill__product flex v-center g20">
-                            <div class="bill__product__banner__wrapper por">
-                                <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/uploads/${p.image}')"></div>
+                            <div class="bill__product__banner__wrapper por" style="padding-top: 20%">
+                                <div class="banner-contain bill__product__banner poa abs-full" style="background-image: url('/uploads/${p.image}');"></div>
                                 <span class="label-small poa bill__product__qty">${p.qty}</span>
                             </div>
                             <div class="bill__product__info flex-full flex-between v-center g12">

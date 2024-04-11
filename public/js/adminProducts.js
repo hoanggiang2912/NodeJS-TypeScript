@@ -1,4 +1,4 @@
-import { productsEndpoint, App } from "./main.js";
+import { productsEndpoint, checkToken, getNewToken, App } from "./main.js";
 const run = async () => {
     const app = new App();
     const deleteBtns = [...document.querySelectorAll('.delete__btn')];
@@ -42,18 +42,28 @@ const run = async () => {
     }
 };
 const handleRemoveProduct = async (id, callback = async () => { }) => {
+    let authToken = localStorage.getItem('authToken');
+    const refreshToken = localStorage.getItem('refreshToken');
+    const checkTokenRes = await checkToken(authToken);
+    const checkTokenData = await checkTokenRes.json();
+    if (!checkTokenData.success) {
+        const newTokenRes = await getNewToken(refreshToken);
+        if (!newTokenRes) {
+            window.location.href = '/login';
+        }
+        const newTokenData = await newTokenRes.json();
+        authToken = newTokenData.authToken;
+        localStorage.setItem('authToken', newTokenData.authToken);
+    }
     const options = {
         method: 'DELETE',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${authToken}`
         }
     };
     const productAPI = `${productsEndpoint}/${id}`;
-    await fetch(productAPI, options)
-        .then(res => {
-        return res.json();
-    })
-        .then((data) => (data.id).toString());
+    await fetch(productAPI, options);
 };
 const renderAdminProduct = (products, container) => {
     const html = products.map(product => {

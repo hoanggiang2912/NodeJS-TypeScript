@@ -1,13 +1,9 @@
 import { getData, categoriesEndpoint, productsEndpoint, App } from './main.js';
-const getAmountProduct = async (id) => {
-    const data = await getData(productsEndpoint);
-    const products = data.filter((p) => p.idCategory._id == id);
-    return products.length;
-};
-const renderAdminCategory = (categories, container) => {
+const renderAdminCategory = (categories, container, products) => {
     if (categories) {
         const html = categories.map(c => {
             const { _id, name, banner } = c;
+            const productsCount = products.filter(p => p.idCategory._id == _id).length;
             return `
                 <div class="admin__category col l-4 m-6 c-12 cp" data-id="${_id}">
                     <div class="admin__product__inner glass rounded-8 oh p20 flex-column g12 por">
@@ -20,7 +16,7 @@ const renderAdminCategory = (categories, container) => {
                                 <h4 class="admin__product__name text body-large fw-smb ttc">${name}</h4>
                                 <div class="flex-between">
                                     <div class="admin__category__stock flex g6 v-center wrap">
-                                        <span class="admin__product__instock text body-large fw-smb"></span>
+                                        <span class="admin__product__instock text body-large fw-smb">${productsCount}</span>
                                         <span class="admin__product__price__new text body-large fw-normal">products available</span>
                                     </div>
                                     <div class="admin__category__action flex-between v-center">
@@ -55,19 +51,12 @@ const renderAdminCategory = (categories, container) => {
 };
 const run = async () => {
     const categories = await getData(categoriesEndpoint);
+    const products = await getData(productsEndpoint);
     const app = new App();
     const adminCategory = document.querySelector('.category__panel');
     if (adminCategory) {
-        renderAdminCategory(categories, adminCategory);
+        renderAdminCategory(categories, adminCategory, products);
         const categoryItems = [...document.querySelectorAll('.admin__category')];
-        const ids = categoryItems.map(item => item.dataset.id);
-        ids.forEach(async (id) => {
-            const amount = await getAmountProduct(id);
-            const categoryStock = document.querySelector(`.admin__category[data-id="${id}"]`)?.querySelector('.admin__product__instock');
-            if (categoryStock) {
-                categoryStock.textContent = amount.toString();
-            }
-        });
         categoryItems.forEach(item => {
             item.addEventListener('click', e => {
                 const target = e.target;
@@ -98,27 +87,22 @@ const run = async () => {
                 app.closeModal(popup, overlay);
             });
             const adminCategoryContainer = document.querySelector('.admin__panel__main');
-            await getData(categoriesEndpoint)
-                .then((categories) => {
-                renderAdminCategory(categories, adminCategoryContainer);
-                const deleteBtns = [...document.querySelectorAll('.delete__btn')];
-                deleteBtns.forEach(btn => {
-                    btn.addEventListener('click', e => {
-                        e.stopPropagation();
-                        app.openModal(popup, overlay);
-                        const id = btn.dataset.id;
-                        const confirmBtn = document.querySelector('.confirm-btn');
-                        confirmBtn.addEventListener('click', async () => {
-                            await handleRemoveCategory(id || '', () => renderAdminCategory(categories, adminCategoryContainer));
-                        });
-                        const discardBtn = document.querySelector('.discard-btn');
-                        discardBtn.addEventListener('click', _ => {
-                            app.closeModal(popup, overlay);
-                        });
+            const deleteBtns = [...document.querySelectorAll('.delete__btn')];
+            deleteBtns.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    e.stopPropagation();
+                    app.openModal(popup, overlay);
+                    const id = btn.dataset.id;
+                    const confirmBtn = document.querySelector('.confirm-btn');
+                    confirmBtn.addEventListener('click', async () => {
+                        await handleRemoveCategory(id || '', () => renderAdminCategory(categories, adminCategoryContainer, products));
+                    });
+                    const discardBtn = document.querySelector('.discard-btn');
+                    discardBtn.addEventListener('click', _ => {
+                        app.closeModal(popup, overlay);
                     });
                 });
-            })
-                .catch(err => console.log(err));
+            });
         }
         const handleRemoveCategory = async (id, callback = () => { }) => {
             const options = {
@@ -220,12 +204,12 @@ const run = async () => {
                     const query = e.target.value;
                     filteredCategories = categories.filter((c) => c.name.toLowerCase().includes(query.toLowerCase()));
                     if (query) {
-                        renderAdminCategory(filteredCategories, adminCategoryContainer);
+                        renderAdminCategory(filteredCategories, adminCategoryContainer, products);
                     }
                 });
                 searchInput.addEventListener('blur', e => {
                     if (!e.target.value) {
-                        renderAdminCategory(filteredCategories, adminCategoryContainer);
+                        renderAdminCategory(filteredCategories, adminCategoryContainer, products);
                     }
                 });
             }

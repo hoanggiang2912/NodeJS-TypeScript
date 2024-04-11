@@ -265,6 +265,23 @@ const createProductValidator = data => {
     return schema.validate(data);
 }
 
+const resetPasswordValidator = data => {
+    const schema = Joi.object({
+        password: Joi.string().min(8).max(32).required().messages({
+            'string.empty': 'Password is not allowed to be empty!',
+            'string.min': 'Password should have a minimum length of {#limit}',
+            'string.max': 'Password should have a maximum length of {#limit}',
+            'any.required': 'Password is a required field'
+        }),
+        confirmPassword: Joi.string().valid(Joi.ref('password')).required().messages({
+            'string.empty': 'Confirm password is not allowed to be empty!',
+            'any.required': 'Confirm password is a required field',
+            'any.only': 'Confirm password must be the same as password'
+        })
+    });
+
+    return schema.validate(data);
+}
 
 module.exports.registerValidator = registerValidator;
 module.exports.loginValidator = loginValidator;
@@ -277,3 +294,4 @@ module.exports.updateProfileValidator = updateProfileValidator;
 module.exports.adminUserUpdateValidator = adminUserUpdateValidator;
 module.exports.createUserValidator = createUserValidator;
 module.exports.createProductValidator = createProductValidator;
+module.exports.resetPasswordValidator = resetPasswordValidator;

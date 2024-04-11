@@ -27,19 +27,22 @@
                     <div class="flex">
                         <div class="admin__category__image por">
                             <div class="abs-full banner-cover"
-                                style="background-image: url('/assets/image/categories/{{this.banner}}');">
+                                style="background-image: url('/uploads/{{this.banner}}');">
                             </div>
                         </div>
                         <div class="admin__category__info flex-column flex-between g20">
                             <h4 class="admin__product__name text body-large fw-smb ttc">{{this.name}}</h4>
                             <div class="flex-between">
                                 <div class="admin__category__stock flex g6 v-center wrap">
-                                    <span class="admin__product__price__old text body-large fw-smb">Updating</span>
+                                    <span class="admin__product__price__old text body-large fw-smb">{{this.productAmount}}</span>
                                     <span class="admin__product__price__new text body-large fw-normal">products available</span>
                                 </div>
                                 <div class="admin__category__action flex-between v-center">
                                     <button class="icon-btn edit__btn">
                                         <i class="fal fa-edit"></i>
+                                    </button>
+                                    <button class="icon-btn edit__btn">
+                                        <i class="fal fa-trash-alt"></i>
                                     </button>
                                 </div>
                             </div>

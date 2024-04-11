@@ -74,6 +74,7 @@ export interface Product {
  * @property {string} email - User email
  * @property {string} password - User password
  * @property {string} token - User token
+ * @property {string} role - User role
  */
 export interface User {
     id: string;
@@ -81,6 +82,7 @@ export interface User {
     email: string;
     password: string;
     token: string;
+    role: string | 'user' | 'admin';
 }
 
 // interface UserOption {

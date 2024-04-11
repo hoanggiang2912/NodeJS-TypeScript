@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
-const { addProductValidator, createProductValidator } = require('../../validation.js');
+const { createProductValidator } = require('../../validation.js');
 const ProductsModel = require('../../models/ProductsModel');
 const ProductsController = require('../../controllers/ProductsController');
-
 const {json} = require('body-parser');
+const { verify } = require('./verifyToken.js');
 
 // get all products
 router.get('/', async (req, res, next) => {
@@ -48,7 +47,7 @@ router.get('/:name', async (req, res, next) => {
     }
 })
 
-router.post('/', async (req, res) => {
+router.post('/',verify, async (req, res, next) => {
     // Validate
     const { error } = createProductValidator(req.body);
     if (error) {
@@ -75,7 +74,7 @@ router.post('/', async (req, res) => {
 });
 
 // delete a specific product
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', verify, async (req, res) => {
     console.log('Deleting product with id:', req.params.id);
     try {
         const removedProduct = await ProductsModel.deleteOne({ _id: req.params.id });
@@ -87,7 +86,7 @@ router.delete('/:id', async (req, res) => {
 });
 
 // update a product 
-router.patch('/:id', async (req, res, next) => {
+router.patch('/:id', verify, async (req, res, next) => {
     console.log('Updating product with id:', req.params.id);
     try {
         const updatedProduct = await ProductsModel.updateOne(
@@ -112,7 +111,7 @@ router.patch('/:id', async (req, res, next) => {
 })
 
 // update product views
-router.patch('/:id/views', async (req, res) => {
+router.patch('/:id/views', verify, async (req, res) => {
     console.log('Updating product views with id:', req.params.id);
     try {
         const updatedProduct = await ProductsModel.updateOne(

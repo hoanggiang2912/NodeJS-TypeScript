@@ -1,16 +1,12 @@
 import { getData, categoriesEndpoint, productsEndpoint, App } from './main.js';
 import { Category, Product } from './interfaces.js';
 
-const getAmountProduct = async (id: string) => {
-    const data = await getData(productsEndpoint);
-    const products = data.filter((p: Product) => p.idCategory._id == id) as Product[];
-    return products.length;
-}
-
-const renderAdminCategory = (categories: Category[], container: HTMLElement) => {
+const renderAdminCategory = (categories: Category[], container: HTMLElement, products: Product[]) => {
     if (categories) {
         const html = categories.map(c => {
             const { _id, name, banner } = c;
+            const productsCount = products.filter(p => p.idCategory._id == _id).length;
+            // console.log(productsCount);
 
             return `
                 <div class="admin__category col l-4 m-6 c-12 cp" data-id="${_id}">
@@ -24,7 +20,7 @@ const renderAdminCategory = (categories: Category[], container: HTMLElement) => 
                                 <h4 class="admin__product__name text body-large fw-smb ttc">${name}</h4>
                                 <div class="flex-between">
                                     <div class="admin__category__stock flex g6 v-center wrap">
-                                        <span class="admin__product__instock text body-large fw-smb"></span>
+                                        <span class="admin__product__instock text body-large fw-smb">${productsCount}</span>
                                         <span class="admin__product__price__new text body-large fw-normal">products available</span>
                                     </div>
                                     <div class="admin__category__action flex-between v-center">
@@ -60,6 +56,7 @@ const renderAdminCategory = (categories: Category[], container: HTMLElement) => 
 
 const run = async () => {
     const categories = await getData(categoriesEndpoint);
+    const products = await getData(productsEndpoint);
 
     // console.log(product, categories);
 
@@ -68,22 +65,10 @@ const run = async () => {
     const adminCategory = document.querySelector('.category__panel') as HTMLElement;
     
     if (adminCategory) {
-        renderAdminCategory(categories, adminCategory);
+        renderAdminCategory(categories, adminCategory, products);
         // handle amount product
         const categoryItems = [...document.querySelectorAll('.admin__category')] as HTMLElement[];
         // console.log(categoryItems);
-        const ids = categoryItems.map(item => item.dataset.id);
-        // console.log(ids);
-
-        ids.forEach(async (id) => {
-            const amount = await getAmountProduct((id as unknown) as string);
-            // console.log(amount);
-            const categoryStock = document.querySelector(`.admin__category[data-id="${id}"]`)?.querySelector('.admin__product__instock') as HTMLElement;
-            // console.log(stock);
-            if (categoryStock) {
-                categoryStock.textContent = amount.toString();
-            }
-        });
 
         // handle redirect to detail page
         categoryItems.forEach(item => {
@@ -122,41 +107,35 @@ const run = async () => {
             })
 
             const adminCategoryContainer = document.querySelector('.admin__panel__main') as HTMLElement;
+            
+            const deleteBtns = [...document.querySelectorAll('.delete__btn')] as HTMLButtonElement[];
 
-            await getData(categoriesEndpoint)
-                .then((categories: Category[]) => {
-                    renderAdminCategory(categories, adminCategoryContainer);
+            deleteBtns.forEach(btn => {
+                btn.addEventListener('click', e => {
+                    // console.log(e.target);
+                    e.stopPropagation();
+                    // open popup
+                    app.openModal(popup, overlay);
 
-                    const deleteBtns = [...document.querySelectorAll('.delete__btn')] as HTMLButtonElement[];
+                    // find and delete if confirmed
+                    const id = btn.dataset.id;
 
-                    deleteBtns.forEach(btn => {
-                        btn.addEventListener('click', e => {
-                            // console.log(e.target);
-                            e.stopPropagation();
-                            // open popup
-                            app.openModal(popup, overlay);
-
-                            // find and delete if confirmed
-                            const id = btn.dataset.id;
-
-                            // confirm
-                            const confirmBtn = document.querySelector('.confirm-btn') as HTMLButtonElement;
-                            confirmBtn.addEventListener('click', async () => {
-                                await handleRemoveCategory(
-                                    id || '',
-                                    () => renderAdminCategory(categories, adminCategoryContainer)
-                                );
-                            });
-
-                            // discard
-                            const discardBtn = document.querySelector('.discard-btn') as HTMLButtonElement;
-                            discardBtn.addEventListener('click', _ => {
-                                app.closeModal(popup, overlay);
-                            })
-                        })
+                    // confirm
+                    const confirmBtn = document.querySelector('.confirm-btn') as HTMLButtonElement;
+                    confirmBtn.addEventListener('click', async () => {
+                        await handleRemoveCategory(
+                            id || '',
+                            () => renderAdminCategory(categories, adminCategoryContainer, products)
+                        );
                     });
+
+                    // discard
+                    const discardBtn = document.querySelector('.discard-btn') as HTMLButtonElement;
+                    discardBtn.addEventListener('click', _ => {
+                        app.closeModal(popup, overlay);
+                    })
                 })
-                .catch(err => console.log(err));
+            });
         }
         const handleRemoveCategory = async (id: string, callback = () => { }) => {
             /** delete selected category */
@@ -282,13 +261,13 @@ const run = async () => {
                         (c: Category) => c.name.toLowerCase().includes(query.toLowerCase())
                     );
                     if (query) {
-                        renderAdminCategory(filteredCategories, adminCategoryContainer as HTMLElement);
+                        renderAdminCategory(filteredCategories, adminCategoryContainer as HTMLElement, products);
                     }
                 });
 
                 searchInput.addEventListener('blur', e => {
                     if (!(e.target as HTMLInputElement).value) {
-                        renderAdminCategory(filteredCategories, adminCategoryContainer as HTMLElement);
+                        renderAdminCategory(filteredCategories, adminCategoryContainer as HTMLElement, products);
                     }
                 });
             }

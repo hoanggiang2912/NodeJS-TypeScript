@@ -1,6 +1,5 @@
 import { createStorage } from "./main.js";
 const loginAPI = `/api/v1/auth/login`;
-const userSignupStorage = createStorage('userSignup');
 const userLoginStorage = createStorage('userLogin');
 (_ => {
     const usersSignupArray = JSON.parse(localStorage.getItem('usersSignup'))?.usersSignup || [];
@@ -17,7 +16,26 @@ const userLoginStorage = createStorage('userLogin');
     if (loginBtn) {
         loginBtn.addEventListener('click', async (e) => {
             e.preventDefault();
-            await login();
+            try {
+                const res = await login();
+                const data = await res.json();
+                if (!res.ok) {
+                    errorMessageEle.innerHTML = data.message;
+                }
+                ;
+                userLoginStorage.set('userLogin', data.user);
+                localStorage.setItem('authToken', data.authToken);
+                localStorage.setItem('refreshToken', data.refreshToken);
+                if (data.user.role == 'user') {
+                    window.location.href = '/';
+                }
+                else if (data.user.role == 'admin') {
+                    window.location.href = '/admin/dashboard';
+                }
+            }
+            catch (error) {
+                console.log(error);
+            }
         });
     }
     const login = async () => {
@@ -34,19 +52,6 @@ const userLoginStorage = createStorage('userLogin');
             },
             body: JSON.stringify(user)
         });
-        if (!res.ok) {
-            const data = await res.json();
-            errorMessageEle.innerHTML = data.message;
-            return;
-        }
-        ;
-        const data = await res.json();
-        userLoginStorage.set('userLogin', data.user);
-        if (data.user.role == 'user') {
-            window.location.href = '/';
-        }
-        else if (data.user.role == 'admin') {
-            window.location.href = '/admin/dashboard';
-        }
+        return res;
     };
 })();
